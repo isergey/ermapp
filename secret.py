@@ -14,6 +14,13 @@ DEV = {
         }
     },
 
+    'CACHES': {
+        'default': {
+            'BACKEND': 'django.core.cache.backends.filebased.FileBasedCache',
+            'LOCATION': '/tmp/django_cache',
+            }
+    },
+
     'SECRET_KEY': '6e&h!4$+&p+!@^543%jn&+x!j3g-pf3%%frsvo2=6p*&*eo_i)'
 
 }
@@ -32,6 +39,13 @@ PROD = {
         }
     },
 
+    'CACHES': {
+        'default': {
+            'BACKEND': 'django.core.cache.backends.filebased.FileBasedCache',
+            'LOCATION': '/tmp/django_cache',
+            }
+    },
+    
     'SECRET_KEY': '6e&h!4$+&p+!@^543%jn&+x!j3g-pf3%%frsvo2=6p*&*eo_i)'
 
 }

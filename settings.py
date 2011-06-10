@@ -6,9 +6,13 @@ import secret
 def rel(*x):
     return os.path.join(os.path.abspath(os.path.dirname(__file__)), *x)
 
-MODE = 'DEV'
+MODE = 'DEV' # DEV, PROD, TEST
 
-DEBUG = True
+if MODE == 'DEV':
+    DEBUG = True
+elif MODE == 'PROD':
+    DEBUG = False
+
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
@@ -42,6 +46,13 @@ SITE_ID = 1
 # to load the internationalization machinery.
 USE_I18N = True
 
+gettext = lambda s: s
+
+LANGUAGES = (
+        ('ru', gettext('Russian')),
+        ('en', gettext('English')),
+        #('tt', gettext('Tatar')),
+    )
 
 # If you set this to False, Django will not format dates, numbers and
 # calendars according to the current locale
@@ -72,6 +83,12 @@ STATIC_URL = 'static'
 
 ADMIN_MEDIA_PREFIX = '/media/static/admin/'
 
+if MODE == 'DEV':
+    CACHES = secret.DEV['CACHES']
+elif MODE == 'PROD':
+    CACHES = secret.PROD['CACHES']
+
+
 # Additional locations of static files
 STATICFILES_DIRS = (
 # Put strings here, like "/home/html/static" or "C:/www/django/static".
@@ -97,14 +114,23 @@ elif MODE == 'PROD':
 
 # List of callables that know how to import templates from various sources.
 TEMPLATE_LOADERS = (
-    'django.template.loaders.filesystem.Loader',
-    'django.template.loaders.app_directories.Loader',
-    #     'django.template.loaders.eggs.Loader',
-    )
+    #('django.template.loaders.cached.Loader', (
+        'django.template.loaders.filesystem.Loader',
+        'django.template.loaders.app_directories.Loader',
+    #)),
+)
+#TEMPLATE_LOADERS = (
+#        (   'django.template.loaders.eggs.Loader', (
+#            'django.template.loaders.filesystem.Loader',
+#            'django.template.loaders.app_directories.Loader',
+#            )
+#        )
+#    )
 
 MIDDLEWARE_CLASSES = (
     'django.middleware.common.CommonMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
@@ -113,10 +139,11 @@ MIDDLEWARE_CLASSES = (
 ROOT_URLCONF = 'ermapp.urls'
 
 TEMPLATE_DIRS = (
-# Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
-# Always use forward slashes, even on Windows.
-# Don't forget to use absolute paths, not relative paths.
-)
+    rel('templates')
+    # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
+    # Always use forward slashes, even on Windows.
+    # Don't forget to use absolute paths, not relative paths.
+    )
 
 INSTALLED_APPS = (
     'django.contrib.auth',
