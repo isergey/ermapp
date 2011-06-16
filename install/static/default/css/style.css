@@ -1,0 +1,75 @@
+html, body {
+    font-family: Georgia, "Times New Roman", serif;
+}
+/*erm app*/
+#search_places {
+    height: 40px;
+}
+#search_places ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+#search_places ul li {
+    float: left;
+    margin: 0 1em 0 0;
+}
+#search_places ul li a{
+    font-size: 1.4em;
+}
+#search_button {
+    float: right;
+    margin-left:5px;
+    cursor:pointer;
+}
+
+.search_point{
+    float: left;
+    width: 145px;
+    border-color: #A1A1A1 #C1C1C1 #BBB;
+    border-style: solid;
+    border-width: 1px;
+    margin-top:1px;
+    margin-right:5px;
+    height: 35px;
+    font-size: 18px;
+    color: #666666;
+    background: #F4F4F5;
+}
+#search_input {
+    float: right;
+    width: 470px;
+    height: 34px;
+    font-size: 24px;
+    color:#333333;
+    background: url(../images/input_bg.gif) repeat-x;
+    border-color: #A1A1A1 #C1C1C1 #BBB;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 3px;
+    padding: 0 0 0 5px;
+    margin-top:1px;
+    background-color:#fff;
+}
+
+#search_form label {
+    color: #90a5a8;
+    font-family: Arial;
+    font-size: 15px;
+    font-weight: normal;
+    width: 100%;
+}
+
+.item_number{
+  font-size: 1.5em;
+  height: 35px;
+  color: #DDD;
+}
+.item_title{
+  font-size: 1.8em;
+  height: 35px;
+  text-decoration: underline;
+}
+.item_title a {
+  color: #49AFD0;
+}

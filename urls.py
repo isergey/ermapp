@@ -6,10 +6,8 @@ from django.contrib import admin
 admin.autodiscover()
 
 urlpatterns = patterns('',
-    (r'^i18n/', include('django.conf.urls.i18n')),
-    # Examples:
-    # url(r'^$', 'ermapp.views.home', name='home'),
-    url(r'^erm/', include('erm.urls')),
+    url(r'^core/', include('apps.core.urls')),
+    url(r'^erm/', include('apps.erm.urls')),
 
     # Uncomment the admin/doc line below to enable admin documentation:
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
@@ -20,6 +18,7 @@ urlpatterns = patterns('',
 
 if settings.MODE == 'DEV':
     from django.conf.urls.static import static
-    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) +\
-              static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)# +\
+#              static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+
 

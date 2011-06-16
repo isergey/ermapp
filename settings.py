@@ -3,8 +3,12 @@
 import os
 import secret
 #определение полного пути до каталога где храниться проект.
-def rel(*x):
-    return os.path.join(os.path.abspath(os.path.dirname(__file__)), *x)
+#def rel(*x):
+#   return os.path.join(os.path.abspath(os.path.dirname(__file__)), *x)
+
+SYSTEM_ROOT = os.path.abspath(os.path.dirname(__file__)) + '/'
+
+
 
 MODE = 'DEV' # DEV, PROD, TEST
 
@@ -60,28 +64,26 @@ USE_L10N = True
 
 # Absolute filesystem path to the directory that will hold user-uploaded files.
 # Example: "/home/media/media.lawrence.com/media/"
-MEDIA_ROOT = rel('media')
-
+MEDIA_ROOT = SYSTEM_ROOT + 'media/'
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash.
 # Examples: "http://media.lawrence.com/media/", "http://example.com/media/"
-MEDIA_URL = '/media'
-
+MEDIA_URL = '/media/'
 # Absolute path to the directory static files should be collected to.
 # Don't put anything in this directory yourself; store your static files
 # in apps' "static/" subdirectories and in STATICFILES_DIRS.
 # Example: "/home/media/media.lawrence.com/static/"
-STATIC_ROOT = rel('static')
+STATIC_ROOT = SYSTEM_ROOT + 'static/'
 
 # URL prefix for static files.
 # Example: "http://media.lawrence.com/static/"
-STATIC_URL = 'static'
+STATIC_URL = '/static/'
 
 # URL prefix for admin static files -- CSS, JavaScript and images.
 # Make sure to use a trailing slash.
 # Examples: "http://foo.com/static/admin/", "/static/admin/".
 
-ADMIN_MEDIA_PREFIX = '/media/static/admin/'
+ADMIN_MEDIA_PREFIX = STATIC_URL + 'admin/'
 
 if MODE == 'DEV':
     CACHES = secret.DEV['CACHES']
@@ -91,17 +93,18 @@ elif MODE == 'PROD':
 
 # Additional locations of static files
 STATICFILES_DIRS = (
-# Put strings here, like "/home/html/static" or "C:/www/django/static".
-# Always use forward slashes, even on Windows.
-# Don't forget to use absolute paths, not relative paths.
-)
+    (SYSTEM_ROOT + 'install/static/'),
+    # Put strings here, like "/home/html/static" or "C:/www/django/static".
+    # Always use forward slashes, even on Windows.
+    # Don't forget to use absolute paths, not relative paths.
+    )
 
 # List of finder classes that know how to find static files in
 # various locations.
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-    #    'django.contrib.staticfiles.finders.DefaultStorageFinder',
+    'django.contrib.staticfiles.finders.DefaultStorageFinder',
     )
 
 # Make this unique, and don't share it with anybody.
@@ -115,10 +118,10 @@ elif MODE == 'PROD':
 # List of callables that know how to import templates from various sources.
 TEMPLATE_LOADERS = (
     #('django.template.loaders.cached.Loader', (
-        'django.template.loaders.filesystem.Loader',
-        'django.template.loaders.app_directories.Loader',
+    'django.template.loaders.filesystem.Loader',
+    'django.template.loaders.app_directories.Loader',
     #)),
-)
+    )
 #TEMPLATE_LOADERS = (
 #        (   'django.template.loaders.eggs.Loader', (
 #            'django.template.loaders.filesystem.Loader',
@@ -139,11 +142,11 @@ MIDDLEWARE_CLASSES = (
 ROOT_URLCONF = 'ermapp.urls'
 
 TEMPLATE_DIRS = (
-    rel('templates')
+    SYSTEM_ROOT + 'templates/',
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
-    )
+)
 
 INSTALLED_APPS = (
     'django.contrib.auth',
@@ -154,10 +157,12 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     # Uncomment the next line to enable the admin:
     'django.contrib.admin',
+    'south',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
-    'ermapp.erm',
-    )
+    'apps.core',
+    'apps.erm',
+)
 
 # A sample logging configuration. The only tangible logging
 # performed by this configuration is to send an email to
