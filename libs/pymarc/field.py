@@ -45,6 +45,7 @@ class Field(object):
         self.__pos = 0
         return self
 
+
     def __str__(self):
         """
         A Field object in a string context will return the tag, indicators

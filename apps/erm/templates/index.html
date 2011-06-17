@@ -15,15 +15,16 @@
         </ul>
     </div>
     <div id="search_panel" class="column last">
+
         <form method="get" id="search_form" action="">
             <div style="overflow:hidden;">
-                <select name="point" class="search_point">
-                    <option value="author">Везде</option>
-                    <option value="author">Автор</option>
-                    <option value="title">Заглавие</option>
-                    <option value="rubric">Рубрика</option>
+                <select name="use" class="search_point">
+                    <option value="anywhere" {% if request.GET.use == 'anywhere' %}selected="selected"{% endif %}>Везде</option>
+                    <option value="author" {% if request.GET.use == 'author' %}selected="selected"{% endif %}>Автор</option>
+                    <option value="title" {% if request.GET.use == 'title' %}selected="selected"{% endif %}>Заглавие</option>
+                    <option value="subject" {% if request.GET.use == 'subject' %}selected="selected"{% endif %}>Рубрика</option>
                 </select>
-                <input name="term" id="search_input" value="" type="text">
+                <input name="term" id="search_input" value="{{ request.GET.term }}" type="text">
             </div>
             <div id="search_buttons">
                 <a id="search_button" onclick="goSearch();return false;">
@@ -41,11 +42,18 @@
                 <div class="item_number alt column span-2">№{{ search_result.number }}</div>
                 <div class="column span-14  last">
                     <div class="item_title">
-                        <a href="#" class="alt">{{ search_result.record.200.a }}</a>
+                        <a href="#" class="alt">{{ search_result.record.200.a|safe }}</a>
                     </div>
-                    <div class="item_field">
-                        Рубрика: <a href="#">математика</a>
-                    </div>
+                    {% if search_result.record.702.a %}
+                        <div class="item_author">
+                            {{ search_result.record.702.a }}
+                        </div>
+                    {% endif %}
+                    {% if search_result.record.606.a %}
+                        <div class="item_field">
+                            Рубрика: <a href="#">{{ search_result.record.606.a }}</a>
+                        </div>
+                    {% endif %}
                     <div class="item_info">
                         Доступ: <span style="color: green;">свободный</span>
                     </div>
