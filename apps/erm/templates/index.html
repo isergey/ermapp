@@ -39,12 +39,16 @@
         {% for search_result in search_results %}
             <div class="result_item column last">
                 <div class="item_number alt column span-2">№{{ search_result.number }}</div>
-                <div class="item_title alt column span-14  last"><a href="#">{{ search_result.record.200.a }}</a></div>
-                <div class="item_field column prepend-2  span-14 last">
-                    Рубрика: <a href="#">математика</a>
-                </div>
-                <div class="item_info column prepend-2 span-14 last">
-                    Доступ: <span style="color: green;">свободный</span>
+                <div class="column span-14  last">
+                    <div class="item_title">
+                        <a href="#" class="alt">{{ search_result.record.200.a }}</a>
+                    </div>
+                    <div class="item_field">
+                        Рубрика: <a href="#">математика</a>
+                    </div>
+                    <div class="item_info">
+                        Доступ: <span style="color: green;">свободный</span>
+                    </div>
                 </div>
             </div>
             <hr/>

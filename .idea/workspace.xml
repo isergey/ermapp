@@ -1,266 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="16253b6b-97cb-4e8f-af32-81f26055811c" name="Default" comment="add bp. add tt">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/apps/erm/static/erm/default/images/extended_link.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/install/static/css/blueprint/plugins/buttons/icons/cross.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/install/static/css/blueprint/plugins/buttons/icons/key.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/install/static/css/blueprint/plugins/buttons/icons/tick.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/install/static/css/blueprint/plugins/link-icons/icons/doc.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/install/static/css/blueprint/plugins/link-icons/icons/email.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/install/static/css/blueprint/plugins/link-icons/icons/external.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/install/static/css/blueprint/plugins/link-icons/icons/feed.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/install/static/css/blueprint/plugins/link-icons/icons/im.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/install/static/css/blueprint/plugins/link-icons/icons/lock.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/install/static/css/blueprint/plugins/link-icons/icons/pdf.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/install/static/css/blueprint/plugins/link-icons/icons/visited.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/install/static/css/blueprint/plugins/link-icons/icons/xls.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/install/static/css/blueprint/src/grid.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/install/static/default/images/input_bg.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/install/static/default/images/search_button_bg.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/libs/pyaz" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/locale/ru/LC_MESSAGES/django.mo" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/apps/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/apps/core/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/apps/core/models.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/apps/core/tests.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/apps/core/urls.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/apps/erm/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/apps/erm/appsettings.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/apps/erm/templates/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/apps/erm/urls.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/apps/erm/views.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/install/static/css/blueprint/ie.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/install/static/css/blueprint/plugins/buttons/readme.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/install/static/css/blueprint/plugins/buttons/screen.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/install/static/css/blueprint/plugins/fancy-type/readme.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/install/static/css/blueprint/plugins/fancy-type/screen.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/install/static/css/blueprint/plugins/link-icons/readme.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/install/static/css/blueprint/plugins/link-icons/screen.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/install/static/css/blueprint/plugins/rtl/readme.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/install/static/css/blueprint/plugins/rtl/screen.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/install/static/css/blueprint/print.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/install/static/css/blueprint/screen.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/install/static/default/css/style.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/install/static/js/jquery.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/libs/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/libs/pymarc/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/libs/pymarc/constants.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/libs/pymarc/exceptions.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/libs/pymarc/field.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/libs/pymarc/marc8.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/libs/pymarc/marc8_mapping.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/libs/pymarc/marcxml.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/libs/pymarc/reader.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/libs/pymarc/record.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/libs/pymarc/writer.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/libs/shotcurts/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/south/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/south/creator/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/south/creator/actions.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/south/creator/changes.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/south/creator/freezer.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/south/db/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/south/db/generic.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/south/db/mysql.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/south/db/oracle.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/south/db/postgresql_psycopg2.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/south/db/sql_server/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/south/db/sql_server/pyodbc.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/south/db/sqlite3.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/south/exceptions.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/south/hacks/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/south/hacks/django_1_0.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/south/introspection_plugins/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/south/introspection_plugins/annoying_autoonetoone.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/south/introspection_plugins/django_audit_log.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/south/introspection_plugins/django_objectpermissions.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/south/introspection_plugins/django_tagging.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/south/introspection_plugins/django_taggit.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/south/introspection_plugins/django_timezones.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/south/introspection_plugins/geodjango.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/south/logger.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/south/management/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/south/management/commands/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/south/management/commands/convert_to_south.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/south/management/commands/datamigration.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/south/management/commands/graphmigrations.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/south/management/commands/migrate.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/south/management/commands/migrationcheck.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/south/management/commands/schemamigration.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/south/management/commands/startmigration.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/south/management/commands/syncdb.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/south/management/commands/test.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/south/management/commands/testserver.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/south/migration/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/south/migration/base.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/south/migration/migrators.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/south/migration/utils.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/south/models.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/south/modelsinspector.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/south/orm.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/south/signals.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/south/tests/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/south/tests/autodetection.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/south/tests/brokenapp/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/south/tests/brokenapp/migrations/0001_depends_on_unmigrated.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/south/tests/brokenapp/migrations/0002_depends_on_unknown.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/south/tests/brokenapp/migrations/0003_depends_on_higher.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/south/tests/brokenapp/migrations/0004_higher.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/south/tests/brokenapp/migrations/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/south/tests/brokenapp/models.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/south/tests/circular_a/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/south/tests/circular_a/migrations/0001_first.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/south/tests/circular_a/migrations/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/south/tests/circular_a/models.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/south/tests/circular_b/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/south/tests/circular_b/migrations/0001_first.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/south/tests/circular_b/migrations/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/south/tests/circular_b/models.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/south/tests/db.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/south/tests/deps_a/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/south/tests/deps_a/migrations/0001_a.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/south/tests/deps_a/migrations/0002_a.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/south/tests/deps_a/migrations/0003_a.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/south/tests/deps_a/migrations/0004_a.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/south/tests/deps_a/migrations/0005_a.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/south/tests/deps_a/migrations/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/south/tests/deps_a/models.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/south/tests/deps_b/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/south/tests/deps_b/migrations/0001_b.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/south/tests/deps_b/migrations/0002_b.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/south/tests/deps_b/migrations/0003_b.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/south/tests/deps_b/migrations/0004_b.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/south/tests/deps_b/migrations/0005_b.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/south/tests/deps_b/migrations/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/south/tests/deps_b/models.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/south/tests/deps_c/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/south/tests/deps_c/migrations/0001_c.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/south/tests/deps_c/migrations/0002_c.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/south/tests/deps_c/migrations/0003_c.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/south/tests/deps_c/migrations/0004_c.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/south/tests/deps_c/migrations/0005_c.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/south/tests/deps_c/migrations/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/south/tests/deps_c/models.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/south/tests/emptyapp/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/south/tests/emptyapp/migrations/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/south/tests/emptyapp/models.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/south/tests/fakeapp/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/south/tests/fakeapp/migrations/0001_spam.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/south/tests/fakeapp/migrations/0002_eggs.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/south/tests/fakeapp/migrations/0003_alter_spam.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/south/tests/fakeapp/migrations/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/south/tests/fakeapp/models.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/south/tests/inspector.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/south/tests/logger.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/south/tests/logic.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/south/tests/otherfakeapp/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/south/tests/otherfakeapp/migrations/0001_first.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/south/tests/otherfakeapp/migrations/0002_second.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/south/tests/otherfakeapp/migrations/0003_third.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/south/tests/otherfakeapp/models.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/south/utils.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/south/v2.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/base.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/error.html" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/erm/locale/ru/LC_MESSAGES/django.mo" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/erm/locale/tt/LC_MESSAGES/django.po" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/erm/urls.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/static/admin/css/base.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/static/admin/css/changelists.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/static/admin/css/dashboard.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/static/admin/css/forms.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/static/admin/css/ie.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/static/admin/css/login.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/static/admin/css/rtl.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/static/admin/css/widgets.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/static/admin/img/admin/arrow-down.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/static/admin/img/admin/arrow-up.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/static/admin/img/admin/changelist-bg.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/static/admin/img/admin/changelist-bg_rtl.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/static/admin/img/admin/chooser-bg.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/static/admin/img/admin/chooser_stacked-bg.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/static/admin/img/admin/default-bg-reverse.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/static/admin/img/admin/default-bg.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/static/admin/img/admin/deleted-overlay.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/static/admin/img/admin/icon-no.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/static/admin/img/admin/icon-unknown.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/static/admin/img/admin/icon-yes.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/static/admin/img/admin/icon_addlink.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/static/admin/img/admin/icon_alert.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/static/admin/img/admin/icon_calendar.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/static/admin/img/admin/icon_changelink.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/static/admin/img/admin/icon_clock.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/static/admin/img/admin/icon_deletelink.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/static/admin/img/admin/icon_error.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/static/admin/img/admin/icon_searchbox.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/static/admin/img/admin/icon_success.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/static/admin/img/admin/inline-delete-8bit.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/static/admin/img/admin/inline-delete.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/static/admin/img/admin/inline-restore-8bit.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/static/admin/img/admin/inline-restore.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/static/admin/img/admin/inline-splitter-bg.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/static/admin/img/admin/nav-bg-grabber.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/static/admin/img/admin/nav-bg-reverse.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/static/admin/img/admin/nav-bg.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/static/admin/img/admin/selector-add.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/static/admin/img/admin/selector-addall.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/static/admin/img/admin/selector-remove.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/static/admin/img/admin/selector-removeall.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/static/admin/img/admin/selector-search.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/static/admin/img/admin/selector_stacked-add.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/static/admin/img/admin/selector_stacked-remove.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/static/admin/img/admin/tool-left.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/static/admin/img/admin/tool-left_over.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/static/admin/img/admin/tool-right.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/static/admin/img/admin/tool-right_over.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/static/admin/img/admin/tooltag-add.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/static/admin/img/admin/tooltag-add_over.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/static/admin/img/admin/tooltag-arrowright.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/static/admin/img/admin/tooltag-arrowright_over.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/static/admin/img/gis/move_vertex_off.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/static/admin/img/gis/move_vertex_on.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/static/admin/js/LICENSE-JQUERY.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/static/admin/js/SelectBox.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/static/admin/js/SelectFilter2.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/static/admin/js/actions.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/static/admin/js/actions.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/static/admin/js/admin/DateTimeShortcuts.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/static/admin/js/admin/RelatedObjectLookups.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/static/admin/js/admin/ordering.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/static/admin/js/calendar.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/static/admin/js/collapse.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/static/admin/js/collapse.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/static/admin/js/compress.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/static/admin/js/core.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/static/admin/js/dateparse.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/static/admin/js/getElementsBySelector.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/static/admin/js/inlines.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/static/admin/js/inlines.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/static/admin/js/jquery.init.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/static/admin/js/jquery.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/static/admin/js/jquery.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/static/admin/js/prepopulate.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/static/admin/js/prepopulate.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/static/admin/js/timeparse.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/static/admin/js/urlify.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/static/erm/static.js" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/erm/__init__.py" afterPath="$PROJECT_DIR$/south/tests/otherfakeapp/migrations/__init__.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/erm/locale/ru/LC_MESSAGES/django.po" afterPath="$PROJECT_DIR$/locale/ru/LC_MESSAGES/django.po" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/erm/models.py" afterPath="$PROJECT_DIR$/apps/erm/models.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/erm/static/erm/static.js" afterPath="$PROJECT_DIR$/apps/erm/static/erm/static.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/erm/templates/setlang_form.html" afterPath="$PROJECT_DIR$/apps/core/templates/select_lang_form.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/erm/tests.py" afterPath="$PROJECT_DIR$/apps/erm/tests.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/erm/views.py" afterPath="$PROJECT_DIR$/apps/core/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/ermapp.iml" afterPath="$PROJECT_DIR$/.idea/ermapp.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/base.db" afterPath="$PROJECT_DIR$/base.db" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/css/blueprint/plugins/buttons/icons/cross.png" afterPath="$PROJECT_DIR$/static/css/blueprint/plugins/buttons/icons/cross.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/css/blueprint/plugins/buttons/icons/key.png" afterPath="$PROJECT_DIR$/static/css/blueprint/plugins/buttons/icons/key.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/css/blueprint/plugins/buttons/icons/tick.png" afterPath="$PROJECT_DIR$/static/css/blueprint/plugins/buttons/icons/tick.png" />
+    <list default="true" id="16253b6b-97cb-4e8f-af32-81f26055811c" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/pyaz" afterPath="$PROJECT_DIR$/libs/pyaz" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/secret.py" afterPath="$PROJECT_DIR$/secret.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/settings.py" afterPath="$PROJECT_DIR$/settings.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/urls.py" afterPath="$PROJECT_DIR$/urls.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/apps/erm/templates/index.html" afterPath="$PROJECT_DIR$/apps/erm/templates/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/apps/erm/views.py" afterPath="$PROJECT_DIR$/apps/erm/views.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/install/static/default/css/style.css" afterPath="$PROJECT_DIR$/install/static/default/css/style.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/base.html" afterPath="$PROJECT_DIR$/templates/base.html" />
     </list>
     <ignored path="ermapp.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -287,10 +34,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="views.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="views.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/apps/erm/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="38" column="11" selection-start="1123" selection-end="1123" vertical-scroll-proportion="0.29961088">
+            <state line="49" column="13" selection-start="1533" selection-end="1533" vertical-scroll-proportion="-13.2">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="style.css" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/install/static/default/css/style.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="67" column="13" selection-start="1209" selection-end="1209" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -323,10 +79,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/apps/erm/templates/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="52" selection-start="498" selection-end="498" vertical-scroll-proportion="-1.25">
+            <state line="6" column="9" selection-start="162" selection-end="162" vertical-scroll-proportion="0.18518518">
               <folding />
             </state>
           </provider>
@@ -335,7 +91,7 @@
       <file leaf-file-name="base.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/base.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="22" selection-start="984" selection-end="984" vertical-scroll-proportion="-12.5">
+            <state line="26" column="27" selection-start="1152" selection-end="1152" vertical-scroll-proportion="-15.958333">
               <folding />
             </state>
           </provider>
@@ -344,7 +100,7 @@
       <file leaf-file-name="__init__.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/libs/pyaz/__init__.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="132" column="0" selection-start="3705" selection-end="3705" vertical-scroll-proportion="0.0">
+            <state line="363" column="43" selection-start="10858" selection-end="10858" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -353,7 +109,7 @@
       <file leaf-file-name="appsettings.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/apps/erm/appsettings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="20" selection-start="85" selection-end="85" vertical-scroll-proportion="0.0">
+            <state line="14" column="2" selection-start="304" selection-end="304" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -373,7 +129,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/apps/erm/urls.py" />
         <option value="$PROJECT_DIR$/libs/pyaz/test.py" />
         <option value="$PROJECT_DIR$/templates/error.html" />
         <option value="$PROJECT_DIR$/libs/pyaz/pyaz.py" />
@@ -384,11 +139,12 @@
         <option value="$PROJECT_DIR$/apps/erm/appsettings.py" />
         <option value="$PROJECT_DIR$/libs/pymarc/field.py" />
         <option value="$PROJECT_DIR$/libs/pymarc/record.py" />
-        <option value="$PROJECT_DIR$/libs/pyaz/__init__.py" />
-        <option value="$PROJECT_DIR$/apps/erm/templates/index.html" />
-        <option value="$PROJECT_DIR$/templates/base.html" />
         <option value="$PROJECT_DIR$/settings.py" />
+        <option value="$PROJECT_DIR$/templates/base.html" />
+        <option value="$PROJECT_DIR$/libs/pyaz/__init__.py" />
         <option value="$PROJECT_DIR$/apps/erm/views.py" />
+        <option value="$PROJECT_DIR$/install/static/default/css/style.css" />
+        <option value="$PROJECT_DIR$/apps/erm/templates/index.html" />
       </list>
     </option>
   </component>
@@ -418,6 +174,8 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="Favorites" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -450,132 +208,8 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ermapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ermapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="libs" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ermapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ermapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="libs" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="shotcurts" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ermapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ermapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="install" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="static" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ermapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ermapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="apps" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ermapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ermapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="apps" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="erm" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ermapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ermapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="apps" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="erm" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="templates" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ermapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ermapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="apps" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="core" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
-      <pane id="Favorites" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -738,14 +372,14 @@
     <editor active="true" />
     <layout>
       <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3293124" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32971016" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32850242" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27809215" sideWeight="0.6718563" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.28337428" sideWeight="0.6727053" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32814372" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3293124" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32729468" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32850242" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -781,7 +415,7 @@
     <option name="CHECK_COMMIT_MESSAGE_SPELLING" value="true" />
     <option name="DEFAULT_PATCH_EXTENSION" value="patch" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="add bp. add tt" />
+    <option name="LAST_COMMIT_MESSAGE" value="add z support" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -798,119 +432,100 @@
     <MESSAGE value="add dev mode" />
     <MESSAGE value="add secret" />
     <MESSAGE value="add bp. add tt" />
+    <MESSAGE value="add z support" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/libs/pymarc/constants.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/libs/pymarc/marc8_mapping.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/libs/pymarc/marcxml.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="0" selection-start="252" selection-end="301" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="10" column="0" selection-start="252" selection-end="301" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/libs/pymarc/reader.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="0" selection-start="58" selection-end="58" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="3" column="0" selection-start="58" selection-end="58" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/libs/pymarc/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="70" column="21" selection-start="2207" selection-end="2207" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="70" column="21" selection-start="2207" selection-end="2207" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/libs/pymarc/exceptions.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.34241244">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.34241244" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/libs/pymarc/marc8.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="0" selection-start="120" selection-end="120" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="5" column="0" selection-start="120" selection-end="120" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/libs/pymarc/writer.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="25" selection-start="163" selection-end="163" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="8" column="25" selection-start="163" selection-end="163" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/apps/erm/appsettings.py">
+    <entry file="file://$PROJECT_DIR$/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="20" selection-start="85" selection-end="85" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="131" column="0" selection-start="3983" selection-end="3983" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/libs/pymarc/record.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="101" column="24" selection-start="3255" selection-end="3255" vertical-scroll-proportion="0.0">
+        <state line="101" column="24" selection-start="3255" selection-end="3255" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libs/pymarc/field.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="83" column="0" selection-start="2798" selection-end="2798" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/erm/appsettings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="2" selection-start="304" selection-end="304" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/libs/pyaz/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="132" column="0" selection-start="3705" selection-end="3705" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/libs/pymarc/field.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="83" column="0" selection-start="2798" selection-end="2798" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/erm/templates/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="52" selection-start="498" selection-end="498" vertical-scroll-proportion="-1.25">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="22" selection-start="984" selection-end="984" vertical-scroll-proportion="-12.5">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="131" column="0" selection-start="3983" selection-end="3983" vertical-scroll-proportion="0.0">
+        <state line="363" column="43" selection-start="10858" selection-end="10858" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/apps/erm/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="38" column="11" selection-start="1123" selection-end="1123" vertical-scroll-proportion="0.29961088">
+        <state line="49" column="13" selection-start="1533" selection-end="1533" vertical-scroll-proportion="-13.2">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/install/static/default/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="67" column="13" selection-start="1209" selection-end="1209" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="26" column="27" selection-start="1152" selection-end="1152" vertical-scroll-proportion="-15.958333">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/erm/templates/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="9" selection-start="162" selection-end="162" vertical-scroll-proportion="0.18518518">
           <folding />
         </state>
       </provider>
