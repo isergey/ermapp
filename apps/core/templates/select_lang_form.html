@@ -3,7 +3,7 @@
     {% load i18n %}
     {% get_language_info for LANGUAGE_CODE as lang %}
     {% trans "Current language" %}: {{ lang.name_local }}
-    <form action="/apps/core/i18n/setlang/" method="post">
+    <form action="/core/i18n/setlang/" method="post">
         {% csrf_token %}
         {#<input name="next" type="hidden" value="/next/page/" />#}
         <select name="language">

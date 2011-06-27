@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% block content %}
+    {% load i18n %}
 
     <script type="text/javascript">
         function goSearch() {
@@ -9,29 +10,35 @@
 
     <div id="search_places" class="column last">
         <ul>
-            <li><a href="#">Журналы</a></li>
-            <li><a href="#">Базы</a></li>
-            <li><a href="#"">Рубрики</a></li>
+            <li><a href="#">{% trans "Journals" %}</a></li>
+            <li><a href="#">{% trans "Bases" %}</a></li>
+            <li><a href="#"">{% trans "Subjects" %}</a></li>
         </ul>
     </div>
+    <hr/>
     <div id="search_panel" class="column last">
 
         <form method="get" id="search_form" action="">
             <div style="overflow:hidden;">
                 <select name="use" class="search_point">
-                    <option value="anywhere" {% if request.GET.use == 'anywhere' %}selected="selected"{% endif %}>Везде</option>
-                    <option value="author" {% if request.GET.use == 'author' %}selected="selected"{% endif %}>Автор</option>
-                    <option value="title" {% if request.GET.use == 'title' %}selected="selected"{% endif %}>Заглавие</option>
-                    <option value="subject" {% if request.GET.use == 'subject' %}selected="selected"{% endif %}>Рубрика</option>
+                    <option value="anywhere"
+                            {% if request.GET.use == 'anywhere' %}selected="selected"{% endif %}>{% trans "Anywhere" %}</option>
+                    <option value="author"
+                            {% if request.GET.use == 'author' %}selected="selected"{% endif %}>{% trans "Author" %}</option>
+                    <option value="title"
+                            {% if request.GET.use == 'title' %}selected="selected"{% endif %}>{% trans "Title" %}</option>
+                    <option value="subject"
+                            {% if request.GET.use == 'subject' %}selected="selected"{% endif %}>{% trans "Subject" %}</option>
                 </select>
                 <input name="term" id="search_input" value="{{ request.GET.term }}" type="text">
             </div>
+
             <div id="search_buttons">
-                <a id="search_button" onclick="goSearch();return false;">
-                    <img alt="Поиск" src="{{ STATIC_URL }}/default/images/search_button_bg.png">
-                </a>
-                <input type="checkbox" name="ft" id="ftcb" checked=""> <label for="ftcb">Только точные
-                совпадения</label>
+{#                <a id="search_button" onclick="goSearch();return false;">#}
+{#                    <img alt="Поиск" src="{{ STATIC_URL }}/default/images/search_button_bg.png">#}
+                    <button style="font-size: 1.9em" class="button button-green" id="search_button" onclick="goSearch();return false;">{% trans 'Search' %}</button>
+{#                </a>#}
+                <input type="checkbox" name="ft" id="ftcb"> <label for="ftcb"> {% trans "Only exact matches" %}</label>
             </div>
         </form>
     </div>
@@ -42,7 +49,7 @@
                 <div class="item_number alt column span-2">№{{ search_result.number }}</div>
                 <div class="column span-14  last">
                     <div class="item_title">
-                        <a href="#" class="alt">{{ search_result.record.200.a|safe }}</a>
+                        <a href="{% url erm_resource_detail %}?id={{ search_result.record.001.data|urlencode }}&search_url={{ search_url|urlencode }}" >{{ search_result.record.200.a|safe }}</a>
                     </div>
                     {% if search_result.record.702.a %}
                         <div class="item_author">
@@ -51,15 +58,26 @@
                     {% endif %}
                     {% if search_result.record.606.a %}
                         <div class="item_field">
-                            Рубрика: <a href="#">{{ search_result.record.606.a }}</a>
+                            {% trans "Subjects" %}: <a href="#">{{ search_result.record.606.a }}</a>
                         </div>
                     {% endif %}
                     <div class="item_info">
-                        Доступ: <span style="color: green;">свободный</span>
+                        {% trans "Access" %}: <span style="color: green;">{% trans "free" %}</span>
                     </div>
                 </div>
             </div>
             <hr/>
+        {% empty %}
+            {% if request.GET.term %}
+                <span style="font-size: 1.5em">{% trans "No results" %}</span>
+            {% endif %}
         {% endfor %}
+
     </div>
+    {% load pagination_tag %}
+    {% if pages_list.paginator.num_pages > 1 %}
+        <div align="center" class="column span-16 last">
+            {% pagination pages_list  %}
+        </div>
+    {% endif %}
 {% endblock %}

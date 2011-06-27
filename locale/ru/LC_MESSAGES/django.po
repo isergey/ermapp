@@ -7,15 +7,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-06-14 19:00+0400\n"
-"PO-Revision-Date: 2011-06-14 19:05+0300\n"
+"POT-Creation-Date: 2011-06-27 20:48+0400\n"
+"PO-Revision-Date: 2011-06-27 14:16+0300\n"
 "Last-Translator: \n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
 
 #: settings.py:56
 msgid "Russian"
@@ -25,16 +26,103 @@ msgstr "Русский"
 msgid "English"
 msgstr "Английский"
 
-#: core/views.py:10
-#: erm/views.py:8
+#: apps/core/views.py:10 apps/erm/views.py:95
 msgid "Hello"
 msgstr "Привет!"
 
-#: core/templates/select_lang_form.html:5
+#: apps/core/templates/pagination_tag.html:6
+msgid "previous"
+msgstr "предыдущая"
+
+#: apps/core/templates/pagination_tag.html:40
+msgid "next"
+msgstr "следующая"
+
+#: apps/core/templates/select_lang_form.html:5
 msgid "Current language"
 msgstr "Текущий язык"
 
-#: core/templates/select_lang_form.html:17
+#: apps/core/templates/select_lang_form.html:17
 msgid "Change"
 msgstr "Сменить"
 
+#: apps/erm/views.py:230 apps/erm/views.py:239
+msgid "Resource not founded"
+msgstr "Ресурс не найден"
+
+#: apps/erm/templates/detail.html:6 apps/erm/templates/index.html:13
+msgid "Journals"
+msgstr "Журналы"
+
+#: apps/erm/templates/detail.html:7 apps/erm/templates/index.html:14
+msgid "Bases"
+msgstr "Базы"
+
+#: apps/erm/templates/detail.html:8 apps/erm/templates/detail.html.py:30
+#: apps/erm/templates/index.html:15 apps/erm/templates/index.html.py:61
+msgid "Subjects"
+msgstr "Рубрики"
+
+#: apps/erm/templates/detail.html:12
+msgid "search results"
+msgstr "результаты поиска"
+
+#: apps/erm/templates/detail.html:35
+msgid "Language"
+msgstr "Язык"
+
+#: apps/erm/templates/detail.html:39 apps/erm/templates/index.html:65
+msgid "Access"
+msgstr "Доступ"
+
+#: apps/erm/templates/detail.html:39 apps/erm/templates/index.html:65
+msgid "free"
+msgstr "свободный"
+
+#: apps/erm/templates/detail.html:43
+msgid "Go to resource"
+msgstr "Перейти к ресурсу"
+
+#: apps/erm/templates/detail.html:43
+msgid "Add to bookmark"
+msgstr "Добавить в закладки"
+
+#: apps/erm/templates/index.html:25
+msgid "Anywhere"
+msgstr "Везде"
+
+#: apps/erm/templates/index.html:27
+msgid "Author"
+msgstr "Автор"
+
+#: apps/erm/templates/index.html:29
+msgid "Title"
+msgstr "Заглавие"
+
+#: apps/erm/templates/index.html:31
+msgid "Subject"
+msgstr "Рубрика"
+
+#: apps/erm/templates/index.html:39
+msgid "Search"
+msgstr "Поиск"
+
+#: apps/erm/templates/index.html:41
+msgid "Only exact matches"
+msgstr "Только точные совпадения"
+
+#: apps/erm/templates/index.html:72
+msgid "No results"
+msgstr "Ничего не найдено"
+
+#~ msgid "Not match any documents"
+#~ msgstr "Не найдено ни одного документа"
+
+#~ msgid "detail information"
+#~ msgstr "детальная информация"
+
+#~ msgid "back"
+#~ msgstr "назад"
+
+#~ msgid "forward"
+#~ msgstr "вперед"

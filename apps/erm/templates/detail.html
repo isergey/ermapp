@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% block content %}
+    {% load i18n %}
+    <div id="search_places">
+        <ul>
+            <li><a href="#">{% trans "Journals" %}</a></li>
+            <li><a href="#">{% trans "Bases" %}</a></li>
+            <li><a href="#"">{% trans "Subjects" %}</a></li>
+        </ul>
+    </div>
+    <hr/>
+    <h2><a href="{% url erm_search_resources %}?{{ search_url }}">{% trans "search results"|capfirst %}</a>
+        → {{ record.200.a }}</h2>
+    <hr/>
+    <div class="item_title">
+        <h3>{{ record.200.a }}</h3>
+    </div>
+    {% if record.702.a %}
+        <div class="item_author">
+            {{ record.702.a }}
+        </div>
+    {% endif %}
+    {% if record.517.a %}
+        <div class="item_field">
+            {{ record.517.a }}
+        </div>
+    {% endif %}
+    {% if record.606.a %}
+        <div class="item_field">
+            {% trans "Subjects" %}: <a href="#">{{ record.606.a }}</a>
+        </div>
+    {% endif %}
+    {% if record.101.a %}
+        <div class="item_field">
+            {% trans "Language" %}: {{ record.101.a }}
+        </div>
+    {% endif %}
+    <div class="item_info">
+        {% trans "Access" %}: <span style="color: green;">{% trans "free" %}</span>
+    </div>
+    {% if record.856.u %}
+        <div class="item_field">
+            <a class="button button-green" style="font-size: 1.5em" href="{{ record.856.u }}">{% trans "Go to resource" %}</a> | <a href="#">{% trans "Add to bookmark" %}
+        </div>
+    {% endif %}
+{% endblock %}
