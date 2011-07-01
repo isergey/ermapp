@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-06-27 20:48+0400\n"
+"POT-Creation-Date: 2011-06-29 14:59+0400\n"
 "PO-Revision-Date: 2011-06-27 14:16+0300\n"
 "Last-Translator: \n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -26,7 +26,7 @@ msgstr "Русский"
 msgid "English"
 msgstr "Английский"
 
-#: apps/core/views.py:10 apps/erm/views.py:95
+#: apps/core/views.py:10 apps/erm/views.py:109
 msgid "Hello"
 msgstr "Привет!"
 
@@ -46,44 +46,48 @@ msgstr "Текущий язык"
 msgid "Change"
 msgstr "Сменить"
 
-#: apps/erm/views.py:230 apps/erm/views.py:239
+#: apps/erm/views.py:249 apps/erm/views.py:258
 msgid "Resource not founded"
 msgstr "Ресурс не найден"
 
-#: apps/erm/templates/detail.html:6 apps/erm/templates/index.html:13
+#: apps/erm/templates/detail.html:22 apps/erm/templates/index.html:13
 msgid "Journals"
 msgstr "Журналы"
 
-#: apps/erm/templates/detail.html:7 apps/erm/templates/index.html:14
+#: apps/erm/templates/detail.html:23 apps/erm/templates/index.html:14
 msgid "Bases"
 msgstr "Базы"
 
-#: apps/erm/templates/detail.html:8 apps/erm/templates/detail.html.py:30
+#: apps/erm/templates/detail.html:24 apps/erm/templates/detail.html.py:46
 #: apps/erm/templates/index.html:15 apps/erm/templates/index.html.py:61
 msgid "Subjects"
 msgstr "Рубрики"
 
-#: apps/erm/templates/detail.html:12
+#: apps/erm/templates/detail.html:28
 msgid "search results"
 msgstr "результаты поиска"
 
-#: apps/erm/templates/detail.html:35
+#: apps/erm/templates/detail.html:51
 msgid "Language"
 msgstr "Язык"
 
-#: apps/erm/templates/detail.html:39 apps/erm/templates/index.html:65
+#: apps/erm/templates/detail.html:55 apps/erm/templates/index.html:65
 msgid "Access"
 msgstr "Доступ"
 
-#: apps/erm/templates/detail.html:39 apps/erm/templates/index.html:65
+#: apps/erm/templates/detail.html:55 apps/erm/templates/index.html:65
 msgid "free"
 msgstr "свободный"
 
-#: apps/erm/templates/detail.html:43
+#: apps/erm/templates/detail.html:61
 msgid "Go to resource"
 msgstr "Перейти к ресурсу"
 
-#: apps/erm/templates/detail.html:43
+#: apps/erm/templates/detail.html:63
+msgid "Bibliographic description"
+msgstr "Библиографическое описание"
+
+#: apps/erm/templates/detail.html:68
 msgid "Add to bookmark"
 msgstr "Добавить в закладки"
 
@@ -114,15 +118,3 @@ msgstr "Только точные совпадения"
 #: apps/erm/templates/index.html:72
 msgid "No results"
 msgstr "Ничего не найдено"
-
-#~ msgid "Not match any documents"
-#~ msgstr "Не найдено ни одного документа"
-
-#~ msgid "detail information"
-#~ msgstr "детальная информация"
-
-#~ msgid "back"
-#~ msgstr "назад"
-
-#~ msgid "forward"
-#~ msgstr "вперед"

@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record syntax="1.2.840.10003.5.28">
+    <leader>
+        <length>01057</length>
+        <status>n</status>
+        <type>a</type>
+        <leader07>m</leader07>
+        <leader08>0</leader08>
+        <leader09></leader09>
+        <indicatorCount>2</indicatorCount>
+        <identifierLength>2</identifierLength>
+        <dataBaseAddress>00265</dataBaseAddress>
+        <leader17></leader17>
+        <leader18>i</leader18>
+        <leader19></leader19>
+        <entryMap>450</entryMap>
+    </leader>
+    <field id="001">RU/КСОБ СПб./KSOB/-370397</field>
+    <field id="005">20110304000000.0</field>
+    <field id="010">
+        <indicator id="1"></indicator>
+        <indicator id="2"></indicator>
+        <subfield id="a">978-5-8459-1525-2</subfield>
+        <subfield id="9">2000</subfield>
+    </field>
+    <field id="100">
+        <indicator id="1"></indicator>
+        <indicator id="2"></indicator>
+        <subfield id="a">20090923d2009 m y0rusy0279 ca</subfield>
+    </field>
+    <field id="101">
+        <indicator id="1">1</indicator>
+        <indicator id="2"></indicator>
+        <subfield id="a">rus</subfield>
+        <subfield id="c">eng</subfield>
+    </field>
+    <field id="102">
+        <indicator id="1"></indicator>
+        <indicator id="2"></indicator>
+        <subfield id="a">RU</subfield>
+    </field>
+    <field id="105">
+        <indicator id="1"></indicator>
+        <indicator id="2"></indicator>
+        <subfield id="a">a jz 000zy</subfield>
+    </field>
+    <field id="200">
+        <indicator id="1">1</indicator>
+        <indicator id="2"></indicator>
+        <subfield id="a">Microsoft Dynamics CRM 4 для чайников</subfield>
+        <subfield id="b">текст</subfield>
+        <subfield id="e">[пер. с англ.]</subfield>
+        <subfield id="f">Джоэл Скотт, Дэвид Ли, Скотт Вейсс</subfield>
+    </field>
+    <field id="210">
+        <indicator id="1"></indicator>
+        <indicator id="2"></indicator>
+        <subfield id="a">Москва</subfield>
+        <subfield id="c">Диалектика</subfield>
+        <subfield id="d">2009</subfield>
+    </field>
+    <field id="215">
+        <indicator id="1"></indicator>
+        <indicator id="2"></indicator>
+        <subfield id="a">361 с.</subfield>
+        <subfield id="c">ил.</subfield>
+    </field>
+    <field id="225">
+        <indicator id="1">2</indicator>
+        <indicator id="2"></indicator>
+        <subfield id="a">Для сомневающихся</subfield>
+    </field>
+    <field id="225">
+        <indicator id="1">2</indicator>
+        <indicator id="2"></indicator>
+        <subfield id="a">...для &quot;чайников&quot;</subfield>
+    </field>
+    <field id="320">
+        <indicator id="1"></indicator>
+        <indicator id="2"></indicator>
+        <subfield id="a">Предм. указ.: с. 355-361</subfield>
+    </field>
+    <field id="606">
+        <indicator id="1"></indicator>
+        <indicator id="2"></indicator>
+        <subfield id="a">Microsoft Dynamics CRM 4, прикладная программа</subfield>
+        <subfield id="x">Применение в предпринимательстве</subfield>
+        <subfield id="2">ksob_sh</subfield>
+    </field>
+    <field id="620">
+        <indicator id="1"></indicator>
+        <indicator id="2"></indicator>
+        <subfield id="d">RU</subfield>
+    </field>
+    <field id="700">
+        <indicator id="1"></indicator>
+        <indicator id="2">1</indicator>
+        <subfield id="a">Скотт</subfield>
+        <subfield id="b">Д.</subfield>
+        <subfield id="g">Джоэл</subfield>
+        <subfield id="4">070</subfield>
+    </field>
+    <field id="701">
+        <indicator id="1"></indicator>
+        <indicator id="2">1</indicator>
+        <subfield id="a">Ли</subfield>
+        <subfield id="b">Д.</subfield>
+        <subfield id="g">Дэвид</subfield>
+        <subfield id="4">070</subfield>
+    </field>
+    <field id="701">
+        <indicator id="1"></indicator>
+        <indicator id="2">1</indicator>
+        <subfield id="a">Вейсс</subfield>
+        <subfield id="b">С.</subfield>
+        <subfield id="g">Скотт</subfield>
+        <subfield id="4">070</subfield>
+    </field>
+    <field id="801">
+        <indicator id="1"></indicator>
+        <indicator id="2">0</indicator>
+        <subfield id="b">КСОБ СПб.</subfield>
+        <subfield id="a">RU</subfield>
+        <subfield id="c">20090923</subfield>
+    </field>
+    <field id="850">
+        <indicator id="1">#</indicator>
+        <indicator id="2">8</indicator>
+        <subfield id="0">-</subfield>
+        <subfield id="a">19717024</subfield>
+    </field>
+</record>
+
+
+

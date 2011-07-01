@@ -12,7 +12,7 @@
         <ul>
             <li><a href="#">{% trans "Journals" %}</a></li>
             <li><a href="#">{% trans "Bases" %}</a></li>
-            <li><a href="#"">{% trans "Subjects" %}</a></li>
+            <li><a href="#">{% trans "Subjects" %}</a></li>
         </ul>
     </div>
     <hr/>
@@ -36,7 +36,7 @@
             <div id="search_buttons">
 {#                <a id="search_button" onclick="goSearch();return false;">#}
 {#                    <img alt="Поиск" src="{{ STATIC_URL }}/default/images/search_button_bg.png">#}
-                    <button style="font-size: 1.9em" class="button button-green" id="search_button" onclick="goSearch();return false;">{% trans 'Search' %}</button>
+                    <input type="submit" style="font-size: 1.9em" class="button button-green" id="search_button" value="{% trans 'Search' %}"/>
 {#                </a>#}
                 <input type="checkbox" name="ft" id="ftcb"> <label for="ftcb"> {% trans "Only exact matches" %}</label>
             </div>
@@ -80,4 +80,5 @@
             {% pagination pages_list  %}
         </div>
     {% endif %}
+    <hr class="space"/>
 {% endblock %}

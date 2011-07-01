@@ -1,0 +1,109 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<record syntax="1.2.840.10003.5.28">
+    <leader>
+        <length>00856</length>
+        <status>c</status>
+        <type>a</type>
+        <leader07>s</leader07>
+        <leader08></leader08>
+        <leader09>a</leader09>
+        <indicatorCount>2</indicatorCount>
+        <identifierLength>2</identifierLength>
+        <dataBaseAddress>00217</dataBaseAddress>
+        <leader17>3</leader17>
+        <leader18>i</leader18>
+        <leader19></leader19>
+        <entryMap>450</entryMap>
+    </leader>
+    <field id="001">11641</field>
+    <field id="005">20110617203425.0</field>
+    <field id="011">
+        <indicator id="1"></indicator>
+        <indicator id="2"></indicator>
+        <subfield id="a">1315-0006</subfield>
+    </field>
+    <field id="035">
+        <indicator id="1"></indicator>
+        <indicator id="2"></indicator>
+        <subfield id="a">(EbpS)ebs758976</subfield>
+    </field>
+    <field id="100">
+        <indicator id="1"></indicator>
+        <indicator id="2"></indicator>
+        <subfield id="a">20060818a 9999u y0engy01020304ba</subfield>
+    </field>
+    <field id="101">
+        <indicator id="1">|</indicator>
+        <indicator id="2"></indicator>
+        <subfield id="a">eng</subfield>
+    </field>
+    <field id="110">
+        <indicator id="1"></indicator>
+        <indicator id="2"></indicator>
+        <subfield id="a">auu 0uu0</subfield>
+    </field>
+    <field id="200">
+        <indicator id="1">1</indicator>
+        <indicator id="2"></indicator>
+        <subfield id="a">Журнал руководителя и главного бухгалтера</subfield>
+        <subfield id="b">[electronic resource].</subfield>
+    </field>
+    <field id="210">
+        <indicator id="1"></indicator>
+        <indicator id="2"></indicator>
+        <subfield id="a">Maracaibo</subfield>
+        <subfield id="c">Espacio Abierto. Investigadores Asociados</subfield>
+    </field>
+    <field id="300">
+        <indicator id="1"></indicator>
+        <indicator id="2"></indicator>
+        <subfield id="a">Academic Journal</subfield>
+    </field>
+    <field id="310">
+        <indicator id="1"></indicator>
+        <indicator id="2"></indicator>
+        <subfield id="a">Online version of print publication.</subfield>
+    </field>
+    <field id="463">
+        <indicator id="1"></indicator>
+        <indicator id="2">1</indicator>
+        <subfield id="1">
+            <field id="200">
+                <indicator id="1">1</indicator>
+                <indicator id="2"></indicator>
+                <subfield id="a">Academic Search Complete</subfield>
+            </field>
+        </subfield>
+        <subfield id="1">
+            <field id="210">
+                <indicator id="1"></indicator>
+                <indicator id="2"></indicator>
+                <subfield id="a">Ipswich, MA</subfield>
+                <subfield id="c"> EBSCO Publishing</subfield>
+                <subfield id="d">1999-</subfield>
+            </field>
+        </subfield>
+    </field>
+    <field id="801">
+        <indicator id="1"></indicator>
+        <indicator id="2"></indicator>
+        <subfield id="a">RU</subfield>
+        <subfield id="b">ORGANIZATION</subfield>
+        <subfield id="c">20110608</subfield>
+    </field>
+    <field id="801">
+        <indicator id="1"></indicator>
+        <indicator id="2"></indicator>
+        <subfield id="a">RU</subfield>
+        <subfield id="b">ORGANIZATION</subfield>
+        <subfield id="c">20110617</subfield>
+        <subfield id="g">RCR</subfield>
+    </field>
+    <field id="856">
+        <indicator id="1">4</indicator>
+        <indicator id="2">0</indicator>
+        <subfield id="3">Full text available: Oct 2004-.</subfield>
+        <subfield id="z">Available on EBSCOhost.</subfield>
+        <subfield id="u">http://search.ebscohost.com/direct.asp?db=a9h&amp;jid=%22KYL%22&amp;scope=site</subfield>
+    </field>
+</record>

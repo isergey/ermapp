@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<record syntax="RUSmarc">
+<leader>
+<length>01874</length>
+<status>n</status>
+<type>a</type>
+<leader07>m</leader07>
+<leader08>0</leader08>
+<leader09>a</leader09>
+<indicatorCount>2</indicatorCount>
+<identifierLength>2</identifierLength>
+<dataBaseAddress>00361</dataBaseAddress>
+<leader17> </leader17>
+<leader18>i</leader18>
+<leader19> </leader19>
+<entryMap>450 </entryMap>
+</leader>
+<field id="001">RU/КСОБ СПб./KSOB/-896073</field>
+<field id="005">20100713000000.0</field>
+<field id="010"><indicator id="1"> </indicator><indicator id="2"> </indicator><subfield id="a">978-5-98264-044-4</subfield></field>
+<field id="100"><indicator id="1"> </indicator><indicator id="2"> </indicator><subfield id="a">20100218d2009    m  y0rusy50        </subfield></field>
+<field id="101"><indicator id="1">0</indicator><indicator id="2"> </indicator><subfield id="a">rus</subfield></field>
+<field id="102"><indicator id="1"> </indicator><indicator id="2"> </indicator><subfield id="a">RU</subfield></field>
+<field id="105"><indicator id="1"> </indicator><indicator id="2"> </indicator><subfield id="a">c   z   000zy</subfield></field>
+<field id="200"><indicator id="1">1</indicator><indicator id="2"> </indicator><subfield id="a">Потом и опытом</subfield><subfield id="b">текст</subfield><subfield id="f">Вячеслав Вс. Иванов </subfield><subfield id="g"> [оформ. С. М. Виноградовой </subfield><subfield id="g"> фотоанаграммы С. Ивановой]</subfield><subfield id="e">[сборник стихотворений, статей, эссе и переводов]</subfield></field>
+<field id="210"><indicator id="1"> </indicator><indicator id="2"> </indicator><subfield id="a">Москва</subfield><subfield id="c">Центр книги ВГБИЛ им. М. И. Рудомино</subfield><subfield id="d">2009</subfield></field>
+<field id="215"><indicator id="1"> </indicator><indicator id="2"> </indicator><subfield id="a">348, [3] с.</subfield><subfield id="c">портр.</subfield></field>
+<field id="300"><indicator id="1"> </indicator><indicator id="2"> </indicator><subfield id="a">Суперобложка.</subfield></field>
+<field id="327"><indicator id="1">1</indicator><indicator id="2"> </indicator><subfield id="a">Содержание : Начерно шопотом  (С7-35); Из книги "Свободные стихи о рабстве"  (С36-41); Из последних стихов  (С42-64); Избранные переводы  (С65-78); Еще не пора  (С79-339)</subfield></field>
+<field id="464"><indicator id="1"> </indicator><indicator id="2">0</indicator><subfield id="1"><field id="200"><indicator id="1">1</indicator><indicator id="2"> </indicator><subfield id="a">Начерно шопотом</subfield></field></subfield></field>
+<field id="464"><indicator id="1"> </indicator><indicator id="2">0</indicator><subfield id="1"><field id="200"><indicator id="1">1</indicator><indicator id="2"> </indicator><subfield id="a">Из книги "Свободные стихи о рабстве"</subfield></field></subfield></field>
+<field id="464"><indicator id="1"> </indicator><indicator id="2">0</indicator><subfield id="1"><field id="200"><indicator id="1">1</indicator><indicator id="2"> </indicator><subfield id="a">Из последних стихов</subfield></field></subfield></field>
+<field id="464"><indicator id="1"> </indicator><indicator id="2">0</indicator><subfield id="1"><field id="200"><indicator id="1">1</indicator><indicator id="2"> </indicator><subfield id="a">Избранные переводы</subfield></field></subfield></field>
+<field id="464"><indicator id="1"> </indicator><indicator id="2">0</indicator><subfield id="1"><field id="200"><indicator id="1">1</indicator><indicator id="2"> </indicator><subfield id="a">Еще не пора</subfield></field></subfield></field>
+<field id="606"><indicator id="1"> </indicator><indicator id="2"> </indicator><subfield id="a">Русская литература</subfield><subfield id="x">Поэзия</subfield><subfield id="z">20 в.</subfield></field>
+<field id="606"><indicator id="1"> </indicator><indicator id="2"> </indicator><subfield id="a">Эссе</subfield></field>
+<field id="606"><indicator id="1"> </indicator><indicator id="2"> </indicator><subfield id="a">Русская литература</subfield><subfield id="x">Проза</subfield><subfield id="z">20 в.</subfield></field>
+<field id="620"><indicator id="1"> </indicator><indicator id="2"> </indicator><subfield id="d">RU</subfield></field>
+<field id="700"><indicator id="1"> </indicator><indicator id="2">1</indicator><subfield id="a">Иванов</subfield><subfield id="b">В. В.</subfield><subfield id="g">Вячеслав Всеволодович</subfield><subfield id="f">1929- </subfield><subfield id="4">070</subfield></field>
+<field id="702"><indicator id="1"> </indicator><indicator id="2">1</indicator><subfield id="a">Виноградова</subfield><subfield id="b">С. М.</subfield><subfield id="g">Светлана Михайловна</subfield><subfield id="4">440</subfield></field>
+<field id="702"><indicator id="1"> </indicator><indicator id="2">1</indicator><subfield id="a">Иванова</subfield><subfield id="b">С.</subfield><subfield id="g">Светлана</subfield><subfield id="4">600</subfield></field>
+<field id="801"><indicator id="1"> </indicator><indicator id="2">0</indicator><subfield id="b">КСОБ СПб.</subfield><subfield id="a">RU</subfield><subfield id="c">20100218</subfield></field>
+<field id="850"><indicator id="1"> </indicator><indicator id="2"> </indicator><subfield id="a">19618026</subfield></field>
+<field id="850"><indicator id="1"> </indicator><indicator id="2"> </indicator><subfield id="a">19017901</subfield></field>
+<field id="850"><indicator id="1"> </indicator><indicator id="2"> </indicator><subfield id="a">19619022</subfield></field>
+</record>

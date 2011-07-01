@@ -95,6 +95,11 @@ html, body {
     font-weight: bold;
 }
 
+.full_document{
+    border: blue solid 1px;
+}
+
+
 .button {
     -moz-border-radius: 4px;
     -webkit-border-radius: 4px;

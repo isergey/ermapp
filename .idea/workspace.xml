@@ -1,24 +1,141 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="16253b6b-97cb-4e8f-af32-81f26055811c" name="Default" comment="add pyporphy recommit">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/apps/core/templates/pagination_tag.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/apps/core/templatetags/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/apps/core/templatetags/add_get_tag.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/apps/core/templatetags/pagination_tag.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/apps/erm/templates/detail.html" />
+    <list default="true" id="16253b6b-97cb-4e8f-af32-81f26055811c" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/appdata/xslt/www.xhtml2pdf.com-.pdf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/appdata/xslt/ya.ru-.pdf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/debug_toolbar/locale/de/LC_MESSAGES/django.mo" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/debug_toolbar/locale/en/LC_MESSAGES/django.mo" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/debug_toolbar/locale/es/LC_MESSAGES/django.mo" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/debug_toolbar/locale/fr/LC_MESSAGES/django.mo" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/debug_toolbar/locale/he/LC_MESSAGES/django.mo" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/debug_toolbar/locale/ru/LC_MESSAGES/django.mo" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/debug_toolbar/media/debug_toolbar/Makefile" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/debug_toolbar/media/debug_toolbar/img/back.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/debug_toolbar/media/debug_toolbar/img/back_hover.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/debug_toolbar/media/debug_toolbar/img/close.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/debug_toolbar/media/debug_toolbar/img/close_hover.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/debug_toolbar/media/debug_toolbar/img/djdt_vertical.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/debug_toolbar/media/debug_toolbar/img/indicator.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/debug_toolbar/media/debug_toolbar/img/panel_bg.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/install/static/default/images/bibliogramma.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/install/static/default/images/white_big.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/install/static/fonts/TIMCYR.TTF" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/install/static/fonts/TIMCYRB.TTF" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/install/static/fonts/TIMCYRBI.TTF" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/install/static/fonts/TIMCYRI.TTF" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mptt/locale/de/LC_MESSAGES/django.mo" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mptt/locale/dk/LC_MESSAGES/django.mo" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/appdata/xslt/full_document.xsl" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/appdata/xslt/marc.xsl" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/appdata/xslt/param.xsl" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/appdata/xslt/record.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/appdata/xslt/rs.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/appdata/xslt/rusmarc.xsl" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/appdata/xslt/short_document.xsl" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/appdata/xslt/zgate_msg.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/appdata/xslt/zgate_org.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/apps/erm/admin.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/apps/erm/migrations/0001_initial.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/apps/erm/migrations/0002_auto__add_field_resource_database.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/apps/erm/migrations/__init__.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/apps/erm/templates/ededed.xhtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/debug_toolbar/__init__.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/debug_toolbar/locale/de/LC_MESSAGES/django.po" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/debug_toolbar/locale/en/LC_MESSAGES/django.po" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/debug_toolbar/locale/es/LC_MESSAGES/django.po" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/debug_toolbar/locale/fr/LC_MESSAGES/django.po" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/debug_toolbar/locale/he/LC_MESSAGES/django.po" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/debug_toolbar/locale/ru/LC_MESSAGES/django.po" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/debug_toolbar/management/__init__.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/debug_toolbar/management/commands/__init__.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/debug_toolbar/management/commands/debugsqlshell.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/debug_toolbar/media/debug_toolbar/css/toolbar.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/debug_toolbar/media/debug_toolbar/css/toolbar.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/debug_toolbar/media/debug_toolbar/js/jquery.cookie.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/debug_toolbar/media/debug_toolbar/js/jquery.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/debug_toolbar/media/debug_toolbar/js/toolbar.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/debug_toolbar/media/debug_toolbar/js/toolbar.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/debug_toolbar/middleware.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/debug_toolbar/models.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/debug_toolbar/panels/__init__.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/debug_toolbar/panels/cache.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/debug_toolbar/panels/headers.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/debug_toolbar/panels/logger.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/debug_toolbar/panels/request_vars.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/debug_toolbar/panels/settings_vars.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/debug_toolbar/panels/signals.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/debug_toolbar/panels/sql.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/debug_toolbar/panels/template.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/debug_toolbar/panels/timer.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/debug_toolbar/panels/version.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/debug_toolbar/templates/debug_toolbar/base.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/debug_toolbar/templates/debug_toolbar/panels/cache.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/debug_toolbar/templates/debug_toolbar/panels/headers.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/debug_toolbar/templates/debug_toolbar/panels/logger.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/debug_toolbar/templates/debug_toolbar/panels/request_vars.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/debug_toolbar/templates/debug_toolbar/panels/settings_vars.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/debug_toolbar/templates/debug_toolbar/panels/signals.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/debug_toolbar/templates/debug_toolbar/panels/sql.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/debug_toolbar/templates/debug_toolbar/panels/sql_explain.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/debug_toolbar/templates/debug_toolbar/panels/sql_profile.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/debug_toolbar/templates/debug_toolbar/panels/sql_select.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/debug_toolbar/templates/debug_toolbar/panels/template_source.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/debug_toolbar/templates/debug_toolbar/panels/templates.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/debug_toolbar/templates/debug_toolbar/panels/timer.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/debug_toolbar/templates/debug_toolbar/panels/versions.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/debug_toolbar/templates/debug_toolbar/redirect.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/debug_toolbar/toolbar/__init__.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/debug_toolbar/toolbar/loader.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/debug_toolbar/urls.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/debug_toolbar/utils/__init__.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/debug_toolbar/utils/sqlparse/__init__.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/debug_toolbar/utils/sqlparse/engine/__init__.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/debug_toolbar/utils/sqlparse/engine/filter.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/debug_toolbar/utils/sqlparse/engine/grouping.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/debug_toolbar/utils/sqlparse/filters.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/debug_toolbar/utils/sqlparse/formatter.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/debug_toolbar/utils/sqlparse/keywords.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/debug_toolbar/utils/sqlparse/lexer.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/debug_toolbar/utils/sqlparse/sql.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/debug_toolbar/utils/sqlparse/tokens.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/debug_toolbar/views.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/install/static/fonts/TIMCYR_TTF.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/libs/pymarc/record.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/libs/pymarc/rs.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mptt/__init__.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mptt/admin.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mptt/exceptions.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mptt/fields.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mptt/forms.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mptt/locale/de/LC_MESSAGES/django.po" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mptt/locale/dk/LC_MESSAGES/django.po" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mptt/managers.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mptt/models.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mptt/templates/admin/mptt_change_list.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mptt/templates/admin/mptt_change_list_results.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mptt/templatetags/__init__.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mptt/templatetags/mptt_admin.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mptt/templatetags/mptt_tags.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mptt/utils.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/base.db" afterPath="$PROJECT_DIR$/base.db" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/pyaz" afterPath="$PROJECT_DIR$/libs/pyaz" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/locale/ru/LC_MESSAGES/django.mo" afterPath="$PROJECT_DIR$/locale/ru/LC_MESSAGES/django.mo" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/apps/core/templates/select_lang_form.html" afterPath="$PROJECT_DIR$/apps/core/templates/select_lang_form.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/apps/erm/appsettings.py" afterPath="$PROJECT_DIR$/apps/erm/appsettings.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/apps/erm/models.py" afterPath="$PROJECT_DIR$/apps/erm/models.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/apps/erm/templates/detail.html" afterPath="$PROJECT_DIR$/apps/erm/templates/detail.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/apps/erm/templates/index.html" afterPath="$PROJECT_DIR$/apps/erm/templates/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/apps/erm/urls.py" afterPath="$PROJECT_DIR$/apps/erm/urls.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/apps/erm/views.py" afterPath="$PROJECT_DIR$/apps/erm/views.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/install/static/default/css/style.css" afterPath="$PROJECT_DIR$/install/static/default/css/style.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/pymarc/marcxml.py" afterPath="$PROJECT_DIR$/libs/pymarc/marcxml.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/pymarc/record.py" afterPath="$PROJECT_DIR$/libs/pymarc/record.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/locale/ru/LC_MESSAGES/django.po" afterPath="$PROJECT_DIR$/locale/ru/LC_MESSAGES/django.po" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/secret.py" afterPath="$PROJECT_DIR$/secret.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/settings.py" afterPath="$PROJECT_DIR$/settings.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/base.html" afterPath="$PROJECT_DIR$/templates/base.html" />
     </list>
     <ignored path="ermapp.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -45,10 +162,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
+      <file leaf-file-name="base.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/base.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="29" column="16" selection-start="1250" selection-end="1250" vertical-scroll-proportion="-14.375">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/apps/erm/templates/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="71" column="67" selection-start="3504" selection-end="3504" vertical-scroll-proportion="-14.583333">
+            <state line="38" column="140" selection-start="1854" selection-end="1854" vertical-scroll-proportion="-23.75">
               <folding />
             </state>
           </provider>
@@ -57,52 +183,7 @@
       <file leaf-file-name="detail.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/apps/erm/templates/detail.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="0" selection-start="311" selection-end="320" vertical-scroll-proportion="-6.25">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="django.po" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/locale/ru/LC_MESSAGES/django.po">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="104" column="0" selection-start="2493" selection-end="2493" vertical-scroll-proportion="0.64953274">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="views.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/apps/erm/views.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="121" column="4" selection-start="3225" selection-end="3225" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="__init__.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/libs/pyaz/__init__.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="105" column="44" selection-start="2817" selection-end="2817" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="urls.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/apps/erm/urls.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="67" selection-start="264" selection-end="284" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="style.css" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/install/static/default/css/style.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="206" column="16" selection-start="6046" selection-end="6046" vertical-scroll-proportion="0.0">
+            <state line="3" column="0" selection-start="66" selection-end="66" vertical-scroll-proportion="-1.875">
               <folding />
             </state>
           </provider>
@@ -111,16 +192,61 @@
       <file leaf-file-name="settings.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="119" column="5" selection-start="3591" selection-end="3591" vertical-scroll-proportion="-12.88">
+            <state line="197" column="25" selection-start="6008" selection-end="6008" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="base.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/base.html">
+      <file leaf-file-name="urls.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/apps/erm/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="0" selection-start="961" selection-end="961" vertical-scroll-proportion="-11.875">
+            <state line="10" column="0" selection-start="390" selection-end="390" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="appsettings.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/apps/erm/appsettings.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="21" column="1" selection-start="487" selection-end="487" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="views.py" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/apps/erm/views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="594" column="13" selection-start="19748" selection-end="19748" vertical-scroll-proportion="0.33526012">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="marcxml.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/libs/pymarc/marcxml.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="252" column="13" selection-start="8118" selection-end="8118" vertical-scroll-proportion="-16.2">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="models.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/apps/core/models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="models.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/apps/erm/models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="103" column="24" selection-start="3370" selection-end="3370" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -140,22 +266,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/libs/pymarc/record.py" />
-        <option value="$PROJECT_DIR$/templates/base.html" />
-        <option value="$PROJECT_DIR$/libs/pymarc/field.py" />
-        <option value="$PROJECT_DIR$/apps/core/templates/select_lang_form.html" />
-        <option value="$PROJECT_DIR$/apps/erm/appsettings.py" />
-        <option value="$PROJECT_DIR$/apps/core/templatetags/core_tags.py" />
-        <option value="$PROJECT_DIR$/settings.py" />
-        <option value="$PROJECT_DIR$/apps/core/templatetags/pagination_tag.py" />
-        <option value="$PROJECT_DIR$/apps/core/templates/pagination_tag.html" />
-        <option value="$PROJECT_DIR$/apps/erm/urls.py" />
-        <option value="$PROJECT_DIR$/libs/pyaz/__init__.py" />
         <option value="$PROJECT_DIR$/install/static/default/css/style.css" />
-        <option value="$PROJECT_DIR$/apps/erm/templates/detail.html" />
-        <option value="$PROJECT_DIR$/apps/erm/views.py" />
-        <option value="$PROJECT_DIR$/apps/erm/templates/index.html" />
         <option value="$PROJECT_DIR$/locale/ru/LC_MESSAGES/django.po" />
+        <option value="$PROJECT_DIR$/apps/erm/templates/ededed.xhtml" />
+        <option value="$PROJECT_DIR$/apps/core/templates/select_lang_form.html" />
+        <option value="$PROJECT_DIR$/apps/erm/templates/index.html" />
+        <option value="$PROJECT_DIR$/secret.py" />
+        <option value="$PROJECT_DIR$/apps/erm/admin.py" />
+        <option value="$PROJECT_DIR$/apps/erm/appsettings.py" />
+        <option value="$PROJECT_DIR$/apps/erm/templates/detail.html" />
+        <option value="$PROJECT_DIR$/apps/erm/models.py" />
+        <option value="$PROJECT_DIR$/templates/base.html" />
+        <option value="$PROJECT_DIR$/settings.py" />
+        <option value="$PROJECT_DIR$/apps/erm/views/search.py" />
+        <option value="$PROJECT_DIR$/apps/erm/urls.py" />
+        <option value="$PROJECT_DIR$/libs/pymarc/marcxml.py" />
+        <option value="$PROJECT_DIR$/apps/erm/views.py" />
       </list>
     </option>
   </component>
@@ -214,15 +340,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="locale" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ru" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LC_MESSAGES" />
+              <option name="myItemId" value="templates" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -268,24 +386,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="libs" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pyaz" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ermapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ermapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="apps" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -316,15 +416,15 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="recentsLimit" value="5" />
-    <property name="DefaultHtmlFileTemplate" value="Html" />
+    <property name="DefaultHtmlFileTemplate" value="Xhtml" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/apps/erm" />
+      <recent name="$PROJECT_DIR$/appdata/xslt" />
       <recent name="$PROJECT_DIR$/apps/erm/templates" />
       <recent name="$PROJECT_DIR$/libs/pyaz" />
       <recent name="$PROJECT_DIR$/media" />
-      <recent name="$PROJECT_DIR$/static" />
-      <recent name="$PROJECT_DIR$/static/admin" />
     </key>
   </component>
   <component name="RunManager" selected="Django server.ermapp">
@@ -472,22 +572,22 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="24" width="1296" height="983" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32971016" sideWeight="0.0" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32850242" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2575142" sideWeight="0.83112186" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1787165" sideWeight="0.72858864" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39927623" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16887817" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27141133" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32850242" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -518,7 +618,7 @@
     <option name="CHECK_COMMIT_MESSAGE_SPELLING" value="true" />
     <option name="DEFAULT_PATCH_EXTENSION" value="patch" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="add pyporphy recommit" />
+    <option name="LAST_COMMIT_MESSAGE" value="add pagination&#10;add add_get tag&#10;search fixes&#10;add resource detail&#10;" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -539,117 +639,118 @@
     <MESSAGE value="add RPNQueryBuilder" />
     <MESSAGE value="add pyporphy" />
     <MESSAGE value="add pyporphy recommit" />
+    <MESSAGE value="add pagination&#10;add add_get tag&#10;search fixes&#10;add resource detail&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/install/static/default/images/white_big.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/locale/ru/LC_MESSAGES/django.po">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="87" column="34" selection-start="2237" selection-end="2237" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/erm/templates/ededed.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="303" vertical-scroll-proportion="-0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/apps/core/templates/select_lang_form.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="18" selection-start="196" selection-end="196" vertical-scroll-proportion="0.0" />
+        <state line="8" column="16" selection-start="341" selection-end="341" vertical-scroll-proportion="-5.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/erm/admin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="43" selection-start="174" selection-end="174" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/secret.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="9" selection-start="660" selection-end="660" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/apps/erm/appsettings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="6" selection-start="342" selection-end="342" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="119" column="5" selection-start="3591" selection-end="3591" vertical-scroll-proportion="-12.88">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/core/templates/pagination_tag.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="42" selection-start="715" selection-end="715" vertical-scroll-proportion="-12.5">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/core/templatetags/pagination_tag.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="48" selection-start="949" selection-end="949" vertical-scroll-proportion="0.53808755">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/core/templatetags/add_get_tag.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="28" selection-start="1056" selection-end="1056" vertical-scroll-proportion="0.7293355">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/erm/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="67" selection-start="264" selection-end="284" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/erm/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/libs/pymarc/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.75233644">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/libs/pyaz/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="105" column="44" selection-start="2817" selection-end="2817" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="0" selection-start="961" selection-end="961" vertical-scroll-proportion="-11.875">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/install/static/default/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="206" column="16" selection-start="6046" selection-end="6046" vertical-scroll-proportion="0.0">
+        <state line="21" column="1" selection-start="487" selection-end="487" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/apps/erm/templates/detail.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="0" selection-start="311" selection-end="320" vertical-scroll-proportion="-6.25">
+        <state line="3" column="0" selection-start="66" selection-end="66" vertical-scroll-proportion="-1.875">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/apps/erm/views.py">
+    <entry file="file://$PROJECT_DIR$/apps/erm/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="121" column="4" selection-start="3225" selection-end="3225" vertical-scroll-proportion="0.0">
+        <state line="103" column="24" selection-start="3370" selection-end="3370" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/core/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="29" column="16" selection-start="1250" selection-end="1250" vertical-scroll-proportion="-14.375">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="197" column="25" selection-start="6008" selection-end="6008" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/erm/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="0" selection-start="390" selection-end="390" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/apps/erm/templates/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="71" column="67" selection-start="3504" selection-end="3504" vertical-scroll-proportion="-14.583333">
+        <state line="38" column="140" selection-start="1854" selection-end="1854" vertical-scroll-proportion="-23.75">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/locale/ru/LC_MESSAGES/django.po">
+    <entry file="file://$PROJECT_DIR$/libs/pymarc/marcxml.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="104" column="0" selection-start="2493" selection-end="2493" vertical-scroll-proportion="0.64953274">
+        <state line="252" column="13" selection-start="8118" selection-end="8118" vertical-scroll-proportion="-16.2">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/erm/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="594" column="13" selection-start="19748" selection-end="19748" vertical-scroll-proportion="0.33526012">
           <folding />
         </state>
       </provider>

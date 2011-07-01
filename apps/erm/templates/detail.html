@@ -1,46 +1,89 @@
 {% extends 'base.html' %}
 {% block content %}
     {% load i18n %}
+
+    
+    <style type="text/css">
+            /* tooltip styling */
+        .tooltip {
+            display: none;
+            background: url({{ STATIC_URL }}/default/images/bibliogramma.png) no-repeat;
+
+            padding: 40px 30px 10px 30px;
+            width: 430px;
+            font-size: 1.2em;
+            color: #000;
+        }
+
+    </style>
+
+
     <div id="search_places">
         <ul>
             <li><a href="#">{% trans "Journals" %}</a></li>
             <li><a href="#">{% trans "Bases" %}</a></li>
-            <li><a href="#"">{% trans "Subjects" %}</a></li>
+            <li><a href="#">{% trans "Subjects" %}</a></li>
         </ul>
     </div>
+
     <hr/>
+
     <h2><a href="{% url erm_search_resources %}?{{ search_url }}">{% trans "search results"|capfirst %}</a>
-        → {{ record.200.a }}</h2>
+        → {{ record.200.a }}
+    </h2>
+
     <hr/>
+
     <div class="item_title">
         <h3>{{ record.200.a }}</h3>
     </div>
+
     {% if record.702.a %}
         <div class="item_author">
             {{ record.702.a }}
         </div>
     {% endif %}
+
     {% if record.517.a %}
         <div class="item_field">
             {{ record.517.a }}
         </div>
     {% endif %}
+
     {% if record.606.a %}
         <div class="item_field">
             {% trans "Subjects" %}: <a href="#">{{ record.606.a }}</a>
         </div>
     {% endif %}
+
     {% if record.101.a %}
         <div class="item_field">
             {% trans "Language" %}: {{ record.101.a }}
         </div>
     {% endif %}
+
     <div class="item_info">
         {% trans "Access" %}: <span style="color: green;">{% trans "free" %}</span>
     </div>
+
+    <hr class="space"/>
+
     {% if record.856.u %}
         <div class="item_field">
-            <a class="button button-green" style="font-size: 1.5em" href="{{ record.856.u }}">{% trans "Go to resource" %}</a> | <a href="#">{% trans "Add to bookmark" %}
+            <a class="button button-green" style="font-size: 1.5em"
+               href="{{ record.856.u }}">{% trans "Go to resource" %}</a> |
+
+            <a href="#1" id="show_full_document">{% trans "Bibliographic description" %}</a>
+            <div class="tooltip">
+                {{ full_document|safe }}
+            </div>
+
+            | <a href="#">{% trans "Add to bookmark" %}</a>
         </div>
     {% endif %}
+
+    <script src="http://cdn.jquerytools.org/1.2.5/jquery.tools.min.js"></script>
+    <script type="text/javascript">
+        $("#show_full_document").tooltip({'relative':true});
+    </script>
 {% endblock %}
