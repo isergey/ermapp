@@ -29,36 +29,42 @@
     <hr/>
 
     <h2><a href="{% url erm_search_resources %}?{{ search_url }}">{% trans "search results"|capfirst %}</a>
-        → {{ record.200.a }}
+        → {{ record.datafields.200.0.subfields.a.0 }}
     </h2>
 
     <hr/>
 
     <div class="item_title">
-        <h3>{{ record.200.a }}</h3>
+        <h3>{{  record.datafields.200.0.subfields.a.0 }}</h3>
     </div>
 
-    {% if record.702.a %}
+    {% if record.datafields.702.0.subfields.a.0 %}
         <div class="item_author">
-            {{ record.702.a }}
+            {{ search_result.record.datafields.702.0.subfields.a.0}}
         </div>
     {% endif %}
 
-    {% if record.517.a %}
+    {% if record.datafields.517.0.subfields.a.0 %}
         <div class="item_field">
             {{ record.517.a }}
         </div>
     {% endif %}
 
-    {% if record.606.a %}
+
+    {% if record.datafields.606 %}
         <div class="item_field">
-            {% trans "Subjects" %}: <a href="#">{{ record.606.a }}</a>
+            {% trans "Subjects" %}:
+            {% for field in record.datafields.606  %}
+                {% for subfield in field.subfields.a %}
+                    <a href="#">{{ subfield }}</a>
+                {% endfor %}
+            {% endfor %}
         </div>
     {% endif %}
 
-    {% if record.101.a %}
+    {% if record.datafields.101.0.subfields.a.0 %}
         <div class="item_field">
-            {% trans "Language" %}: {{ record.101.a }}
+            {% trans "Language" %}: {{ record.datafields.101.0.subfields.a.0 }}
         </div>
     {% endif %}
 
@@ -68,10 +74,10 @@
 
     <hr class="space"/>
 
-    {% if record.856.u %}
+    {% if  record.datafields.856.0.subfields.u.0 %}
         <div class="item_field">
             <a class="button button-green" style="font-size: 1.5em"
-               href="{{ record.856.u }}">{% trans "Go to resource" %}</a> |
+               href="{{ record.datafields.856.0.subfields.u.0 }}">{% trans "Go to resource" %}</a> |
 
             <a href="#1" id="show_full_document">{% trans "Bibliographic description" %}</a>
             <div class="tooltip">

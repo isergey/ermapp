@@ -31,34 +31,42 @@
                             {% if request.GET.use == 'subject' %}selected="selected"{% endif %}>{% trans "Subject" %}</option>
                 </select>
                 <input name="term" id="search_input" value="{{ request.GET.term }}" type="text">
+                <input type="submit" style="font-size: 2em" class="button button-green" id="search_button" value="{% trans 'Search' %}"/>
             </div>
 
             <div id="search_buttons">
 {#                <a id="search_button" onclick="goSearch();return false;">#}
 {#                    <img alt="Поиск" src="{{ STATIC_URL }}/default/images/search_button_bg.png">#}
-                    <input type="submit" style="font-size: 1.9em" class="button button-green" id="search_button" value="{% trans 'Search' %}"/>
+{#                    <input type="submit" style="font-size: 1.5em" class="button button-green" id="search_button" value="{% trans 'Search' %}"/>#}
 {#                </a>#}
                 <input type="checkbox" name="ft" id="ftcb"> <label for="ftcb"> {% trans "Only exact matches" %}</label>
             </div>
         </form>
     </div>
     <hr/>
+
     <div id="search_results" class="column span-16 last">
         {% for search_result in search_results %}
+
             <div class="result_item column last">
                 <div class="item_number alt column span-2">№{{ search_result.number }}</div>
                 <div class="column span-14  last">
                     <div class="item_title">
-                        <a href="{% url erm_resource_detail %}?id={{ search_result.record.001.data|urlencode }}&search_url={{ search_url|urlencode }}" >{{ search_result.record.200.a|safe }}</a>
+                        <a href="{% url erm_resource_detail %}?id={{ search_result.record.controlfields.001|urlencode }}&search_url={{ search_url|urlencode }}" >{{ search_result.record.datafields.200.0.subfields.a.0|safe }}</a>
                     </div>
-                    {% if search_result.record.702.a %}
+                    {% if search_result.record.datafields.702.0.subfields.a.0 %}
                         <div class="item_author">
-                            {{ search_result.record.702.a }}
+                            {{ search_result.record.datafields.702.0.subfields.a.0 }}
                         </div>
                     {% endif %}
-                    {% if search_result.record.606.a %}
+                    {% if search_result.record.datafields.606 %}
                         <div class="item_field">
-                            {% trans "Subjects" %}: <a href="#">{{ search_result.record.606.a }}</a>
+                            {% trans "Subjects" %}:
+                            {% for field in search_result.record.datafields.606  %}
+                                {% for subfield in field.subfields.a %}
+                                    <a href="#">{{ subfield }}</a>
+                                {% endfor %}
+                            {% endfor %}
                         </div>
                     {% endif %}
                     <div class="item_info">

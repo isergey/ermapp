@@ -8,8 +8,6 @@ import secret
 
 SYSTEM_ROOT = os.path.abspath(os.path.dirname(__file__)) + '/'
 
-
-
 MODE = 'DEV' # DEV, PROD, TEST
 
 if MODE == 'DEV':
@@ -93,10 +91,10 @@ elif MODE == 'PROD':
 
 # Additional locations of static files
 STATICFILES_DIRS = (
-    (SYSTEM_ROOT + 'install/static/'),
-    # Put strings here, like "/home/html/static" or "C:/www/django/static".
-    # Always use forward slashes, even on Windows.
-    # Don't forget to use absolute paths, not relative paths.
+        (SYSTEM_ROOT + 'install/static/'),
+        # Put strings here, like "/home/html/static" or "C:/www/django/static".
+        # Always use forward slashes, even on Windows.
+        # Don't forget to use absolute paths, not relative paths.
     )
 
 # List of finder classes that know how to find static files in
@@ -121,7 +119,7 @@ TEMPLATE_LOADERS = (
     'django.template.loaders.filesystem.Loader',
     'django.template.loaders.app_directories.Loader',
     #)),
-)
+    )
 
 TEMPLATE_CONTEXT_PROCESSORS = (
     'django.contrib.auth.context_processors.auth',
@@ -131,8 +129,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'django.core.context_processors.static',
     'django.core.context_processors.request',
     'django.contrib.messages.context_processors.messages',
-)
-
+    )
 
 MIDDLEWARE_CLASSES = (
     'django.middleware.common.CommonMiddleware',
@@ -141,7 +138,7 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
-    #'debug_toolbar.middleware.DebugToolbarMiddleware',
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
     )
 
 ROOT_URLCONF = 'ermapp.urls'
@@ -151,7 +148,7 @@ TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
-)
+    )
 
 INSTALLED_APPS = (
     'django.contrib.auth',
@@ -169,7 +166,7 @@ INSTALLED_APPS = (
     # 'django.contrib.admindocs',
     'apps.core',
     'apps.erm',
-)
+    )
 
 # A sample logging configuration. The only tangible logging
 # performed by this configuration is to send an email to
@@ -179,19 +176,37 @@ INSTALLED_APPS = (
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
+    'formatters': {
+        'verbose': {
+            'format': '%(levelname)s %(asctime)s %(message)s'
+        },
+    },
     'handlers': {
         'mail_admins': {
             'level': 'ERROR',
             'class': 'django.utils.log.AdminEmailHandler'
-        }
-    },
+        },
+        'rotating_file': {
+            'level': 'DEBUG',
+            'formatter': 'verbose', # from the django doc example
+            'class': 'logging.handlers.TimedRotatingFileHandler',
+            'filename': SYSTEM_ROOT+'system.log', # full path works
+            'when': 'midnight',
+            'interval': 1,
+            'backupCount': 7,
+            },
+        },
     'loggers': {
         'django.request': {
             'handlers': ['mail_admins'],
             'level': 'ERROR',
             'propagate': True,
             },
-        }
+        'file_logger': {
+            'handlers': ['rotating_file'],
+            'level': 'DEBUG',
+            }
+    }
 }
 
 DEBUG_TOOLBAR_PANELS = (
@@ -204,5 +219,10 @@ DEBUG_TOOLBAR_PANELS = (
     'debug_toolbar.panels.sql.SQLDebugPanel',
     'debug_toolbar.panels.signals.SignalDebugPanel',
     'debug_toolbar.panels.logger.LoggingPanel',
-)
+    )
+
+DEBUG_TOOLBAR_CONFIG = {
+    'INTERCEPT_REDIRECTS': False,
+}
 INTERNAL_IPS = ('127.0.0.1',)
+

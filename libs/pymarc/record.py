@@ -1,4 +1,5 @@
 import re
+import hashlib
 
 from exceptions import BaseAddressInvalid, RecordLeaderInvalid,\
     BaseAddressNotFound, RecordDirectoryInvalid, NoFieldsFound,\
@@ -69,6 +70,8 @@ class Record(object):
         for more information.
         """
         # join is significantly faster than concatenation
+        self.fields = sorted(self.fields, key=lambda x: x.tag)
+            
         text_list = ['=LDR  %s' % self.leader]
         text_list.extend([unicode(field) for field in self.fields])
         text = u'\n'.join(text_list) + '\n'
@@ -212,17 +215,21 @@ class Record(object):
         if field_count == 0:
             raise NoFieldsFound
 
-    def as_marc(self, encoding=None):
+    def as_marc(self, encoding=None, sorted_fields=True):
         """
         encoding - encoding of serialized record
         returns the record serialized as MARC21
         """
+
+        if sorted_fields:
+            self.fields = sorted(self.fields, key=lambda x: x.tag)
+
         if encoding:
             encoding = encoding.lower()
             if encoding == 'utf-8' or encoding == 'utf8':
                 self.set_leader_index(9, 'a')
 
-        fields = ''
+        fields = []
         directory = ''
         offset = 0
 
@@ -240,7 +247,7 @@ class Record(object):
             elif encoding:
                 field_data = field_data.encode(encoding)
 
-            fields += field_data
+            fields.append(field_data)
             if field.tag.isdigit():
                 directory += '%03d' % int(field.tag)
             else:
@@ -253,8 +260,8 @@ class Record(object):
         directory += END_OF_FIELD
 
         # field data ends with an end of record
-        fields += END_OF_RECORD
-
+        fields.append(END_OF_RECORD)
+        fields = ''.join(fields)
         # the base address where the directory ends and the field data begins
         base_address = LEADER_LEN + len(directory)
 
@@ -267,11 +274,98 @@ class Record(object):
                       (record_length, self.leader[5:12], base_address, self.leader[17:])
 
         # return the encoded record
-        return self.leader + directory + fields
+        return ''.join((self.leader,directory,fields))
 
+    def as_md5(self):
+
+        fields = []
+
+        # build the directory
+        # each element of the directory includes the tag, the byte length of
+        # the field and the offset from the base address where the field data
+        # can be found
+        for field in self.fields:
+            if field.is_control_field(): continue
+            field_data = field.as_marc()
+            field_data = field_data.encode('utf-8')
+
+
+            fields.append(field_data)
+
+        fields = ''.join(fields)
+
+
+        # return the encoded record
+        return hashlib.md5(fields).hexdigest()
         # alias for backwards compatability
 
-    as_marc21 = as_marc
+    def as_dict(self, syntax=u'1.2.840.10003.5.28'):
+
+        record_dict = {
+            'syntax': syntax,
+            'leader': self.leader,
+            'controlfields': {},
+            'datafields': {}
+        }
+
+        for field in self.fields:
+            if field.is_control_field():
+                record_dict['controlfields'][field.tag] = field.data
+
+            elif field.tag[0] == '4':
+                if field.tag not in record_dict['datafields']:
+                    record_dict['datafields'][field.tag] = []
+
+                field_dict = {
+                    'i1': field.indicator1,
+                    'i2': field.indicator2,
+                    'subfields': {}
+                }
+
+                for subfield in field:
+                    if not isinstance(subfield[1], Field): continue
+
+                    inner_field = subfield[1]
+
+                    if subfield[0] not in field_dict['subfields']:
+                        field_dict['subfields'][subfield[0]] = {'datafields': []}
+
+                    if inner_field.tag not in field_dict['subfields'][subfield[0]]['datafields']:
+                        field_dict['subfields'][subfield[0]]['datafields'] = { inner_field.tag: [] }
+
+                    inner_field_dict = {
+                        'i1': field.indicator1,
+                        'i2': field.indicator2,
+                        'subfields': {}
+                    }
+                    for inner_subfield in inner_field:
+                        if inner_subfield[0] not in inner_field_dict['subfields']:
+                            inner_field_dict['subfields'][inner_subfield[0]] = []
+
+                        inner_field_dict['subfields'][inner_subfield[0]].append(inner_subfield[1])
+
+                    field_dict['subfields'][subfield[0]]['datafields'][inner_field.tag].append(inner_field_dict)
+
+                record_dict['datafields'][field.tag].append(field_dict)
+
+            else:
+                if field.tag not in record_dict['datafields']:
+                    record_dict['datafields'][field.tag] = []
+
+                field_dict = {
+                    'i1': field.indicator1,
+                    'i2': field.indicator2,
+                    'subfields': {}
+                }
+
+                for subfield in field:
+                    if subfield[0] not in field_dict['subfields']:
+                        field_dict['subfields'][subfield[0]] = []
+
+                    field_dict['subfields'][subfield[0]].append(subfield[1])
+
+                record_dict['datafields'][field.tag].append(field_dict)
+        return record_dict
 
     def title(self):
         """
