@@ -1,0 +1,21 @@
+{% extends "administration_base.html" %}
+{% block module_content %}
+    <div class="panel">
+        <h2>Управление электронными ресурсами</h2>
+        <ul class="tabs">
+            <li {% if tab == 'license' %} class="current" {% endif %}><a href="#">Лицензии</a></li>
+            <li {% if tab == 'resources' %} class="current" {% endif %}><a href="#">Электронные ресурсы</a></li>
+            <li  {% if tab == 'rubrics' %} class="current" {% endif %}><a href="#">Рубрики</a></li>
+        </ul>
+        <div class="panes">
+            {% block content %}{% endblock %}
+        </div>
+   </div>
+    <hr class="space"/>
+
+    <script type="text/javascript">
+        $("a.delete").click(function() {
+            if (!confirm('Вы уверены что хотите удалить?')) return false;
+        });
+    </script>
+{% endblock %}

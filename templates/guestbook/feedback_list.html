@@ -1,0 +1,97 @@
+{% extends "base.html" %}
+{% block title %}
+    Отзывы
+{% endblock %}
+{% block content %}
+    <style type="text/css">
+        .guestbook .feedback {
+        }
+
+        .guestbook table {
+            border-width: 10px;
+        }
+
+        .guestbook td.name {
+        /*width: 30%;*/
+        }
+
+        .guestbook td.message {
+        /*width: 70%;*/
+            vertical-align: top;
+        }
+
+        .guestbook .feedback {
+            padding: 10px;
+        }
+
+        .guestbook .odd {
+            background: #f6f8ff;
+        }
+
+        .guestbook .name {
+            font-size: 130%;
+        }
+
+        .guestbook .org {
+            color: #666666;
+            font-style: italic;
+        }
+
+        .guestbook .message {
+            border-top: 1px solid;
+            border-top-color: #eff0ef;
+            margin: 5px 0 0 0;
+            padding: 5px 0 0 0;
+        }
+    </style>
+    <div class="text">
+        <h3>Отзывы</h3>
+
+        <div style="padding:10px 0 0 10px"><a class="awesome blue" href="{% url guestbook_add_feedback %}">Написать
+            отзыв</a></div>
+        </br>
+        <div class="guestbook">
+
+            {% for feedback in feedback_list.object_list %}
+                <div class="feedback {% if not forloop.counter|divisibleby:"2" %}odd{% endif %}">
+                    <div class="name">{{ feedback.name }}</div>
+                    {% if feedback.organisation %}
+                        <div class="org"> {{ feedback.organisation }} </div> {% endif %}
+                    <div class="message">{{ feedback.message|safe }}</div>
+                    <div class="date" align="right">{{ feedback.add_date|date:"d.m.Y" }}</div>
+                </div>
+
+            {% empty %}
+                Нет отзывов.
+            {% endfor %}
+
+        </div>
+
+
+        {% if feedback_list.paginator.num_pages > 1 %}
+            <div class="pagination">
+                <span class="step-links">
+                Страницы:
+                    {% if feedback_list.has_previous %}
+                        <a class="page" href="?page={{ feedback_list.previous_page_number }}">сюда</a>
+                    {% endif %}
+                    {% for page in feedback_list.paginator.page_range %}
+                        {% if page %}
+                            {% ifequal page feedback_list.number %}
+                                <span class="current page">{{ page }}</span>
+                            {% else %}
+                                <a href="?page={{ page }}" class="page">{{ page }}</a>
+                            {% endifequal %}
+                        {% else %}
+                            ...
+                        {% endif %}
+                    {% endfor %}
+                    {% if feedback_list.has_next %}
+                        <a class="page" href="?page={{ feedback_list.next_page_number }}">туда</a>
+                    {% endif %}
+                </span>
+            </div>
+
+        {% endif %}
+    </div>
+{% endblock %}

@@ -1,0 +1,79 @@
+{% extends "guestbook/administration/guestbook.html" %}
+{% block module_action %}список сообщений{% endblock %}
+{% block module_page %}
+    <style type="text/css">
+    a.button{
+        margin: 2px 2px 2px 2px;
+    }
+    .table_container td{
+        vertical-align:top;text-align:justify;
+    }
+    </style>
+    <div class="module_actions column prepend-1 last">
+    </div>
+    <hr/>
+    <div class="table_container column span-19 prepend-1 last">
+        <div class="table_title last">
+            Список сообщений-отзывов
+        </div>
+        <table>
+            <tr>
+                <th class="span-9">Сообщение</th>
+                <th >Пользователь</th>
+                <th>Дата добавления</th>
+                <th>Опубликовано</th>
+                <th class="span-3">Действия</th>
+            </tr>
+            {% for feedback in feedbacks_list.object_list %}
+            <tr >
+                <td >{{ feedback.message|safe }}</td>
+                <td style="text-align:center;">{{ feedback.name }}</td>
+                <td>{{ feedback.add_date|date:"d-M-Y H:i:s" }}</td>
+                <td style="text-align:center;">
+                    {% if feedback.published  %}
+                        <span style="color:green;">Да</span>
+                    {% else %}
+                        <b><span style="color:red;">Нет</span></b>
+                    {% endif %}
+                </td>
+                <td>
+                    <a title="Редактировать сообщение" class="button" href="{% url administration_guestbook_message_edit feedback.id %}">
+                        <img src="/media/images/icons/pencil_16.png" alt=""/>
+                    </a>
+                    <a class="button negative delete" title="Удалить сообщение" href="{% url administration_guestbook_message_delete feedback.id %}">
+                        <img src="/media/images/icons/delete_16.png" alt=""/>
+                    </a>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+    {% if feedbacks_list.paginator.num_pages > 1 %}
+    <div class="span-19 prepend-1 last">
+        <div class="block">
+            <div class="pagination">
+                <span class="step-links">
+                    {% if feedbacks_list.has_previous %}
+                        <a class="page" href="?page={{ feedbacks_list.previous_page_number }}">сюда</a>
+                    {% endif %}
+                    {% for page in feedbacks_list.paginator.page_range %}
+                        {% if page %}
+                            {% ifequal page feedbacks_list.number %}
+                                <span class="current page">{{ page }}</span>
+                            {% else %}
+                                <a href="?page={{ page }}" class="page">{{ page }}</a>
+                            {% endifequal %}
+                        {% else %}
+                            ...
+                        {% endif %}
+                    {% endfor %}
+                    {% if feedbacks_list.has_next %}
+                        <a class="page" href="?page={{ feedbacks_list.next_page_number }}">туда</a>
+                    {% endif %}
+                </span>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+    <hr class="space"/>
+{% endblock %}

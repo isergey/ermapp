@@ -1,0 +1,51 @@
+{% extends 'admin_erm.html' %}
+{% load i18n %}
+{% block content %}
+    <style>
+        .form ul.errorlist {
+            margin: 0;
+            padding: 0;
+            color: red;
+            list-style: none;
+            margin-left: 200px;
+            clear: both;
+        }
+
+        .ggForm textarea, input[type=text], input[type=password], input[type=email], input[type=url], input[type=date], input[type=number], input[type=time], input[type=date], input.date {
+            width: 50%;
+        }
+
+
+    </style>
+    <div class="pane current" style="display: block;">
+        <a href="{% url erm_admin_licences  %}" class="button button-gray">{% trans 'Licenses list' %}</a>
+        <hr class="space"/>
+        <div class="panel">
+            <h2>Добавление лицензии</h2>
+
+            <div class="ggForm" style="text-align:left;">
+
+                <form class="form" action="" method="POST" id="ggform_4e16d5983d663">
+                    {% include 'admin_license_fieldset.html' %}
+                    <hr/>
+                    <div align="center">
+                        <button type="submit" class="button button-green">{% trans 'Create' %}</button>
+                        <a href="{% url erm_admin_licences  %}" class="button button-red">{% trans 'Cancel' %}</a>
+                    </div>
+
+                </form>
+                {#        <script>#}
+                {#            $(document).ready(function() {#}
+                {#                $("#ggform_4e16d5983d663").validator({#}
+                {#                    position: "left",#}
+                {#                    offset: [25, 10],#}
+                {#                    messageClass:"form-error",#}
+                {#                    message: "<div><em/></div>" // em element is the arrow#}
+                {#                });#}
+                {#            });#}
+                {#        </script>#}
+
+            </div>
+        </div>
+    </div>
+{% endblock %}

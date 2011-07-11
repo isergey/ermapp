@@ -1,0 +1,78 @@
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <LINK rel="icon" href="http://favicon.ru/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/blueprint/screen.css" type="text/css" media="screen, projection">
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/blueprint/print.css" type="text/css" media="print">
+    <!--[if IE]>
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/blueprint/ie.css" type="text/css" media="screen, projection"><![endif]-->
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/blueprint/plugins/fancy-type/screen.css" type="text/css"
+          media="screen, projection"/>
+{#    <link rel="stylesheet" href="{{ STATIC_URL }}css/blueprint/plugins/buttons/screen.css" type="text/css" media="screen, projection"/>#}
+    <link rel="stylesheet" href="{{ STATIC_URL }}default/css/admin_style.css" type="text/css" media="screen, projection">
+    <link rel="stylesheet" href="{{ STATIC_URL }}default/css/widgets.css" type="text/css" media="screen, projection">
+       
+    <script type="text/javascript" src="{{ STATIC_URL }}js/jquery.min.js"></script>
+    <title>Администрирование libportal</title>
+</head>
+<div class="container">
+    <div class="header block column span-24 last">
+        <h2 class="prepend-1 alt">Портал. Администрирование.</h2>
+    </div>
+    <hr class="space"/>
+    <div class="column span-3">
+        <div id="admin_menu" class="panel">
+            <ul>
+{#                <li class="first{% if active_module == 'pages' %} selected{% endif %}">#}
+{#                    <a href="{% url administration_pages_index %}">Страницы</a>#}
+{#                </li>#}
+{#                <li class="{% if active_module == 'menus' %} selected{% endif %}">#}
+{#                    <a href="{% url administration_menus_index %}">Меню</a>#}
+{#                </li>#}
+{#                <li class="{% if active_module == 'news' %} selected{% endif %}">#}
+{#                    <a href="{% url administration_news_index %}">Новости</a>#}
+{#                </li>#}
+{#                <li class="{% if active_module == 'gallery' %} selected{% endif %}">#}
+{#                    <a href="{% url administration_gallery_index %}">Галлерея</a>#}
+{#                </li>#}
+{#                <li class="{% if active_module == 'polls' %} selected{% endif %}">#}
+{#                    <a href="{% url administration_polls_index %}">Голосования</a>#}
+{#                </li>#}
+{#                <li class="{% if active_module == 'events' %} selected{% endif %}">#}
+{#                    <a href="{% url administration_events_index %}">Афиша</a>#}
+{#                </li>#}
+{#                <li class="{% if active_module == 'guestbook' %} selected{% endif %}">#}
+{#                    <a href="{% url administration_guestbook_index %}">Отзывы</a>#}
+{#                </li>#}
+{#                <li class="{% if active_module == 'professional' %} selected{% endif %}">#}
+{#                    <a href="{% url administration_professional_index %}">Проф страница</a>#}
+{#                </li>#}
+{#                <li class="{% if active_module == 'zgate' %} selected{% endif %}">#}
+{#                    <a href="{% url administration_zgate_index %}">АРМ Читателя</a>#}
+{#                </li>#}
+{#                <li class="first{% if active_module == 'accounts' %} selected{% endif %}">#}
+{#                    <a href="{% url administration_accounts_organisations %}">Учетные записи</a>#}
+{#                </li>#}
+                <li class="first{% if active_module == 'erm' %} selected{% endif %}">
+                    <a href="{% url erm_admin_index %}">Файлы</a>
+                </li>
+                <li class="first{% if active_module == 'erm' %} selected{% endif %}">
+                    <a href="{% url erm_admin_index %}">Файлы</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="column span-21 last">
+        {% block module_content %}{% endblock %}
+    </div>
+    <hr class="space"/>
+    <div class=" column span-24 last">
+        <div class="block footer" style="height:30px">
+            © Библиотечный портал
+        </div>
+    </div>
+</div>
+</body>
+</html>
+

@@ -7,4 +7,6 @@ urlpatterns = patterns('apps.erm',
     #url(r'^detail/pdf/$', 'resource_detail_pdf',  name="erm_resource_detail_pdf"),
     url(r'^search/$', 'views_frontend.search_resources', name="erm_search_resources"),
     url(r'^admin/$', 'views_admin.index', name="erm_admin_index"),
+    url(r'^admin/licences/$', 'views_admin.licenses', name="erm_admin_licences"),
+    url(r'^admin/licences/create/$', 'views_admin.license_create', name="erm_admin_licence_create"),
 )

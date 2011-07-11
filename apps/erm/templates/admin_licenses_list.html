@@ -1,0 +1,66 @@
+{% extends 'admin_erm.html' %}
+{% load i18n %}
+{% load pagination_tag %}
+{% block content %}
+    <style>
+        .form ul.errorlist {
+            margin: 0;
+            padding: 0;
+            color: red;
+            list-style: none;
+            margin-left: 200px;
+            clear: both;
+        }
+
+        .ggForm textarea, input[type=text], input[type=password], input[type=email], input[type=url], input[type=date], input[type=number], input[type=time], input[type=date], input.date {
+            width: 50%;
+        }
+        .pagination{
+            font-size: 1.2em;
+        }
+
+    </style>
+    <div class="pane current" style="display: block;">
+        <a href="{% url erm_admin_licence_create  %}" class="button button-gray">{% trans 'Add license' %}</a>
+        <hr class="space"/>
+        <div class="panel">
+            <h2>{% trans "Licenses list" %}</h2>
+            <div class="table_container">
+                {#                <div class="table_title">#}
+                {#                    {% trans "Licenses list" %}#}
+                {#                </div>#}
+                <table>
+                    <tr>
+                        <th>{% trans 'Organisation name' %}</th>
+                        <th>{% trans 'License name' %}</th>
+                        <th>{% trans 'Start date' %}</th>
+                        <th>{% trans 'End date' %}</th>
+                        <th class="span-3">{% trans 'Actions' %}</th>
+                    </tr>
+                    {% for license in licenses_list.object_list %}
+                        <tr>
+                            <td>{{ license.organisation_name }}</td>
+                            <td>{{ license.name }}</td>
+                            <td>{{ license.start_date }}</td>
+                            <td>{{ license.end_date }}</td>
+                            <td>
+                                <a title="{% trans 'Edit license' %}" class="button" href="#">
+                                    {#                                <img src="/media/images/icons/pencil_16.png" alt=""/>#}{% trans 'Edit' %}
+                                </a>
+                                <a class="button negative delete" title="{% trans 'Delete license' %}" href="#">
+                                    {% trans 'Delete' %}
+                                </a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </table>
+
+                {% if licenses_list.paginator.num_pages > 1 %}
+                    <div align="center" class="">
+                        {% pagination licenses_list %}
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

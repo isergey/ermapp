@@ -1,0 +1,1537 @@
+[
+    {
+        "controlfields": {
+            "001": "102",
+            "005": "20110608180210.0"
+        },
+        "datafields": {
+            "035": [
+                {
+                    "i1": " ",
+                    "i2": " ",
+                    "subfields": {
+                        "a": [
+                            "(EbpS)ebs484990"
+                        ]
+                    }
+                }
+            ],
+            "100": [
+                {
+                    "i1": " ",
+                    "i2": " ",
+                    "subfields": {
+                        "a": [
+                            "20051220a    9999u  y0engy01020304ba"
+                        ]
+                    }
+                }
+            ],
+            "101": [
+                {
+                    "i1": "|",
+                    "i2": " ",
+                    "subfields": {
+                        "a": [
+                            "eng"
+                        ]
+                    }
+                }
+            ],
+            "110": [
+                {
+                    "i1": " ",
+                    "i2": " ",
+                    "subfields": {
+                        "a": [
+                            "auu    0uu0"
+                        ]
+                    }
+                }
+            ],
+            "200": [
+                {
+                    "i1": "1",
+                    "i2": " ",
+                    "subfields": {
+                        "a": [
+                            "New Zealand Journal of Photography"
+                        ],
+                        "b": [
+                            "[electronic resource]."
+                        ]
+                    }
+                }
+            ],
+            "210": [
+                {
+                    "i1": " ",
+                    "i2": " ",
+                    "subfields": {
+                        "a": [
+                            ""
+                        ],
+                        "c": [
+                            "New Zealand Centre for Photography"
+                        ]
+                    }
+                }
+            ],
+            "300": [
+                {
+                    "i1": " ",
+                    "i2": " ",
+                    "subfields": {
+                        "a": [
+                            "Academic Journal"
+                        ]
+                    }
+                }
+            ],
+            "310": [
+                {
+                    "i1": " ",
+                    "i2": " ",
+                    "subfields": {
+                        "a": [
+                            "Indexing and abstracting for print publication."
+                        ]
+                    }
+                }
+            ],
+            "463": [
+                {
+                    "i1": " ",
+                    "i2": "1",
+                    "subfields": {}
+                }
+            ],
+            "801": [
+                {
+                    "i1": " ",
+                    "i2": " ",
+                    "subfields": {
+                        "a": [
+                            "RU"
+                        ],
+                        "b": [
+                            "ORGANIZATION"
+                        ],
+                        "c": [
+                            "20110608"
+                        ]
+                    }
+                }
+            ],
+            "856": [
+                {
+                    "i1": "4",
+                    "i2": "0",
+                    "subfields": {
+                        "3": [
+                            "Abstracts Available: Feb 2004-Nov 2007 "
+                        ],
+                        "u": [
+                            "http://search.ebscohost.com/direct.asp?db=a9h&jid=%2201Z%22&scope=site"
+                        ],
+                        "z": [
+                            "Available on EBSCOhost."
+                        ]
+                    }
+                }
+            ]
+        },
+        "leader": "00737cas a22001933i 450 ",
+        "syntax": "1.2.840.10003.5.28"
+    },
+    {
+        "controlfields": {
+            "001": "103",
+            "005": "20110608180210.0"
+        },
+        "datafields": {
+            "011": [
+                {
+                    "i1": " ",
+                    "i2": " ",
+                    "subfields": {
+                        "a": [
+                            "1070-8588"
+                        ]
+                    }
+                }
+            ],
+            "035": [
+                {
+                    "i1": " ",
+                    "i2": " ",
+                    "subfields": {
+                        "a": [
+                            "(EbpS)ebs485171"
+                        ]
+                    }
+                }
+            ],
+            "100": [
+                {
+                    "i1": " ",
+                    "i2": " ",
+                    "subfields": {
+                        "a": [
+                            "20070202a    9999u  y0engy01020304ba"
+                        ]
+                    }
+                }
+            ],
+            "101": [
+                {
+                    "i1": "|",
+                    "i2": " ",
+                    "subfields": {
+                        "a": [
+                            "eng"
+                        ]
+                    }
+                }
+            ],
+            "110": [
+                {
+                    "i1": " ",
+                    "i2": " ",
+                    "subfields": {
+                        "a": [
+                            "auu    0uu0"
+                        ]
+                    }
+                }
+            ],
+            "200": [
+                {
+                    "i1": "1",
+                    "i2": " ",
+                    "subfields": {
+                        "a": [
+                            "Software Development"
+                        ],
+                        "b": [
+                            "[electronic resource]."
+                        ]
+                    }
+                }
+            ],
+            "210": [
+                {
+                    "i1": " ",
+                    "i2": " ",
+                    "subfields": {
+                        "a": [
+                            "Manhasset"
+                        ],
+                        "c": [
+                            "CMP Media LLC"
+                        ]
+                    }
+                }
+            ],
+            "300": [
+                {
+                    "i1": " ",
+                    "i2": " ",
+                    "subfields": {
+                        "a": [
+                            "Periodical"
+                        ]
+                    }
+                }
+            ],
+            "310": [
+                {
+                    "i1": " ",
+                    "i2": " ",
+                    "subfields": {
+                        "a": [
+                            "Indexing and abstracting for print publication."
+                        ]
+                    }
+                }
+            ],
+            "463": [
+                {
+                    "i1": " ",
+                    "i2": "1",
+                    "subfields": {}
+                }
+            ],
+            "801": [
+                {
+                    "i1": " ",
+                    "i2": " ",
+                    "subfields": {
+                        "a": [
+                            "RU"
+                        ],
+                        "b": [
+                            "ORGANIZATION"
+                        ],
+                        "c": [
+                            "20110608"
+                        ]
+                    }
+                }
+            ],
+            "856": [
+                {
+                    "i1": "4",
+                    "i2": "0",
+                    "subfields": {
+                        "3": [
+                            "Abstracts Available: Jan 2003-May 2006 "
+                        ],
+                        "u": [
+                            "http://search.ebscohost.com/direct.asp?db=a9h&jid=%2203G%22&scope=site"
+                        ],
+                        "z": [
+                            "Available on EBSCOhost."
+                        ]
+                    }
+                }
+            ]
+        },
+        "leader": "00731cas a22002053i 450 ",
+        "syntax": "1.2.840.10003.5.28"
+    },
+    {
+        "controlfields": {
+            "001": "104",
+            "005": "20110608180210.0"
+        },
+        "datafields": {
+            "011": [
+                {
+                    "i1": " ",
+                    "i2": " ",
+                    "subfields": {
+                        "a": [
+                            "1075-2838"
+                        ]
+                    }
+                }
+            ],
+            "035": [
+                {
+                    "i1": " ",
+                    "i2": " ",
+                    "subfields": {
+                        "a": [
+                            "(EbpS)ebs485479"
+                        ]
+                    }
+                }
+            ],
+            "100": [
+                {
+                    "i1": " ",
+                    "i2": " ",
+                    "subfields": {
+                        "a": [
+                            "20040816a    9999u  y0engy01020304ba"
+                        ]
+                    }
+                }
+            ],
+            "101": [
+                {
+                    "i1": "|",
+                    "i2": " ",
+                    "subfields": {
+                        "a": [
+                            "eng"
+                        ]
+                    }
+                }
+            ],
+            "110": [
+                {
+                    "i1": " ",
+                    "i2": " ",
+                    "subfields": {
+                        "a": [
+                            "auu    0uu0"
+                        ]
+                    }
+                }
+            ],
+            "200": [
+                {
+                    "i1": "1",
+                    "i2": " ",
+                    "subfields": {
+                        "a": [
+                            "C/C++ Users Journal"
+                        ],
+                        "b": [
+                            "[electronic resource]."
+                        ]
+                    }
+                }
+            ],
+            "210": [
+                {
+                    "i1": " ",
+                    "i2": " ",
+                    "subfields": {
+                        "a": [
+                            "Manhasset"
+                        ],
+                        "c": [
+                            "CMP Media LLC"
+                        ]
+                    }
+                }
+            ],
+            "300": [
+                {
+                    "i1": " ",
+                    "i2": " ",
+                    "subfields": {
+                        "a": [
+                            "Trade Publication"
+                        ]
+                    }
+                }
+            ],
+            "310": [
+                {
+                    "i1": " ",
+                    "i2": " ",
+                    "subfields": {
+                        "a": [
+                            "Indexing and abstracting for print publication."
+                        ]
+                    }
+                }
+            ],
+            "463": [
+                {
+                    "i1": " ",
+                    "i2": "1",
+                    "subfields": {}
+                }
+            ],
+            "801": [
+                {
+                    "i1": " ",
+                    "i2": " ",
+                    "subfields": {
+                        "a": [
+                            "RU"
+                        ],
+                        "b": [
+                            "ORGANIZATION"
+                        ],
+                        "c": [
+                            "20110608"
+                        ]
+                    }
+                }
+            ],
+            "856": [
+                {
+                    "i1": "4",
+                    "i2": "0",
+                    "subfields": {
+                        "3": [
+                            "Abstracts Available: Jan 2004-Feb 2006 "
+                        ],
+                        "u": [
+                            "http://search.ebscohost.com/direct.asp?db=a9h&jid=%2206O%22&scope=site"
+                        ],
+                        "z": [
+                            "Available on EBSCOhost."
+                        ]
+                    }
+                }
+            ]
+        },
+        "leader": "00737cas a22002053i 450 ",
+        "syntax": "1.2.840.10003.5.28"
+    },
+    {
+        "controlfields": {
+            "001": "105",
+            "005": "20110608180210.0"
+        },
+        "datafields": {
+            "011": [
+                {
+                    "i1": " ",
+                    "i2": " ",
+                    "subfields": {
+                        "a": [
+                            "1496-8190"
+                        ]
+                    }
+                }
+            ],
+            "035": [
+                {
+                    "i1": " ",
+                    "i2": " ",
+                    "subfields": {
+                        "a": [
+                            "(EbpS)ebs487167"
+                        ]
+                    }
+                }
+            ],
+            "100": [
+                {
+                    "i1": " ",
+                    "i2": " ",
+                    "subfields": {
+                        "a": [
+                            "20070321a    9999u  y0engy01020304ba"
+                        ]
+                    }
+                }
+            ],
+            "101": [
+                {
+                    "i1": "|",
+                    "i2": " ",
+                    "subfields": {
+                        "a": [
+                            "eng"
+                        ]
+                    }
+                }
+            ],
+            "110": [
+                {
+                    "i1": " ",
+                    "i2": " ",
+                    "subfields": {
+                        "a": [
+                            "auu    0uu0"
+                        ]
+                    }
+                }
+            ],
+            "200": [
+                {
+                    "i1": "1",
+                    "i2": " ",
+                    "subfields": {
+                        "a": [
+                            "Seminars in Inflammatory Bowel Disease"
+                        ],
+                        "b": [
+                            "[electronic resource]."
+                        ]
+                    }
+                }
+            ],
+            "210": [
+                {
+                    "i1": " ",
+                    "i2": " ",
+                    "subfields": {
+                        "a": [
+                            "Newtown"
+                        ],
+                        "c": [
+                            "B.C. Decker Inc."
+                        ]
+                    }
+                }
+            ],
+            "300": [
+                {
+                    "i1": " ",
+                    "i2": " ",
+                    "subfields": {
+                        "a": [
+                            "Academic Journal"
+                        ]
+                    }
+                }
+            ],
+            "310": [
+                {
+                    "i1": " ",
+                    "i2": " ",
+                    "subfields": {
+                        "a": [
+                            "Online version of print publication."
+                        ]
+                    }
+                }
+            ],
+            "463": [
+                {
+                    "i1": " ",
+                    "i2": "1",
+                    "subfields": {}
+                }
+            ],
+            "801": [
+                {
+                    "i1": " ",
+                    "i2": " ",
+                    "subfields": {
+                        "a": [
+                            "RU"
+                        ],
+                        "b": [
+                            "ORGANIZATION"
+                        ],
+                        "c": [
+                            "20110608"
+                        ]
+                    }
+                }
+            ],
+            "856": [
+                {
+                    "i1": "4",
+                    "i2": "0",
+                    "subfields": {
+                        "3": [
+                            "Full text available: Jun 2004-Mar 2005. "
+                        ],
+                        "u": [
+                            "http://search.ebscohost.com/direct.asp?db=a9h&jid=%220GC%22&scope=site"
+                        ],
+                        "z": [
+                            "Available on EBSCOhost."
+                        ]
+                    }
+                }
+            ]
+        },
+        "leader": "00745cas a22002053i 450 ",
+        "syntax": "1.2.840.10003.5.28"
+    },
+    {
+        "controlfields": {
+            "001": "106",
+            "005": "20110608180210.0"
+        },
+        "datafields": {
+            "011": [
+                {
+                    "i1": " ",
+                    "i2": " ",
+                    "subfields": {
+                        "a": [
+                            "0742-6706"
+                        ]
+                    }
+                }
+            ],
+            "035": [
+                {
+                    "i1": " ",
+                    "i2": " ",
+                    "subfields": {
+                        "a": [
+                            "(EbpS)ebs487370"
+                        ]
+                    }
+                }
+            ],
+            "100": [
+                {
+                    "i1": " ",
+                    "i2": " ",
+                    "subfields": {
+                        "a": [
+                            "20041019a    9999u  y0engy01020304ba"
+                        ]
+                    }
+                }
+            ],
+            "101": [
+                {
+                    "i1": "|",
+                    "i2": " ",
+                    "subfields": {
+                        "a": [
+                            "eng"
+                        ]
+                    }
+                }
+            ],
+            "110": [
+                {
+                    "i1": " ",
+                    "i2": " ",
+                    "subfields": {
+                        "a": [
+                            "auu    0uu0"
+                        ]
+                    }
+                }
+            ],
+            "200": [
+                {
+                    "i1": "1",
+                    "i2": " ",
+                    "subfields": {
+                        "a": [
+                            "Einstein Journal of Biology &  Medicine"
+                        ],
+                        "b": [
+                            "[electronic resource]."
+                        ]
+                    }
+                }
+            ],
+            "210": [
+                {
+                    "i1": " ",
+                    "i2": " ",
+                    "subfields": {
+                        "a": [
+                            ""
+                        ],
+                        "c": [
+                            "Albert Einstein College of Medicine of Yeshiva University"
+                        ]
+                    }
+                }
+            ],
+            "300": [
+                {
+                    "i1": " ",
+                    "i2": " ",
+                    "subfields": {
+                        "a": [
+                            "Academic Journal"
+                        ]
+                    }
+                }
+            ],
+            "310": [
+                {
+                    "i1": " ",
+                    "i2": " ",
+                    "subfields": {
+                        "a": [
+                            "Online version of print publication."
+                        ]
+                    }
+                }
+            ],
+            "463": [
+                {
+                    "i1": " ",
+                    "i2": "1",
+                    "subfields": {}
+                }
+            ],
+            "801": [
+                {
+                    "i1": " ",
+                    "i2": " ",
+                    "subfields": {
+                        "a": [
+                            "RU"
+                        ],
+                        "b": [
+                            "ORGANIZATION"
+                        ],
+                        "c": [
+                            "20110608"
+                        ]
+                    }
+                }
+            ],
+            "856": [
+                {
+                    "i1": "4",
+                    "i2": "0",
+                    "subfields": {
+                        "3": [
+                            "Full text available: Mar 2003-. "
+                        ],
+                        "u": [
+                            "http://search.ebscohost.com/direct.asp?db=a9h&jid=%220IF%22&scope=site"
+                        ],
+                        "z": [
+                            "Available on EBSCOhost."
+                        ]
+                    }
+                }
+            ]
+        },
+        "leader": "00772cas a22002053i 450 ",
+        "syntax": "1.2.840.10003.5.28"
+    },
+    {
+        "controlfields": {
+            "001": "107",
+            "005": "20110608180210.0"
+        },
+        "datafields": {
+            "011": [
+                {
+                    "i1": " ",
+                    "i2": " ",
+                    "subfields": {
+                        "a": [
+                            "0040-0912"
+                        ]
+                    }
+                }
+            ],
+            "035": [
+                {
+                    "i1": " ",
+                    "i2": " ",
+                    "subfields": {
+                        "a": [
+                            "(EbpS)ebs487755"
+                        ]
+                    }
+                }
+            ],
+            "100": [
+                {
+                    "i1": " ",
+                    "i2": " ",
+                    "subfields": {
+                        "a": [
+                            "20031017a    9999u  y0engy01020304ba"
+                        ]
+                    }
+                }
+            ],
+            "101": [
+                {
+                    "i1": "|",
+                    "i2": " ",
+                    "subfields": {
+                        "a": [
+                            "eng"
+                        ]
+                    }
+                }
+            ],
+            "110": [
+                {
+                    "i1": " ",
+                    "i2": " ",
+                    "subfields": {
+                        "a": [
+                            "auu    0uu0"
+                        ]
+                    }
+                }
+            ],
+            "200": [
+                {
+                    "i1": "1",
+                    "i2": " ",
+                    "subfields": {
+                        "a": [
+                            "Education + Training"
+                        ],
+                        "b": [
+                            "[electronic resource]."
+                        ]
+                    }
+                }
+            ],
+            "210": [
+                {
+                    "i1": " ",
+                    "i2": " ",
+                    "subfields": {
+                        "a": [
+                            "West Yorkshire"
+                        ],
+                        "c": [
+                            "Emerald Group Publishing Ltd."
+                        ]
+                    }
+                }
+            ],
+            "300": [
+                {
+                    "i1": " ",
+                    "i2": " ",
+                    "subfields": {
+                        "a": [
+                            "Academic Journal"
+                        ]
+                    }
+                }
+            ],
+            "310": [
+                {
+                    "i1": " ",
+                    "i2": " ",
+                    "subfields": {
+                        "a": [
+                            "Indexing and abstracting for print publication."
+                        ]
+                    }
+                }
+            ],
+            "463": [
+                {
+                    "i1": " ",
+                    "i2": "1",
+                    "subfields": {}
+                }
+            ],
+            "801": [
+                {
+                    "i1": " ",
+                    "i2": " ",
+                    "subfields": {
+                        "a": [
+                            "RU"
+                        ],
+                        "b": [
+                            "ORGANIZATION"
+                        ],
+                        "c": [
+                            "20110608"
+                        ]
+                    }
+                }
+            ],
+            "856": [
+                {
+                    "i1": "4",
+                    "i2": "0",
+                    "subfields": {
+                        "3": [
+                            "Abstracts Available: Mar 2003- "
+                        ],
+                        "u": [
+                            "http://search.ebscohost.com/direct.asp?db=a9h&jid=%220M7%22&scope=site"
+                        ],
+                        "z": [
+                            "Available on EBSCOhost."
+                        ]
+                    }
+                }
+            ]
+        },
+        "leader": "00750cas a22002053i 450 ",
+        "syntax": "1.2.840.10003.5.28"
+    },
+    {
+        "controlfields": {
+            "001": "108",
+            "005": "20110608180210.0"
+        },
+        "datafields": {
+            "011": [
+                {
+                    "i1": " ",
+                    "i2": " ",
+                    "subfields": {
+                        "a": [
+                            "0956-0157"
+                        ]
+                    }
+                }
+            ],
+            "035": [
+                {
+                    "i1": " ",
+                    "i2": " ",
+                    "subfields": {
+                        "a": [
+                            "(EbpS)ebs488578"
+                        ]
+                    }
+                }
+            ],
+            "100": [
+                {
+                    "i1": " ",
+                    "i2": " ",
+                    "subfields": {
+                        "a": [
+                            "20031017a    9999u  y0engy01020304ba"
+                        ]
+                    }
+                }
+            ],
+            "101": [
+                {
+                    "i1": "|",
+                    "i2": " ",
+                    "subfields": {
+                        "a": [
+                            "eng"
+                        ]
+                    }
+                }
+            ],
+            "110": [
+                {
+                    "i1": " ",
+                    "i2": " ",
+                    "subfields": {
+                        "a": [
+                            "auu    0uu0"
+                        ]
+                    }
+                }
+            ],
+            "200": [
+                {
+                    "i1": "1",
+                    "i2": " ",
+                    "subfields": {
+                        "a": [
+                            "Water and Environment International"
+                        ],
+                        "b": [
+                            "[electronic resource]."
+                        ]
+                    }
+                }
+            ],
+            "210": [
+                {
+                    "i1": " ",
+                    "i2": " ",
+                    "subfields": {
+                        "a": [
+                            "Uxbridge, Middlesex"
+                        ],
+                        "c": [
+                            "Turret Rai Plc."
+                        ]
+                    }
+                }
+            ],
+            "300": [
+                {
+                    "i1": " ",
+                    "i2": " ",
+                    "subfields": {
+                        "a": [
+                            "Academic Journal"
+                        ]
+                    }
+                }
+            ],
+            "310": [
+                {
+                    "i1": " ",
+                    "i2": " ",
+                    "subfields": {
+                        "a": [
+                            "Online version of print publication."
+                        ]
+                    }
+                }
+            ],
+            "463": [
+                {
+                    "i1": " ",
+                    "i2": "1",
+                    "subfields": {}
+                }
+            ],
+            "801": [
+                {
+                    "i1": " ",
+                    "i2": " ",
+                    "subfields": {
+                        "a": [
+                            "RU"
+                        ],
+                        "b": [
+                            "ORGANIZATION"
+                        ],
+                        "c": [
+                            "20110608"
+                        ]
+                    }
+                }
+            ],
+            "856": [
+                {
+                    "i1": "4",
+                    "i2": "0",
+                    "subfields": {
+                        "3": [
+                            "Full text available: Sep 1999-Sep 2001. "
+                        ],
+                        "u": [
+                            "http://search.ebscohost.com/direct.asp?db=a9h&jid=%220UN%22&scope=site"
+                        ],
+                        "z": [
+                            "Available on EBSCOhost."
+                        ]
+                    }
+                }
+            ]
+        },
+        "leader": "00753cas a22002053i 450 ",
+        "syntax": "1.2.840.10003.5.28"
+    },
+    {
+        "controlfields": {
+            "001": "109",
+            "005": "20110608180210.0"
+        },
+        "datafields": {
+            "011": [
+                {
+                    "i1": " ",
+                    "i2": " ",
+                    "subfields": {
+                        "a": [
+                            "1357-6283"
+                        ]
+                    }
+                }
+            ],
+            "035": [
+                {
+                    "i1": " ",
+                    "i2": " ",
+                    "subfields": {
+                        "a": [
+                            "(EbpS)ebs488590"
+                        ]
+                    }
+                }
+            ],
+            "100": [
+                {
+                    "i1": " ",
+                    "i2": " ",
+                    "subfields": {
+                        "a": [
+                            "20031016a    9999u  y0engy01020304ba"
+                        ]
+                    }
+                }
+            ],
+            "101": [
+                {
+                    "i1": "|",
+                    "i2": " ",
+                    "subfields": {
+                        "a": [
+                            "eng"
+                        ]
+                    }
+                }
+            ],
+            "110": [
+                {
+                    "i1": " ",
+                    "i2": " ",
+                    "subfields": {
+                        "a": [
+                            "auu    0uu0"
+                        ]
+                    }
+                }
+            ],
+            "200": [
+                {
+                    "i1": "1",
+                    "i2": " ",
+                    "subfields": {
+                        "a": [
+                            "Education for Health Change in Learning and Practice"
+                        ],
+                        "b": [
+                            "[electronic resource]."
+                        ]
+                    }
+                }
+            ],
+            "210": [
+                {
+                    "i1": " ",
+                    "i2": " ",
+                    "subfields": {
+                        "a": [
+                            "Oxfordshire"
+                        ],
+                        "c": [
+                            "Carfax Publishing Company"
+                        ]
+                    }
+                }
+            ],
+            "300": [
+                {
+                    "i1": " ",
+                    "i2": " ",
+                    "subfields": {
+                        "a": [
+                            "Academic Journal"
+                        ]
+                    }
+                }
+            ],
+            "310": [
+                {
+                    "i1": " ",
+                    "i2": " ",
+                    "subfields": {
+                        "a": [
+                            "Online version of print publication."
+                        ]
+                    }
+                }
+            ],
+            "463": [
+                {
+                    "i1": " ",
+                    "i2": "1",
+                    "subfields": {}
+                }
+            ],
+            "801": [
+                {
+                    "i1": " ",
+                    "i2": " ",
+                    "subfields": {
+                        "a": [
+                            "RU"
+                        ],
+                        "b": [
+                            "ORGANIZATION"
+                        ],
+                        "c": [
+                            "20110608"
+                        ]
+                    }
+                }
+            ],
+            "856": [
+                {
+                    "i1": "4",
+                    "i2": "0",
+                    "subfields": {
+                        "3": [
+                            "Full text available: Jul 1998-Nov 2006. "
+                        ],
+                        "u": [
+                            "http://search.ebscohost.com/direct.asp?db=a9h&jid=%220UZ%22&scope=site"
+                        ],
+                        "z": [
+                            "Available on EBSCOhost."
+                        ]
+                    }
+                }
+            ]
+        },
+        "leader": "00772cas a22002053i 450 ",
+        "syntax": "1.2.840.10003.5.28"
+    },
+    {
+        "controlfields": {
+            "001": "110",
+            "005": "20110608180210.0"
+        },
+        "datafields": {
+            "011": [
+                {
+                    "i1": " ",
+                    "i2": " ",
+                    "subfields": {
+                        "a": [
+                            "0018-814X"
+                        ]
+                    }
+                }
+            ],
+            "035": [
+                {
+                    "i1": " ",
+                    "i2": " ",
+                    "subfields": {
+                        "a": [
+                            "(EbpS)ebs488751"
+                        ]
+                    }
+                }
+            ],
+            "100": [
+                {
+                    "i1": " ",
+                    "i2": " ",
+                    "subfields": {
+                        "a": [
+                            "20041019a    9999u  y0engy01020304ba"
+                        ]
+                    }
+                }
+            ],
+            "101": [
+                {
+                    "i1": "|",
+                    "i2": " ",
+                    "subfields": {
+                        "a": [
+                            "eng"
+                        ]
+                    }
+                }
+            ],
+            "110": [
+                {
+                    "i1": " ",
+                    "i2": " ",
+                    "subfields": {
+                        "a": [
+                            "auu    0uu0"
+                        ]
+                    }
+                }
+            ],
+            "200": [
+                {
+                    "i1": "1",
+                    "i2": " ",
+                    "subfields": {
+                        "a": [
+                            "Hydraulics & Pneumatics"
+                        ],
+                        "b": [
+                            "[electronic resource]."
+                        ]
+                    }
+                }
+            ],
+            "210": [
+                {
+                    "i1": " ",
+                    "i2": " ",
+                    "subfields": {
+                        "a": [
+                            "Cleveland"
+                        ],
+                        "c": [
+                            "Penton Publishing"
+                        ]
+                    }
+                }
+            ],
+            "300": [
+                {
+                    "i1": " ",
+                    "i2": " ",
+                    "subfields": {
+                        "a": [
+                            "Trade Publication"
+                        ]
+                    }
+                }
+            ],
+            "310": [
+                {
+                    "i1": " ",
+                    "i2": " ",
+                    "subfields": {
+                        "a": [
+                            "Online version of print publication."
+                        ]
+                    }
+                }
+            ],
+            "463": [
+                {
+                    "i1": " ",
+                    "i2": "1",
+                    "subfields": {}
+                }
+            ],
+            "801": [
+                {
+                    "i1": " ",
+                    "i2": " ",
+                    "subfields": {
+                        "a": [
+                            "RU"
+                        ],
+                        "b": [
+                            "ORGANIZATION"
+                        ],
+                        "c": [
+                            "20110608"
+                        ]
+                    }
+                }
+            ],
+            "856": [
+                {
+                    "i1": "4",
+                    "i2": "0",
+                    "subfields": {
+                        "3": [
+                            "Full text available: Apr 2004-. "
+                        ],
+                        "u": [
+                            "http://search.ebscohost.com/direct.asp?db=a9h&jid=%220W3%22&scope=site"
+                        ],
+                        "z": [
+                            "Available on EBSCOhost."
+                        ]
+                    }
+                }
+            ]
+        },
+        "leader": "00726cas a22002053i 450 ",
+        "syntax": "1.2.840.10003.5.28"
+    },
+    {
+        "controlfields": {
+            "001": "111",
+            "005": "20110608180210.0"
+        },
+        "datafields": {
+            "011": [
+                {
+                    "i1": " ",
+                    "i2": " ",
+                    "subfields": {
+                        "a": [
+                            "0363-6127"
+                        ]
+                    }
+                }
+            ],
+            "035": [
+                {
+                    "i1": " ",
+                    "i2": " ",
+                    "subfields": {
+                        "a": [
+                            "(EbpS)ebs498376"
+                        ]
+                    }
+                }
+            ],
+            "100": [
+                {
+                    "i1": " ",
+                    "i2": " ",
+                    "subfields": {
+                        "a": [
+                            "20031021a    9999u  y0engy01020304ba"
+                        ]
+                    }
+                }
+            ],
+            "101": [
+                {
+                    "i1": "|",
+                    "i2": " ",
+                    "subfields": {
+                        "a": [
+                            "eng"
+                        ]
+                    }
+                }
+            ],
+            "110": [
+                {
+                    "i1": " ",
+                    "i2": " ",
+                    "subfields": {
+                        "a": [
+                            "auu    0uu0"
+                        ]
+                    }
+                }
+            ],
+            "200": [
+                {
+                    "i1": "1",
+                    "i2": " ",
+                    "subfields": {
+                        "a": [
+                            "American Journal of Physiology Renal Physiology"
+                        ],
+                        "b": [
+                            "[electronic resource]."
+                        ]
+                    }
+                }
+            ],
+            "300": [
+                {
+                    "i1": " ",
+                    "i2": " ",
+                    "subfields": {
+                        "a": [
+                            "Academic Journal"
+                        ]
+                    }
+                }
+            ],
+            "310": [
+                {
+                    "i1": " ",
+                    "i2": " ",
+                    "subfields": {
+                        "a": [
+                            "Indexing and abstracting for print publication."
+                        ]
+                    }
+                }
+            ],
+            "463": [
+                {
+                    "i1": " ",
+                    "i2": "1",
+                    "subfields": {}
+                }
+            ],
+            "801": [
+                {
+                    "i1": " ",
+                    "i2": " ",
+                    "subfields": {
+                        "a": [
+                            "RU"
+                        ],
+                        "b": [
+                            "ORGANIZATION"
+                        ],
+                        "c": [
+                            "20110608"
+                        ]
+                    }
+                }
+            ],
+            "856": [
+                {
+                    "i1": "4",
+                    "i2": "0",
+                    "subfields": {
+                        "3": [
+                            "Abstracts Available: Mar 1997- "
+                        ],
+                        "u": [
+                            "http://search.ebscohost.com/direct.asp?db=a9h&jid=%221SL%22&scope=site"
+                        ],
+                        "z": [
+                            "Available on EBSCOhost."
+                        ]
+                    }
+                }
+            ]
+        },
+        "leader": "00715cas a22001933i 450 ",
+        "syntax": "1.2.840.10003.5.28"
+    }
+]

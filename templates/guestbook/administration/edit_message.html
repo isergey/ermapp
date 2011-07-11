@@ -1,0 +1,61 @@
+{% extends "guestbook/administration/guestbook.html" %}
+{% block module_action %}редактирование отзыва{% endblock %}
+{% block module_page %}
+<div class="module_actions column prepend-1 last">
+    <a class="button negative delete" title="Удалить отзыв" href="{% url administration_guestbook_message_delete feedback.id%}"><img src="/media/images/icons/delete_16.png" alt=""/>Удалить страницу</a>
+</div>
+<hr/>
+<div class="column span-19 prepend-1 last">
+    <p><b>Дата создания отзыва: </b>{{ feedback.add_date }}</p>
+    <form id="dummy" action="" method="post">
+        <fieldset>
+            <div class="last">
+                <label for="{{ form.name.auto_id }}">{{ form.name.label }}</label><br>
+                <input type="text" class="text span-18" name="{{ form.name.name }}" id="{{ form.name.auto_id }}" {% if form.name.data %}value="{{ form.name.data }}" {% endif %}>
+                {% if form.name.errors %}
+                <div class="error">
+                    {{ form.name.errors }}
+                </div>
+                {% endif %}
+            </div>
+            <div class="last">
+                <label for="{{ form.published.auto_id }}">{{ form.published.label }}</label><br>
+                {{ form.published }}
+                {% if form.published.errors %}
+                <div class="error">
+                    {{ form.published.errors }}
+                </div>
+                {% endif %}
+            </div>
+            <div class="last">
+                <label for="{{ form.email.auto_id }}">{{ form.email.label }}</label><br>
+                <input type="text" class="text span-18" name="{{ form.email.name }}" id="{{ form.email.auto_id }}" {% if form.email.data %} value="{{ form.email.data }}"{% endif %}>
+                {% if form.email.errors %}
+                <div class="error">
+                    {{ form.email.errors }}
+                </div>
+                {% endif %}
+            </div>
+            <div class="last">
+                <label for="{{ form.message.auto_id }}">{{ form.message.label }}</label>
+                <textarea name="{{ form.message.name }}" id="{{ form.message.auto_id }}" class="span-18">{% if form.message.data %}{{ form.message.data }}{% endif %}</textarea>
+                {% if form.content.errors %}
+                <div class="error">
+                    {{ form.content.errors }}
+                </div>
+                {% endif %}
+            </div>
+            <div class="last">
+                <button type="submit" class="button positive" title="Применить изменения">
+                    <img src="/media/css/bp/buttons/icons/tick_16.png" alt=""/> Применить
+                </button>
+                <a class="button negative" title="Отменить редактирование отзыва" href="{% url administration_pages_index %}">
+                    <img src="/media/images/icons/stop_16.png" alt=""/>Отменить
+                </a>
+
+            </div>
+        </fieldset>
+    </form>
+</div>
+<hr class="space"/>
+{% endblock %}
