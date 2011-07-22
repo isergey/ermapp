@@ -2,24 +2,6 @@
 {% load i18n %}
 {% load pagination_tag %}
 {% block content %}
-    <style>
-        .form ul.errorlist {
-            margin: 0;
-            padding: 0;
-            color: red;
-            list-style: none;
-            margin-left: 200px;
-            clear: both;
-        }
-
-        .ggForm textarea, input[type=text], input[type=password], input[type=email], input[type=url], input[type=date], input[type=number], input[type=time], input[type=date], input.date {
-            width: 50%;
-        }
-        .pagination{
-            font-size: 1.2em;
-        }
-
-    </style>
     <div class="pane current" style="display: block;">
         <a href="{% url erm_admin_licence_create  %}" class="button button-gray">{% trans 'Add license' %}</a>
         <hr class="space"/>
@@ -35,7 +17,7 @@
                         <th>{% trans 'License name' %}</th>
                         <th>{% trans 'Start date' %}</th>
                         <th>{% trans 'End date' %}</th>
-                        <th class="span-3">{% trans 'Actions' %}</th>
+                        <th>{% trans 'Actions' %}</th>
                     </tr>
                     {% for license in licenses_list.object_list %}
                         <tr>
@@ -44,11 +26,12 @@
                             <td>{{ license.start_date }}</td>
                             <td>{{ license.end_date }}</td>
                             <td>
-                                <a title="{% trans 'Edit license' %}" class="button" href="#">
-                                    {#                                <img src="/media/images/icons/pencil_16.png" alt=""/>#}{% trans 'Edit' %}
+                                <a title="{% trans 'Edit license' %}" class="button button-gray action" href="#">
+                                    <img src="{{ STATIC_URL }}default/images/icons/pencil_16.png" alt="">
                                 </a>
-                                <a class="button negative delete" title="{% trans 'Delete license' %}" href="#">
-                                    {% trans 'Delete' %}
+
+                                <a class="button button-gray action" title="{% trans 'Delete license' %}" href="#">
+                                    <img src="{{ STATIC_URL }}default/images/icons/delete_16.png" alt="">
                                 </a>
                             </td>
                         </tr>

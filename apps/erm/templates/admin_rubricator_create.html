@@ -1,0 +1,24 @@
+{% extends 'admin_erm.html' %}
+{% load i18n %}
+{% block content %}
+    <div class="pane current" style="display: block;">
+        <a href="#" class="button button-gray">{% trans 'Rubricators list' %}</a>
+        <hr class="space"/>
+        <div class="panel">
+            <h2>{% trans "Create rubricator" %}</h2>
+
+            <div class="ggForm" style="text-align:left;">
+
+                <form class="form" action="" method="POST" id="ggform_4e16d5983d663">
+                    {% include "admin_rubricator_form_fieldset.html" %}
+                    <hr/>
+                    <div align="center">
+                        <button type="submit" class="button button-green">{% trans 'Create' %}</button>
+                        <a href="#" class="button button-red">{% trans 'Cancel' %}</a>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}

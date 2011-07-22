@@ -11,8 +11,21 @@ DEV = {
             'PASSWORD': '123456', # Not used with sqlite3.
             'HOST': '127.0.0.1', # Set to empty string for localhost. Not used with sqlite3.
             'PORT': '3306', # Set to empty string for default. Not used with sqlite3.
-
+#            'OPTIONS': {
+#                'init_command': 'SET storage_engine=INNODB',
+#                }
         }
+
+#        'default': {
+#            'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#            # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
+#            #'NAME': 'base.db', # Or path to database file if using sqlite3.
+#            'NAME': 'erm', # Or path to database file if using sqlite3.
+#            'USER': 'postgres', # Not used with sqlite3.
+#            'PASSWORD': '123456', # Not used with sqlite3.
+#            'HOST': '127.0.0.1', # Set to empty string for localhost. Not used with sqlite3.
+#            'PORT': '5432', # Set to empty string for default. Not used with sqlite3.
+#        }
     },
 
     'CACHES': {

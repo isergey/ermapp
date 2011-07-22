@@ -1,6 +1,6 @@
 from cStringIO import StringIO
 
-from record import Record
+from record import Record, UnimarcRecord
 from exceptions import RecordLengthInvalid
 
 class Reader(object):
@@ -92,6 +92,30 @@ class MARCReader(Reader):
                         utf8_handling=self.utf8_handling)
         return record
 
+class UNIMARCReader(MARCReader):
+    def __init__(self, *args, **kwargs):
+        super(UNIMARCReader, self).__init__(*args, **kwargs)
+
+    def next(self):
+        """
+        To support iteration.
+        """
+        first5 = self.file_handle.read(5)
+        if not first5:
+            raise StopIteration
+        if len(first5) < 5:
+            raise RecordLengthInvalid
+
+        length = int(first5)
+        chunk = self.file_handle.read(length - 5)
+        chunk = first5 + chunk
+        record = UnimarcRecord(chunk,
+                        to_unicode=self.to_unicode,
+                        force_utf8=self.force_utf8,
+                        encoding=self.encoding,
+                        hide_utf8_warnings=self.hide_utf8_warnings,
+                        utf8_handling=self.utf8_handling)
+        return record
 
 def map_records(f, *files):
     """

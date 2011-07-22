@@ -1,0 +1,62 @@
+{% extends 'admin_erm.html' %}
+{% load i18n %}
+{% block content %}
+    <div class="pane current" style="display: block;">
+        <a href="#" class="button button-gray">{% trans 'Rubric list' %}</a>
+        <hr class="space"/>
+        <div class="panel">
+            <h2>{% trans "Load file for extracting rubrics" %}</h2>
+
+            <div class="ggForm" style="text-align:left;">
+
+                <form class="form" action="" method="POST" id="ggform_4e16d5983d663" enctype="multipart/form-data">
+                    <fieldset>
+                        <dl>
+                            <dd>
+                                <label>{{ form.rubricator.label }}</label>
+                                <div class="FieldBox">
+                                    {{ form.rubricator }}
+                                    {{ form.rubricator.errors }}
+                                </div>
+                            </dd>
+                            <dd>
+                                <label>{{ form.syntax.label }}</label>
+                                <div class="FieldBox">
+                                    {{ form.syntax }}
+                                    {{ form.syntax.errors }}
+                                </div>
+                            </dd>
+                            <dd>
+                                <label>{{ form.type.label }}</label>
+                                <div class="FieldBox">
+                                    {{ form.type }}
+                                    {{ form.type.errors }}
+                                </div>
+                            </dd>
+                            <dd>
+                                <label>{{ form.encoding.label }}</label>
+                                <div class="FieldBox">
+                                    {{ form.encoding }}
+                                    {{ form.encoding.errors }}
+                                </div>
+                            </dd>
+                            <dd>
+                                <label>{{ form.file.label }}</label>
+                                <div class="FieldBox">
+                                    {{ form.file }}
+                                    {{ form.file.errors }}
+                                </div>
+                            </dd>                        
+                        </dl>
+                    </fieldset>
+                    <hr/>
+                    <div align="center">
+                        <button type="submit" class="button button-green">{% trans 'Load' %}</button>
+                        <a href="#" class="button button-red">{% trans 'Cancel' %}</a>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}

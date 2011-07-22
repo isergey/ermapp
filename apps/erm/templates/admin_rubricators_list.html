@@ -1,0 +1,45 @@
+{% extends 'admin_erm.html' %}
+{% load i18n %}
+{% load pagination_tag %}
+{% block content %}
+    <div class="pane current" style="display: block;">
+        <a href="{% url erm_admin_rubricator_create  %}" class="button button-gray">{% trans 'Add rubricator' %}</a>
+        <hr class="space"/>
+        <div class="panel">
+            <h2>{% trans "Rubricators list" %}</h2>
+            <div class="table_container">
+                {#                <div class="table_title">#}
+                {#                    {% trans "Licenses list" %}#}
+                {#                </div>#}
+                <table>
+                    <tr>
+                        <th>{% trans 'Rubricator name' %}</th>
+                        <th>{% trans 'Vandor name' %}</th>
+                        <th>{% trans 'Actions' %}</th>
+                    </tr>
+                    {% for rubricator in rubricators_list.object_list %}
+                        <tr>
+                            <td>{{ rubricator.name }}</td>
+                            <td>{{ rubricator.vendor }}</td>
+                            <td>
+                                <a title="{% trans 'Edit rubricator' %}" class="button button-gray action" href="#">
+                                    <img src="{{ STATIC_URL }}default/images/icons/pencil_16.png" alt="">
+                                </a>
+
+                                <a class="button button-gray action" title="{% trans 'Delete rubricator' %}" href="#">
+                                    <img src="{{ STATIC_URL }}default/images/icons/delete_16.png" alt="">
+                                </a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </table>
+
+                {% if rubricators_list.paginator.num_pages > 1 %}
+                    <div align="center" class="">
+                        {% pagination rubricators_list %}
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

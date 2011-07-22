@@ -138,7 +138,7 @@ MIDDLEWARE_CLASSES = (
 #    'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
-#    'debug_toolbar.middleware.DebugToolbarMiddleware',
+    #'debug_toolbar.middleware.DebugToolbarMiddleware',
     )
 
 ROOT_URLCONF = 'ermapp.urls'
@@ -161,6 +161,7 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     'debug_toolbar',
     'south',
+    'treebeard',
     'mptt',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
@@ -222,7 +223,7 @@ DEBUG_TOOLBAR_PANELS = (
     )
 
 DEBUG_TOOLBAR_CONFIG = {
-    'INTERCEPT_REDIRECTS': False,
+    'INTERCEPT_REDIRECTS': True,
 }
 INTERNAL_IPS = ('127.0.0.1',)
 

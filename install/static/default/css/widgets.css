@@ -148,7 +148,9 @@ button::-moz-focus-inner, input::-moz-focus-inner { border: 0; }
     filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#5c8825', endColorstr='#8fbb44');
 }
 
-
+.button.action {
+        padding: 5px 5px;
+}
 /**
  * Widgets
  */
@@ -694,6 +696,9 @@ a.caldisabled {
     float: left;
     clear: left;
 }
+.form fieldset{
+    border-radius: 4px;
+}
 
 div.FieldBox input[type=checkbox]
 {
@@ -703,6 +708,19 @@ div.FieldBox input[type=checkbox]
 .form input, .form textarea, .form select {
     float: left;
     clear: right;
+}
+
+.form ul.errorlist {
+    margin: 0;
+    padding: 0;
+    color: red;
+    list-style: none;
+    margin-left: 200px;
+    clear: both;
+}
+
+.ggForm textarea, input[type=text], input[type=password], input[type=email], input[type=url], input[type=date], input[type=number], input[type=time], input[type=date], input.date {
+    width: 50%;
 }
 
 input.half,select.half,textarea.half {
