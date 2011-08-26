@@ -193,12 +193,15 @@ class Record(object):
                         continue
                     code = subfield[0]
                     data = subfield[1:]
-
+                    print data
                     if to_unicode:
                         if self.leader[9] == 'a' or force_utf8:
                             data = data.decode('utf-8', utf8_handling)
                         elif encoding and (encoding != 'marc-8'):
-                            data = data.decode(encoding, utf8_handling)
+                            try:
+                                data = data.decode(encoding, utf8_handling)
+                            except UnicodeDecodeError:
+                                data = u"Can't decode string"
                         else:
                             data = marc8_to_unicode(data, hide_utf8_warnings)
                     subfields.append(code)

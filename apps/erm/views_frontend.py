@@ -8,17 +8,22 @@ import simplejson
 import StringIO
 import logging
 
+from django.views.decorators.http import require_http_methods
+from django.utils.decorators import method_decorator
+from django.contrib.auth.decorators import login_required
 from django.conf import settings
 from django.utils.translation import ugettext as _
 from django.template import RequestContext
 from django.shortcuts import render_to_response
 from django.http import HttpResponse, Http404, HttpResponseRedirect
 from django.core.paginator import Paginator, InvalidPage, EmptyPage
+from django.forms.models import model_to_dict
+from view import View
 
 from libs import pyaz
 import libs.pymarc as pymarc
 import appsettings
-from models import Resource, Rubric
+from models import Resource, LocalRubric, RubircLink, ExtendedRubric, Rubric
 from mptt.exceptions import InvalidMove
 from mptt.forms import MoveNodeForm
 
@@ -113,38 +118,51 @@ def highlighting(words, record, filed='200', subfield='a' ):
     return record
 
 
+class BaseView(View):
+    #обработка пост запроса
+    def post(self):
+        request = self.request #используем объект request
+        return self.render_to_response('index.html', {'a': 'a', 'b': 'b'})
+
+    #обработка запроса, если нет методов для post или get
+    def do(self, year):
+        return self.render_to_response('index.html', {'a': 'a', 'b': 'b'})
+
+
 def index(request):
 #    resource = Resource(record='ededwedwed', record_syntax='XML')
 #    resource.save()
     logger = logging.getLogger('file_logger')
     logger.error(u'Вызов индекса')
     import sys
-    rubrics_tree = Rubric.tree.filter(show=True)
-    reader = pymarc.MARCReader(file(settings.SYSTEM_ROOT+'appdata/rusmarc_ebsco.mrc'), encoding='utf-8', to_unicode=True)
+
+    #    rubrics_tree = Rubric.tree.filter(show=True)
+    reader = pymarc.MARCReader(file(settings.SYSTEM_ROOT + 'appdata/rusmarc_ebsco.mrc'), encoding='utf-8',
+                               to_unicode=True)
     records = []
     i = 0
     for record in reader:
         print str(record.as_marc())
-        i+=1
+        i += 1
         if i > 10: break
         records.append(pymarc.record_to_dict(record=record))
         #print simplejson.dumps(pymarc.record_to_dict(record=record), encoding='utf-8', ensure_ascii=False)
-#    print 'ok'
+    #    print 'ok'
     #print simplejson.dumps(records, ensure_ascii=False ,encoding='utf-8')
     print sys.getsizeof(pymarc)
     #simplejson.dump(records, , ensure_ascii=False, encoding='utf-8')
     #print simplejson.dumps(records, ensure_ascii=False, encoding='utf-8')
 
-    file(settings.SYSTEM_ROOT+'appdata/rusmarc_ebsco.json','wb').write(simplejson.dumps(records, encoding='utf-8', ensure_ascii=False, sort_keys=True, indent=4).encode('utf-8'))
-    records =  simplejson.load(file(settings.SYSTEM_ROOT+'appdata/rusmarc_ebsco.json','rb'))
+    file(settings.SYSTEM_ROOT + 'appdata/rusmarc_ebsco.json', 'wb').write(
+        simplejson.dumps(records, encoding='utf-8', ensure_ascii=False, sort_keys=True, indent=4).encode('utf-8'))
+    records = simplejson.load(file(settings.SYSTEM_ROOT + 'appdata/rusmarc_ebsco.json', 'rb'))
     for record in records:
         print record['datafields']['200'][0]['subfields']['a'][0]
-        
+
     return render_to_response(
         'index.html',
             {'message': _('Hello'),
-             'nodes': rubrics_tree
-        },
+             },
         context_instance=RequestContext(request)
     )
 
@@ -243,11 +261,11 @@ def search_resources(request):
             for zrecord in zrecords.object_list:
                 number += 1
                 record = pymarc.Record(data=zrecord, to_unicode=True, encoding='utf-8')
-                record.add_field(pymarc.Field(tag='993', indicators=(' ',' '), subfields=('a',record.as_md5(),)))
+                record.add_field(pymarc.Field(tag='993', indicators=(' ', ' '), subfields=('a', record.as_md5(),)))
                 record = highlighting(fuzzy_terms, record)
-                print record
+                #print record
                 search_results.append(
-                    {
+                        {
                         'number': number,
                         'record': record.as_dict()
                     }
@@ -260,7 +278,7 @@ def search_resources(request):
     return render_to_response(
         'index.html',
             {
-            'test': {'rec':[{'ee':'ggg'}]},
+            'test': {'rec': [{'ee': 'ggg'}]},
             'search_url': request.GET.urlencode(),
             'search_results': search_results,
             'pages_list': zrecords,
@@ -313,6 +331,110 @@ def bibliograph(request):
         'bibliograph.html',
         context_instance=RequestContext(request)
     )
+
+
+def rubric_path(node):
+    path_list = [node]
+    #print node.get_ancestors()
+    parent = node.parent
+    while parent:
+        path_list.append(parent)
+        parent = parent.parent
+    return path_list
+
+
+def rubrics_select(request):
+    rubricators = ExtendedRubric.objects.filter(parent=None)
+    return render_to_response(
+        'link_rubrics.html',
+            {
+            'rubricators': rubricators,
+            },
+        context_instance=RequestContext(request)
+    )
+
+
+def search_local_rubrics(request):
+    rubric_name = request.GET.get('name', None)
+    page = request.GET.get('page', 0)
+
+    local_rubrics = LocalRubric.objects.filter(name__icontains=rubric_name).exclude(parent=None).order_by('name')
+    paginator = Paginator(local_rubrics, 20)
+    try:
+        local_rubrics_list = paginator.page(page)
+    except (EmptyPage, InvalidPage):
+        local_rubrics_list = paginator.page(paginator.num_pages)
+
+    pathes = []
+
+    for rubric in local_rubrics_list.object_list:
+        ancestors = rubric_path(rubric) #rubric.get_ancestors(ascending=True)
+        row = []
+        for ancestor in  ancestors[:-1]:
+            ancestor_dict = model_to_dict(ancestor)
+            ancestor_dict['is_leaf_node'] = ancestor.is_leaf_node()
+            row.insert(0, ancestor_dict)
+            #row.append(model_to_dict(rubric))
+        pathes.append(row)
+    return HttpResponse(simplejson.dumps(pathes, encoding='utf-8', ensure_ascii=False))
+
+
+def search_ext_rubrics(request):
+    rubric_name = request.GET.get('name', None)
+    rubricator = request.GET.get('rubricator', None)
+    print rubricator
+    pathes = []
+
+    if rubric_name:
+        rubrics = ExtendedRubric.objects.filter(name__icontains=rubric_name, tree_id=int(rubricator)).exclude(
+            parent=None)
+        for rubric in rubrics:
+            ancestors = rubric.get_ancestors(ascending=True)
+            row = []
+            for ancestor in  ancestors:
+                if ancestor.is_root_node(): break
+                row.append(model_to_dict(ancestor))
+            row.append(model_to_dict(rubric))
+            pathes.append(row)
+
+    return HttpResponse(simplejson.dumps(pathes, encoding='utf-8', ensure_ascii=False))
+
+
+def get_local_rubric_info(request):
+    rubric_id = request.GET.get('id', None)
+    result = []
+    try:
+        rubric = LocalRubric.objects.get(pk=rubric_id)
+        ancestors = rubric_path(rubric)[:-1]
+        for ancestor in rubric_path(rubric)[:-1]:
+            result.insert(0, model_to_dict(ancestor))
+    except LocalRubric.DoesNotExist:
+        pass
+    print result
+    return HttpResponse(simplejson.dumps(result, encoding='utf-8', ensure_ascii=False))
+
+
+def get_ext_rubric_info(request):
+    rubric_id = request.GET.get('id', None)
+    result = {
+        'path': [],
+        'rubricator': None
+    }
+    try:
+        rubric = ExtendedRubric.objects.get(pk=rubric_id)
+        ancestors = rubric_path(rubric)[:-1]
+        for ancestor in rubric_path(rubric)[:-1]:
+            result['path'].insert(0, model_to_dict(ancestor))
+    except ExtendedRubric.DoesNotExist:
+        pass
+
+    try:
+        rubricator = ExtendedRubric.objects.get(parent=None, tree_id=rubric.tree_id)
+        result['rubricator'] = model_to_dict(rubricator)
+    except ExtendedRubric.DoesNotExist:
+        pass
+
+    return HttpResponse(simplejson.dumps(result, encoding='utf-8', ensure_ascii=False))
 
 
 #from django import http

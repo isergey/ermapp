@@ -41,7 +41,11 @@ class RubricatorForm(forms.ModelForm):
         model = Rubricator
 
 class RubricFileForm(forms.Form):
-    rubricator = forms.ChoiceField(choices=get_rubricators_choices(), label=_(u'Rubricator'))
+    def __init__(self, *args, **kwargs):
+        super(RubricFileForm, self).__init__(*args, **kwargs)
+        self.fields['rubricator'] = forms.ChoiceField(choices=get_rubricators_choices())
+        
+    rubricator = forms.ChoiceField(label=_(u'Rubricator'))
     syntax = forms.ChoiceField(choices=RUBRIC_FILE_SYNTAXES, label=_(u'File syntax'))
     type = forms.ChoiceField(choices=RUBRIC_FILE_TYPES, label=_(u'File type'))
     encoding = forms.ChoiceField(choices=ENCODINGS, label=_(u'Records encoding'))

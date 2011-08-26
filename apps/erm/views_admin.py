@@ -28,7 +28,7 @@ from models import Resource, Rubric
 from mptt.exceptions import InvalidMove
 from mptt.forms import MoveNodeForm
 
-from forms import LicenseForm, RubricFileForm, RubricatorForm
+from forms import LicenseForm, RubricFileForm, RubricatorForm, get_rubricators_choices
 
 from models import License, Rubricator, LocalRubric, Rubric, RubircLink
 #en_morph = pymorphy.get_morph(settings.SYSTEM_ROOT + 'appdata/pymorphy/dicts/en', 'cdb')
@@ -40,6 +40,7 @@ from models import License, Rubricator, LocalRubric, Rubric, RubircLink
 #
 #full_xslt_root = etree.parse(settings.SYSTEM_ROOT + 'appdata/xslt/marc.xsl')
 #full_transform = etree.XSLT(full_xslt_root)
+
 
 
 def index(request):
@@ -187,7 +188,7 @@ def load_rubrics_file(request):
             )
 
     else:
-        form = RubricFileForm()
+        form = RubricFileForm(initial={})
 
     return render_to_response(
         'admin_load_rubrics_file.html',

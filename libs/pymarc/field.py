@@ -59,17 +59,45 @@ class Field(object):
         [2] http://search.cpan.org/~eijabb/MARC-File-MARCMaker/
         [3] http://www.loc.gov/marc/mnemonics.html
         """
-        if self.is_control_field(): 
-            text = u'=%s  %s' % (self.tag, self.data.replace(' ','\\'))
+        if self.is_control_field():
+            text = '=%s  %s' % (self.tag, self.data.replace(' ','\\'))
         else:
-            text = u'=%s  ' % (self.tag)
+            text = '=%s  ' % (self.tag)
             for indicator in self.indicators:
                 if indicator in (' ','\\'):
                     text += '\\'
                 else:
-                    text += u'%s' % indicator
+                    text += '%s' % indicator
             for subfield in self:
-                text += (u'$%s%s' % subfield)
+                text += ('$%s%s' % subfield)
+        return text
+
+
+
+    def __unicode__(self):
+        """
+        A Field object in a string context will return the tag, indicators
+        and subfield as a string. This follows MARCMaker format; see [1]
+        and [2] for further reference. Special character mnemonic strings
+        have yet to be implemented (see [3]), so be forewarned. Note also
+        for complete MARCMaker compatibility, you will need to change your
+        newlines to DOS format ('\r\n').
+
+        [1] http://www.loc.gov/marc/makrbrkr.html#mechanics
+        [2] http://search.cpan.org/~eijabb/MARC-File-MARCMaker/
+        [3] http://www.loc.gov/marc/mnemonics.html
+        """
+        if self.is_control_field():
+            text = '=%s  %s' % (self.tag, self.data.replace(' ','\\'))
+        else:
+            text = '=%s  ' % (self.tag)
+            for indicator in self.indicators:
+                if indicator in (' ','\\'):
+                    text += '\\'
+                else:
+                    text += '%s' % indicator
+            for subfield in self:
+                text += ('$%s%s' % subfield)
         return text
 
     def __getitem__(self, subfield):

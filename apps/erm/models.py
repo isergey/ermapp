@@ -10,22 +10,24 @@ from treebeard.al_tree import AL_Node
 
 from treebeard.ns_tree import NS_Node
 
+from django.db.models.signals import post_save, post_delete
+from django.dispatch import receiver
 
 ACCESS_RULES = (
-        ('ip', u'IP'),
-        ('password', u'Password'),
-        ('free', u'Free'),
+    ('ip', u'IP'),
+    ('password', u'Password'),
+    ('free', u'Free'),
     )
 
 RESOURCE_TYPES = (
-        ('journal', u'Journal'),
+    ('journal', u'Journal'),
     )
 
 RECORD_SYNTAXES = (
-        ('xml', u'XML'),
-        ('rusmarc', u'RUSMARC'),
-        ('usmarc', u'USMARC'),
-        ('unimarc', u'UNIMARC'),
+    ('xml', u'XML'),
+    ('rusmarc', u'RUSMARC'),
+    ('usmarc', u'USMARC'),
+    ('unimarc', u'UNIMARC'),
     )
 
 class Organisation(models.Model):
@@ -48,10 +50,9 @@ class License(models.Model):
         return self.name + ' / ' + self.organisation.name
 
 
-
 class Rubricator(models.Model):
     name = models.CharField(max_length=128, verbose_name=_(u"Rubricator name"))
-    vendor = models.CharField(max_length=128, verbose_name=_(u"Rubricator's vendor") )
+    vendor = models.CharField(max_length=128, verbose_name=_(u"Rubricator's vendor"))
     comments = models.TextField(max_length=2048, verbose_name=_(u"Comments"), blank=True)
 
     def __unicode__(self):
@@ -61,28 +62,41 @@ class Rubricator(models.Model):
         unique_together = ("name", "vendor")
 
 
-
-
 class LocalRubric(MPTTModel):
+    parent = TreeForeignKey('self', null=True, blank=True, related_name='children', db_index=True)
     name = models.CharField(max_length=128, verbose_name=_(u'Rubric name'), db_index=True)
     show = models.BooleanField(verbose_name=_(u'Show or hide rubric'))
-    parent = TreeForeignKey('self', null=True, blank=True, related_name='children', db_index=True)
+    linked = models.BooleanField(verbose_name=u'Имеет ли связь', default=False, db_index=True)
+
     def __unicode__(self):
         return self.name
+
     class Meta:
         unique_together = ("name", "parent")
 
 
-
-class Rubric(MPTTModel):
-    #rubricator = models.ForeignKey(Rubricator, verbose_name=_(u"Rubricator"), db_index=True)
+class ExtendedRubric(MPTTModel):
+    parent = TreeForeignKey('self', null=True, blank=True, related_name='children', db_index=True)
     name = models.CharField(max_length=128, verbose_name=_(u'Rubric name'), db_index=True)
     show = models.BooleanField(verbose_name=_(u'Show or hide rubric'))
-    #linked = models.ManyToManyField('self',unique=True)
-    parent = TreeForeignKey('self', null=True, blank=True, related_name='children', db_index=True)
-    #parent = models.ForeignKey('self', null=True, blank=True, related_name='children')
+    linked = models.BooleanField(verbose_name=u'Имеет ли связь', default=False, db_index=True)
+
     def __unicode__(self):
         return self.name
+
+    class Meta:
+        unique_together = ("name", "parent")
+
+
+class Rubric(MPTTModel):
+    parent = TreeForeignKey('self', null=True, blank=True, related_name='children', db_index=True)
+    name = models.CharField(max_length=128, verbose_name=_(u'Rubric name'), db_index=True)
+    show = models.BooleanField(verbose_name=_(u'Show or hide rubric'))
+    linked = models.BooleanField(verbose_name=u'Имеет ли связь', default=False, db_index=True)
+
+    def __unicode__(self):
+        return self.name
+
     class Meta:
         unique_together = ("name", "parent")
         ordering = ['name']
@@ -90,8 +104,10 @@ class Rubric(MPTTModel):
 
 class RubircLink(models.Model):
     local_rubric = models.ForeignKey(LocalRubric)
-    ext_rubric = models.ForeignKey(Rubric)
+    ext_rubric = models.ForeignKey(ExtendedRubric)
 
+    def __unicode__(self):
+        return self.local_rubric.name + u' → ' + self.ext_rubric.name
 #
 #class Rubric(models.Model):
 #
@@ -147,6 +163,38 @@ class Resource(models.Model):
     database = models.ForeignKey(Database, verbose_name=_(u'Database'))
     record = models.TextField(max_length=102400, verbose_name=_(u'Record body (base64'))
     record_syntax = models.CharField(choices=RECORD_SYNTAXES, max_length=32, verbose_name=_(u'Record body'))
+
+
+
+
+
+
+
+@receiver(post_save, sender=RubircLink)
+def set_linked_flag(sender, instance, **kwargs):
+    rubric = instance.local_rubric
+    if not rubric.linked:
+        rubric.linked = True
+        rubric.save()
+
+    rubric = instance.ext_rubric
+    if not rubric.linked:
+        rubric.linked = True
+        rubric.save()
+
+
+@receiver(post_delete, sender=RubircLink)
+def unset_linked_flag(sender, instance, **kwargs):
+
+    if RubircLink.objects.filter(local_rubric=instance.local_rubric).count() == 0:
+        instance.local_rubric.linked = False
+        instance.local_rubric.save()
+
+
+    if RubircLink.objects.filter(ext_rubric=instance.ext_rubric).count() == 0:
+        instance.ext_rubric.linked = False
+        instance.ext_rubric.save()
+
 
 
 #class Template(models.Model):

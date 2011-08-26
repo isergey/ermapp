@@ -2,8 +2,15 @@
 from django.conf.urls.defaults import *
 
 urlpatterns = patterns('apps.erm',
+    url(r'^bv/(?P<year>\d+)/$', 'views_frontend.BaseView', name="erm_bv"),
     url(r'^$', 'views_frontend.index', name="erm_index"),
     url(r'^detail/$', 'views_frontend.resource_detail', name="erm_resource_detail"),
+    url(r'^rs/$', 'views_frontend.rubrics_select', name="erm_rubrics_select"),
+    url(r'^slr/$', 'views_frontend.search_local_rubrics', name="erm_search_local_rubrics"),
+    url(r'^ser/$', 'views_frontend.search_ext_rubrics', name="erm_search_ext_rubrics"),
+    url(r'^glri/$', 'views_frontend.get_local_rubric_info', name="erm_get_local_rubric_info"),
+    url(r'^geri/$', 'views_frontend.get_ext_rubric_info', name="erm_get_ext_rubric_info"),
+
     #url(r'^detail/pdf/$', 'resource_detail_pdf',  name="erm_resource_detail_pdf"),
     url(r'^search/$', 'views_frontend.search_resources', name="erm_search_resources"),
     url(r'^admin/$', 'views_admin.index', name="erm_admin_index"),

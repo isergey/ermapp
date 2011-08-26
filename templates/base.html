@@ -4,50 +4,54 @@
 <html>
 <head>
     <title>Электронные ресурсы</title>
-    <link rel="stylesheet" href="{{ STATIC_URL }}css/blueprint/screen.css" type="text/css" media="screen, projection">
-    <link rel="stylesheet" href="{{ STATIC_URL }}css/blueprint/print.css" type="text/css" media="print">
-    <!--[if lt IE 8]><link rel="stylesheet" href={{ STATIC_URL }}css/blueprint/ie.css" type="text/css" media="screen, projection">
-    <![endif]-->
-    <!-- Import fancy-type plugin for the sample page. -->
-    <link rel="stylesheet" href="{{ STATIC_URL }}css/blueprint/plugins/fancy-type/screen.css" type="text/css"
-          media="screen, projection">
+{#    <link rel="stylesheet" href="{{ STATIC_URL }}css/blueprint/screen.css" type="text/css" media="screen, projection">#}
+{#    <link rel="stylesheet" href="{{ STATIC_URL }}css/blueprint/print.css" type="text/css" media="print">#}
+{#    <!--[if lt IE 8]><link rel="stylesheet" href={{ STATIC_URL }}css/blueprint/ie.css" type="text/css" media="screen, projection">#}
+{#    <![endif]-->#}
+{#    <!-- Import fancy-type plugin for the sample page. -->#}
+{#    <link rel="stylesheet" href="{{ STATIC_URL }}css/blueprint/plugins/fancy-type/screen.css" type="text/css"#}
+{#          media="screen, projection">#}
     <link rel="stylesheet" href="{{ STATIC_URL }}default/css/style.css" type="text/css" media="screen, projection">
     <link rel="stylesheet" href="{{ STATIC_URL }}default/css/widgets.css" type="text/css" media="screen, projection">
+    <link rel="stylesheet" href="{{ STATIC_URL }}/css/bootstrap-1.1.0.min.css">
     <script type="text/javascript" src="{{ STATIC_URL }}js/jquery.min.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}js/jquery.tmpl.min.js"></script>
+    <script src="http://ui.jquery.com/latest/ui/jquery.effects.core.js"></script>
+    <script src="http://ui.jquery.com/latest/ui/jquery.effects.slide.js"></script>
 </head>
 <body>
 
 
 <div class="container ">
-    <div class="span-24">
+{#    <div class="span-24">#}
         {#        The header#}
-    </div>
+{#    </div>#}
 
-    <div class="span-4"><span style="color: #ffffff; height: 10px;">.</span>
-    {% if nodes != None %}
-    <ul class="root">
-        {% recursetree nodes %}
-            <li>
-                {{ node.name }}
-                {% if not node.is_leaf_node %}
-                    <ul class="children">
-                        {{ children }}
-                    </ul>
-                {% endif %}
-            </li>
-        {% endrecursetree %}
-    </ul>
-    {% endif %}
+{#    <div class="span-4"><span style="color: #ffffff; height: 10px;">.</span>#}
+{#    {% if nodes != None %}#}
+{#    <ul class="root">#}
+{#        {% recursetree nodes %}#}
+{#            <li>#}
+{#                {{ node.name }}#}
+{#                {% if not node.is_leaf_node %}#}
+{#                    <ul class="children">#}
+{#                        {{ children }}#}
+{#                    </ul>#}
+{#                {% endif %}#}
+{#            </li>#}
+{#        {% endrecursetree %}#}
+{#    </ul>#}
+{#    {% endif %}#}
+{#    </div>#}
+    <div class="row">
+        <div class="span16 columns" style="background: #ffffff">
+            {% block content %}{% endblock %}
+        </div>
     </div>
-    <div class="span-16" style="background: #ffffff">
-        {% block content %}{% endblock %}
-    </div>
-    <div class="span-4 last">
-        {#        The right column#}
-    </div>
-
-    <div class="span-24">
-        {#        The footer#}
+    <div class="row">
+        <div class="span16">
+            {#        The footer#}
+        </div>
     </div>
 </div>
 

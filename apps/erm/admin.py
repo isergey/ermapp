@@ -10,6 +10,8 @@ admin.site.register(models.Rubric, MPTTModelAdmin)
 
 admin.site.register(models.LocalRubric, MPTTModelAdmin)
 
+admin.site.register(models.ExtendedRubric, MPTTModelAdmin)
+
 class OrganisationAdmin(admin.ModelAdmin):
     list_display = ('name',)
 

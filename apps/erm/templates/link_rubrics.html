@@ -1,0 +1,336 @@
+{% extends 'base.html' %}
+{% block content %}
+    {% load i18n %}
+    <style>
+        a.rubric_link {
+            font-size: 120%;
+        }
+    </style>
+    {#    {% load mptt_tags %}#}
+    <div class="row">
+        <div class="span8 columns">
+            <h3>Локальный рубрикатор</h3>
+
+            <div class="well">
+                <form id="local_rubric_search" action="" method="POST">
+                    <input type="text" name="local_rubric" id="local_rubric" class="xlarge"/>
+                    <button type="submit" class="btn">Поиск</button>
+                </form>
+            </div>
+        </div>
+        <div class="cloumns  span8">
+            <h3>Внешний рубрикатор</h3>
+            <div class="well">
+                <form id="ext_rubric_search" action="" method="POST">
+                    <select id="rubricator" style="width: 100px">
+                        {% for rubricator in rubricators %}
+                            <option value="{{ rubricator.tree_id }}">{{ rubricator.name }}</option>
+                        {% endfor %}
+                    </select>
+                    <input type="text" name="ext_rubric" id="ext_rubric" class="xlarge" style="width: 235px"/>
+                    <button type="submit" class="btn">Поиск</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="span8 columns">
+            <div class="well">
+                <div id="local_rubrics" style="min-height: 400px">
+                    Локальные рубрики
+                </div>
+                <div class="pagination">
+                    <ul>
+                        {#                        <li class="prev"><a href="#1">← Previous</a></li>#}
+                        <li class="active"><a href="#1" class="page">1</a></li>
+                        <li><a href="#1" class="page">2</a></li>
+                        <li><a href="#1" class="page">3</a></li>
+                        <li><a href="#1" class="page">4</a></li>
+                        <li><a href="#1" class="page">5</a></li>
+                        {#                        <li class="next"><a href="#1">Next →</a></li>#}
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+        <div class="span8 columns">
+            <div class="well">
+                <div id="ext_rubrics" style="min-height: 400px">
+                    Внешние рубрики
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+
+        <table class="zebra-striped well">
+            <tr>
+                <th>Локальная рубрика</th>
+                <th style="background: #ffffcc">Внешняя рубрика</th>
+                <th style="background: #ffffcc">Рубрикатор</th>
+                <th>Действия</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td style="background: #ffffcc">2</td>
+                <td style="background: #ffffcc">3</td>
+                <td><a href="#1" class="btn danger small">X</a></td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td style="background: #ffffcc">2</td>
+                <td style="background: #ffffcc">3</td>
+                <td>4</td>
+            </tr>
+        </table>
+        <a href="#1" class="btn large primary">Сохранить связи</a>
+    </div>
+
+    <script type="text/javascript">
+        var rubric_links = {};
+        rubric_links.frfrfrf = 'rfrfr';
+        var local_linked_rubric1_id = null;
+        var ext_linked_rubric1_id = null;
+    </script>
+
+    <script type="text/javascript">
+        var last_page = 0;
+        $(function() {
+
+            $('#local_rubrics .rubric_link').live('click', function() {
+                if ($(this).attr('id') != local_linked_rubric1_id) {
+                    var old_local_linked_rubric1_id = $('#' + local_linked_rubric1_id);
+                    old_local_linked_rubric1_id.css('font-weight', 'normal');
+                    old_local_linked_rubric1_id.css('color', '');
+
+                    local_linked_rubric1_id = $(this).attr('id');
+                    $(this).css('font-weight', 'bold');
+                    $(this).css('color', 'green');
+                }
+                check_link();
+            });
+
+            $('#ext_rubrics .rubric_link').live('click', function() {
+                if ($(this).attr('id') != ext_linked_rubric1_id) {
+                    var old_ext_linked_rubric1_id = $('#' + ext_linked_rubric1_id);
+                    old_ext_linked_rubric1_id.css('font-weight', 'normal');
+                    old_ext_linked_rubric1_id.css('color', '');
+
+                    ext_linked_rubric1_id = $(this).attr('id');
+                    $(this).css('font-weight', 'bold');
+                    $(this).css('color', 'green');
+                }
+                check_link();
+            });
+
+            function check_link() {
+                if (local_linked_rubric1_id && ext_linked_rubric1_id) {
+//                    alert(local_linked_rubric1_id + ' : ' + ext_linked_rubric1_id);
+//                    alert(local_linked_rubric1_id.split('_')[1])
+                    var local_rubric_path = '';
+                    var ext_rubric_path = ''
+                    var rubricator = '';
+                    var link = {l:local_linked_rubric1_id, e:ext_linked_rubric1_id};
+                    $.ajax({
+                        url: "{% url erm_get_local_rubric_info  %}",
+                        type: "GET",
+                        dataType: "json",
+                        async: false,
+                        data:{
+                            'id': local_linked_rubric1_id.split('_')[1]
+                        },
+                        success: function(path) {
+                            local_rubric_path = renderRubricPath(path);
+                        }
+                    });
+                    alert(local_rubric_path);
+                    $.ajax({
+                        url: "{% url erm_get_ext_rubric_info  %}",
+                        type: "GET",
+                        dataType: "json",
+                        async: false,
+                        data:{
+                            'id': ext_linked_rubric1_id.split('_')[1]
+                        },
+                        success: function(result) {
+                            rubricator = result.rubricator.name;
+                            ext_rubric_path = renderRubricPath(result.path);
+                        }
+                    });
+//                    alert(local_rubruc_path);
+                    alert(ext_rubric_path);
+                    alert(rubricator);
+                    alert(link.l + ' ' + link.e);
+
+                }
+            }
+
+            $('td').click(function() {
+                $(this).parent().fadeOut('100');
+            });
+
+            $('.page').click(function() {
+                $('.pagination ul li').each(function() {
+                    $(this).removeClass('active');
+                })
+                $(this).parent().addClass('active');
+                var slide = {
+                    hide_direction: 'left',
+                    show_direction: 'right'
+                };
+                if (last_page < $(this).html()) {
+                    slide.hide_direction = 'left';
+                    slide.show_direction = 'right';
+                }
+                else {
+                    slide.hide_direction = 'right';
+                    slide.show_direction = 'left';
+                }
+                last_page = $(this).html();
+                $.ajax({
+                    url: "{% url erm_search_local_rubrics  %}",
+                    type: "GET",
+                    dataType: "json",
+                    async: true,
+                    data:{
+                        'name': $('#local_rubric').val(),
+                        'page': $(this).html(),
+                        'links': rubric_links
+                    },
+                    success: function(results) {
+//                        $('#local_rubrics').hide('slide', {direction: slide.hide_direction }, 500);
+                        renderSearchRubrics(results, 'lr_', '#local_rubrics');
+                        $('#local_rubrics').show('slide', {direction: slide.show_direction}, 300);
+                    }
+                });
+            });
+
+            $('#local_rubric_search').submit(function() {
+                $.ajax({
+                    url: "{% url erm_search_local_rubrics  %}",
+                    type: "GET",
+                    dataType: "json",
+                    data:{'name': $('#local_rubric').val()},
+                    success: function(results) {
+                        renderSearchRubrics(results, 'lr_', '#local_rubrics');
+                    }
+                });
+                return false;
+            });
+
+            $('#ext_rubric_search').submit(function() {
+                $.ajax({
+                    url: "{% url erm_search_ext_rubrics  %}",
+                    type: "GET",
+                    dataType: "json",
+                    data:{
+                        'name': $('#ext_rubric').val(),
+                        'rubricator': $('#rubricator').val()
+                    },
+                    success: function(results) {
+                        renderSearchRubrics(results, 'er_', '#ext_rubrics');
+                    }
+                });
+                return false;
+            });
+
+            $('.close').click(function() {
+                $(this).parent().parent().css('display', 'none');
+            });
+        });
+    </script>
+
+
+
+
+
+    <script type="text/javascript">
+        function renderRubricPath(path) {
+            var string_parh = '';
+            for (i in path) {
+                if (i < path.length - 1) {
+                    string_parh += path[i].name + ' → ';
+                }
+                else {
+
+                    if (!path[i].is_leaf_node) {
+                        string_parh += '+ <a class="rubric_link" href="#1">{0}</a>'.format(path[i].name);
+                    }
+                    else {
+                        string_parh += '<a class="rubric_link" href="#1">{0}</a>'.format(path[i].name);
+                    }
+
+                }
+            }
+            return string_parh;
+        }
+
+        function renderSearchRubrics(results, id_prefix, container_id) {
+            $(container_id).html('');
+            for (row in results) {
+                var string_parh = '';
+                for (i in results[row]) {
+
+                    if (i < results[row].length - 1) {
+                        string_parh += results[row][i].name + ' → ';
+                    }
+                    else {
+
+                        if (!results[row][i].is_leaf_node) {
+                            string_parh += '+ <a class="rubric_link" href="#1" id="{0}{1}">{2}</a>'.format(id_prefix, results[row][i].id, results[row][i].name);
+                        }
+                        else {
+                            string_parh += '<a class="rubric_link" href="#1" id="{0}{1}">{2}</a>'.format(id_prefix, results[row][i].id, results[row][i].name);
+                        }
+
+                        if (!results[row][i].linked) {
+                            string_parh += ' <img alt="Не имеет связей" src="http://hulp.effectiveweb.nl/sites/hulp.effectiveweb.nl/files/../../../files/help/shared/fck_Unlink.gif">'
+                        }
+                        else {
+                            string_parh += ' <img alt="Имеет связи" src="http://hulp.effectiveweb.nl/sites/hulp.effectiveweb.nl/files/../../../files/help/shared/fck_Link.png">'
+                        }
+
+                    }
+                }
+                $(container_id).append('<div>{0}</div>'.format(string_parh));
+            }
+        }
+    </script>
+
+
+    <script type="text/javascript">
+        String.prototype.format = function() {
+            var formatted = this;
+            for (arg in arguments) {
+                formatted = formatted.replace("{" + arg + "}", arguments[arg]);
+            }
+            return formatted;
+        };
+    </script>
+
+
+
+
+
+
+    {#    <script type="text/javascript">#}
+    {#        function showModal() {#}
+    {#            $('#modal').html('\#}
+    {#            <div class="modal">\#}
+    {#        <div class="modal-header">\#}
+    {#            <h3>Modal Heading</h3>\#}
+    {#            <a href="#" class="close">×</a>\#}
+    {#        </div>\#}
+    {#        <div class="modal-body">\#}
+    {#            <p>One fine body…</p>\#}
+    {#        </div>\#}
+    {#        <div class="modal-footer">\#}
+    {#            <a href="#" class="btn primary">Primary</a>\#}
+    {#            <a href="#" class="btn secondary">Secondary</a>\#}
+    {#        </div>\#}
+    {#    </div>\#}
+    {#        ');#}
+    {#        }#}
+    {#    </script>#}
+    <div id='modal'></div>
+{% endblock %}
