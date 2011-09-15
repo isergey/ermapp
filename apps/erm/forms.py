@@ -2,6 +2,31 @@
 from django.utils.translation import ugettext_lazy as _
 from django import forms
 from models import License, Rubricator
+from django.forms.extras.widgets import SelectDateWidget
+
+
+
+class MultiTextField(forms.MultiValueField):
+    def __init__(self, *args, **kwargs):
+        super(MultiTextField, self).__init__(*args, **kwargs)
+    def compress(self, data_list):
+        print data_list
+
+class DatabaseForm(forms.Form):
+    name = forms.CharField(label=_(u'Database name'), max_length=256)
+    vendor = forms.CharField(label=(u'Vendor'), max_length=256)
+    rubrics = forms.CharField(label=_(u'Rubric name'), max_length=256)
+
+    descriprion = forms.CharField(label=(u'Descriprion'), max_length=256, widget=forms.Textarea, required=False)
+
+    start_date = forms.DateField(label=(u'Start date'), widget=SelectDateWidget)
+    end_date = forms.DateField(label=(u'End date'), widget=SelectDateWidget)
+    
+
+class RubricForm(forms.Form):
+    name = forms.CharField(label=_(u'Rubric name'), max_length=256)
+    
+
 
 class LicenseForm(forms.ModelForm):
     class Meta:

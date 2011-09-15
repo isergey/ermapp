@@ -12,6 +12,10 @@ admin.site.register(models.LocalRubric, MPTTModelAdmin)
 
 admin.site.register(models.ExtendedRubric, MPTTModelAdmin)
 
+class TermCountAdmin(admin.ModelAdmin):
+    list_display = ('term','count')
+admin.site.register(models.TermCount, TermCountAdmin)
+
 class OrganisationAdmin(admin.ModelAdmin):
     list_display = ('name',)
 

@@ -115,10 +115,10 @@ elif MODE == 'PROD':
 
 # List of callables that know how to import templates from various sources.
 TEMPLATE_LOADERS = (
-    #('django.template.loaders.cached.Loader', (
+#    ('django.template.loaders.cached.Loader', (
     'django.template.loaders.filesystem.Loader',
     'django.template.loaders.app_directories.Loader',
-    #)),
+#    )),
     )
 
 TEMPLATE_CONTEXT_PROCESSORS = (
@@ -133,6 +133,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
 
 MIDDLEWARE_CLASSES = (
     'django.middleware.common.CommonMiddleware',
+    'django.middleware.transaction.TransactionMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.locale.LocaleMiddleware',
 #    'django.middleware.csrf.CsrfViewMiddleware',

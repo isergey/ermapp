@@ -1,21 +1,26 @@
 {% extends "administration_base.html" %}
-{% block module_content %}
-    <div class="panel">
-        <h2>Управление электронными ресурсами</h2>
-        <ul class="tabs">
-            <li {% if tab == 'license' %} class="current" {% endif %}><a href="#">Лицензии</a></li>
-            <li {% if tab == 'resources' %} class="current" {% endif %}><a href="#">Электронные ресурсы</a></li>
-            <li  {% if tab == 'rubrics' %} class="current" {% endif %}><a href="#">Рубрики</a></li>
-        </ul>
-        <div class="panes">
-            {% block content %}{% endblock %}
-        </div>
-   </div>
-    <hr class="space"/>
+{% load i18n %}
+{% block module_links_list %}
+    <li class="active"><a href="#">{% trans 'eJournals' %}</a></li>
+    <li><a href="{% url erm_admin_databases %}">{% trans 'eDatabase' %}</a></li>
+    <li><a href="#">{% trans 'Rubrics' %}</a></li>
+{% endblock module_links_list %}
 
-    <script type="text/javascript">
-        $("a.delete").click(function() {
-            if (!confirm('Вы уверены что хотите удалить?')) return false;
-        });
-    </script>
-{% endblock %}
+{% block module_content %}
+    <div class="row">
+        <div class="span3 columns">
+            <div class="module_menu">
+                <ul style="padding-top: 20px; list-style: none; margin: 0">
+                    {% block erm_menu %}
+                        <li><a href="#1">Меню модуля</a></li>
+                    {% endblock %}
+                </ul>
+            </div>
+        </div>
+        <div class="span13 columns">
+            {% block erm_action_content %}
+                Содержимое модуля
+            {% endblock %}
+        </div>
+    </div>
+{% endblock module_content%}

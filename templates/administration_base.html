@@ -1,78 +1,88 @@
+{% load i18n %}
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
-    <LINK rel="icon" href="http://favicon.ru/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="{{ STATIC_URL }}css/blueprint/screen.css" type="text/css" media="screen, projection">
-    <link rel="stylesheet" href="{{ STATIC_URL }}css/blueprint/print.css" type="text/css" media="print">
-    <!--[if IE]>
-    <link rel="stylesheet" href="{{ STATIC_URL }}css/blueprint/ie.css" type="text/css" media="screen, projection"><![endif]-->
-    <link rel="stylesheet" href="{{ STATIC_URL }}css/blueprint/plugins/fancy-type/screen.css" type="text/css"
-          media="screen, projection"/>
-{#    <link rel="stylesheet" href="{{ STATIC_URL }}css/blueprint/plugins/buttons/screen.css" type="text/css" media="screen, projection"/>#}
-    <link rel="stylesheet" href="{{ STATIC_URL }}default/css/admin_style.css" type="text/css" media="screen, projection">
-    <link rel="stylesheet" href="{{ STATIC_URL }}default/css/widgets.css" type="text/css" media="screen, projection">
-       
+    {#    <LINK rel="icon" href="http://favicon.ru/favicon.ico" type="image/x-icon">#}
+    {#    <link rel="stylesheet" href="{{ STATIC_URL }}css/blueprint/screen.css" type="text/css" media="screen, projection">#}
+    {#    <link rel="stylesheet" href="{{ STATIC_URL }}css/blueprint/print.css" type="text/css" media="print">#}
+    {#    <!--[if IE]>#}
+    {#    <link rel="stylesheet" href="{{ STATIC_URL }}css/blueprint/ie.css" type="text/css" media="screen, projection"><![endif]-->#}
+    {#    <link rel="stylesheet" href="{{ STATIC_URL }}css/blueprint/plugins/fancy-type/screen.css" type="text/css"#}
+    {#          media="screen, projection"/>#}
+    {#    <link rel="stylesheet" href="{{ STATIC_URL }}css/blueprint/plugins/buttons/screen.css" type="text/css" media="screen, projection"/>#}
+    {#    <link rel="stylesheet" href="{{ STATIC_URL }}default/css/admin_style.css" type="text/css" media="screen, projection">#}
+    {#    <link rel="stylesheet" href="{{ STATIC_URL }}default/css/widgets.css" type="text/css" media="screen, projection">#}
+
+{#    <link rel="stylesheet" href="{{ STATIC_URL }}/css/bootstrap-1.2.0.min.css" type="text/css" media="screen, projection">#}
+<link rel="stylesheet" href="http://twitter.github.com/bootstrap/assets/css/bootstrap-1.2.0.min.css">
     <script type="text/javascript" src="{{ STATIC_URL }}js/jquery.min.js"></script>
     <title>Администрирование libportal</title>
 </head>
+<body>
+<style>
+    #module_content{
+        padding-top: 40px;
+    }
+</style>
 <div class="container">
-    <div class="header block column span-24 last">
-        <h2 class="prepend-1 alt">Портал. Администрирование.</h2>
-    </div>
-    <hr class="space"/>
-    <div class="column span-3">
-        <div id="admin_menu" class="panel">
-            <ul>
-{#                <li class="first{% if active_module == 'pages' %} selected{% endif %}">#}
-{#                    <a href="{% url administration_pages_index %}">Страницы</a>#}
-{#                </li>#}
-{#                <li class="{% if active_module == 'menus' %} selected{% endif %}">#}
-{#                    <a href="{% url administration_menus_index %}">Меню</a>#}
-{#                </li>#}
-{#                <li class="{% if active_module == 'news' %} selected{% endif %}">#}
-{#                    <a href="{% url administration_news_index %}">Новости</a>#}
-{#                </li>#}
-{#                <li class="{% if active_module == 'gallery' %} selected{% endif %}">#}
-{#                    <a href="{% url administration_gallery_index %}">Галлерея</a>#}
-{#                </li>#}
-{#                <li class="{% if active_module == 'polls' %} selected{% endif %}">#}
-{#                    <a href="{% url administration_polls_index %}">Голосования</a>#}
-{#                </li>#}
-{#                <li class="{% if active_module == 'events' %} selected{% endif %}">#}
-{#                    <a href="{% url administration_events_index %}">Афиша</a>#}
-{#                </li>#}
-{#                <li class="{% if active_module == 'guestbook' %} selected{% endif %}">#}
-{#                    <a href="{% url administration_guestbook_index %}">Отзывы</a>#}
-{#                </li>#}
-{#                <li class="{% if active_module == 'professional' %} selected{% endif %}">#}
-{#                    <a href="{% url administration_professional_index %}">Проф страница</a>#}
-{#                </li>#}
-{#                <li class="{% if active_module == 'zgate' %} selected{% endif %}">#}
-{#                    <a href="{% url administration_zgate_index %}">АРМ Читателя</a>#}
-{#                </li>#}
-{#                <li class="first{% if active_module == 'accounts' %} selected{% endif %}">#}
-{#                    <a href="{% url administration_accounts_organisations %}">Учетные записи</a>#}
-{#                </li>#}
-                <li class="first{% if active_module == 'erm' %} selected{% endif %}">
-                    <a href="{% url erm_admin_index %}">Файлы</a>
-                </li>
-                <li class="first{% if active_module == 'erm' %} selected{% endif %}">
-                    <a href="{% url erm_admin_index %}">Файлы</a>
-                </li>
-            </ul>
+    <div class="topbar-wrapper" style="z-index: 5;">
+        <div class="topbar">
+            <div class="topbar-inner">
+                <div class="container">
+                    <h3><a href="#">ERM</a></h3>
+                    <ul class="nav">
+                    {% block module_links_list %}<li><a href="#">Действие модуля</a></li>{% endblock %}
+                    </ul>
+                    <ul class="nav secondary-nav">
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle">{% trans 'Modules' %}</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">{% trans 'Users' %}</a></li>
+                                <li><a href="#">{% trans 'ZGate' %}</a></li>
+                                <li class="divider"></li>
+                                <li><a href="#">{% trans 'Settings' %}</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- /topbar-inner -->
         </div>
+        <!-- /topbar -->
     </div>
-
-    <div class="column span-21 last">
-        {% block module_content %}{% endblock %}
-    </div>
-    <hr class="space"/>
-    <div class=" column span-24 last">
-        <div class="block footer" style="height:30px">
-            © Библиотечный портал
+    <!-- /topbar-wrapper -->
+    <div id="module_content">
+        <div class="columns span16">
+            {% block module_content %}{% endblock %}
         </div>
     </div>
 </div>
+<script type="text/javascript">
+    String.prototype.startsWith = function (str){
+        return this.indexOf(str) == 0;
+    };
+//    $("a").each(function(){
+//        if ($(this).attr('href').startsWith(location.pathname)){
+//            $(this).parent().addClass('active');
+//        }
+//        else{
+//            $(this).parent().removeClass('active');
+//        }
+//    });
+    $("body").bind("click", function (e) {
+        $('.dropdown-toggle, .menu').parent("li").removeClass("open");
+    });
+    $(".dropdown-toggle, .menu").click(function (e) {
+        var $li = $(this).parent("li").toggleClass('open');
+        return false;
+    });
+    $("a.delete").click(function() {
+        if (!confirm('Вы уверены что хотите удалить?')) return false;
+    });
+
+</script>
 </body>
 </html>
 

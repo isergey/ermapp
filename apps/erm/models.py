@@ -105,7 +105,9 @@ class Rubric(MPTTModel):
 class RubircLink(models.Model):
     local_rubric = models.ForeignKey(LocalRubric)
     ext_rubric = models.ForeignKey(ExtendedRubric)
-
+    class Meta:
+        unique_together = ("local_rubric", "ext_rubric")
+        
     def __unicode__(self):
         return self.local_rubric.name + u' → ' + self.ext_rubric.name
 #
@@ -164,6 +166,9 @@ class Resource(models.Model):
     record = models.TextField(max_length=102400, verbose_name=_(u'Record body (base64'))
     record_syntax = models.CharField(choices=RECORD_SYNTAXES, max_length=32, verbose_name=_(u'Record body'))
 
+class TermCount(models.Model):
+    term = models.CharField(max_length=255, verbose_name=_(u"Term name"), db_index=True)
+    count = models.IntegerField(verbose_name=_(u"Term count"), db_index=True)
 
 
 

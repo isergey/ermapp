@@ -1,0 +1,41 @@
+{% extends 'admin_erm.html' %}
+{% load i18n %}
+{% load pagination_tag %}
+
+{% block erm_menu %}
+    <li><a href="{% url erm_admin_create_databases %}">Создать базу</a></li>
+    <li><a href="{% url erm_admin_databases %}">Список баз</a></li>
+{% endblock %}
+
+{% block erm_action_content %}
+    <div class="row">
+        <h3>Список баз данных</h3>
+        <hr/>
+        <table class="zebra-striped">
+            <tr>
+                <td><input type="text" style="width: 100%;"/></td>
+                <td><input type="text" style="width: 100%;"/></td>
+                <td><input type="text" style="width: 100%;"/></td>
+                <td><input type="text" style="width: 100%;"/></td>
+            </tr>
+            <tr>
+                <th class="blue header headerSortDown">Название</th>
+                <th>Поставщик</th>
+                <th>Рубрики</th>
+                <th>Период подписки</th>
+            </tr>
+            <tbody>
+            {% for database in databases %}
+            <tr>
+                <td><a href="{% url erm_admin_database_detail database.id %}">{{ database.name }}</a></td>
+                <td>{{ database.vendor }}</td>
+                <td>{{ database.rubrics }}</td>
+                <td>{{ database.start_date }} - {{ database.end_date }}</td>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+        <hr/>
+    <div class="row">
+    {#    {% if {% url erm_admin_databases %} == {{ request.META.PATH_INFO }} %}active{% endblock %}#}
+{% endblock %}

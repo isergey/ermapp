@@ -7,19 +7,17 @@ from time import time as t
 import simplejson
 import logging
 
-
-
 from django.conf import settings
 from django.utils.translation import ugettext as _
 from django.template import RequestContext
-from django.shortcuts import render_to_response, get_object_or_404
+from django.shortcuts import render_to_response, get_object_or_404, render
+from django.core.urlresolvers import reverse
 from django.http import HttpResponse, Http404, HttpResponseRedirect
 from django.core.paginator import Paginator, InvalidPage, EmptyPage, PageNotAnInteger
 from django.shortcuts import redirect
 from django.utils.decorators import method_decorator
 from django.contrib.auth.decorators import login_required
 from django.db import transaction, IntegrityError
-
 
 from libs import pyaz, filework
 import libs.pymarc as pymarc
@@ -28,36 +26,184 @@ from models import Resource, Rubric
 from mptt.exceptions import InvalidMove
 from mptt.forms import MoveNodeForm
 
-from forms import LicenseForm, RubricFileForm, RubricatorForm, get_rubricators_choices
-
+from forms import LicenseForm, RubricFileForm, RubricatorForm, get_rubricators_choices, DatabaseForm, RubricForm
+from django.forms.formsets import formset_factory
 from models import License, Rubricator, LocalRubric, Rubric, RubircLink
-#en_morph = pymorphy.get_morph(settings.SYSTEM_ROOT + 'appdata/pymorphy/dicts/en', 'cdb')
-#ru_morph = pymorphy.get_morph(settings.SYSTEM_ROOT + 'appdata/pymorphy/dicts/ru', 'cdb')
-#
-#term_word_split_re = re.compile(ur'\W+', re.UNICODE)
-#latin_letters_re = re.compile(ur'^[a-zA-Z]+$', re.UNICODE)
-#russian_letters_re = re.compile(ur'^[а-яА-Я]+$', re.UNICODE)
-#
-#full_xslt_root = etree.parse(settings.SYSTEM_ROOT + 'appdata/xslt/marc.xsl')
-#full_transform = etree.XSLT(full_xslt_root)
-
+import marc_models as mm
 
 
 def index(request):
+    return render(request,
+                  'admin_index.html',
+            {
+            'message': _('Hello'),
+            },
+                  )
 
-    return render_to_response(
-        'admin_index.html',
-        {
-             'message': _('Hello'),
-        },
-        context_instance=RequestContext(request)
+
+def make_zconnection(database_conf):
+    zconnection = pyaz.ZConnection(
+        database_conf['server']
+    )
+    zconnection.connect(str(database_conf['server']['host']),
+                        int(database_conf['server']['port']))
+    return zconnection
+
+
+def search(database_conf, query, offset=None, limit=None):
+    zconnection = make_zconnection(database_conf)
+    zresults = zconnection.search(query)
+    records = []
+    for zrecord in zresults:
+        records.append(pymarc.Record(data=zrecord, to_unicode=True, encoding=database_conf['server']['encoding']))
+
+    return records
+
+
+def insert_record(record, database_conf, syntax=u"rusmarc"):
+    zconnection = make_zconnection(database_conf)
+    zopts = pyaz.ZOptions()
+    zopts.set_option('databaseName', database_conf['server']['databaseName'])
+    zopts.set_option('syntax', database_conf['server']['preferredRecordSyntax'])
+
+    zpac = pyaz.ZPackage(zconnection, zopts)
+    zpac.set_option('action', 'recordInsert')
+
+    zpac.set_option('record', record.as_marc(encoding='utf-8'))
+    zpac.send('update')
+
+def update_record(record, database_conf, syntax=u"rusmarc"):
+    print record
+    zconnection = make_zconnection(database_conf)
+    zopts = pyaz.ZOptions()
+    zopts.set_option('databaseName', database_conf['server']['databaseName'])
+    zopts.set_option('syntax', database_conf['server']['preferredRecordSyntax'])
+
+    zpac = pyaz.ZPackage(zconnection, zopts)
+    zpac.set_option('action', 'recordReplace')
+
+    zpac.set_option('record', record.as_marc(encoding='utf-8'))
+    zpac.send('update')
+
+
+def delete_record(record, database_conf):
+    zconnection = make_zconnection(database_conf)
+    zopts = pyaz.ZOptions()
+    zopts.set_option('databaseName', database_conf['server']['databaseName'])
+    zopts.set_option('syntax', database_conf['server']['preferredRecordSyntax'])
+
+    zpac = pyaz.ZPackage(zconnection, zopts)
+    zpac.set_option('action', 'recordDelete')
+
+    zpac.set_option('record', record.as_marc())
+    zpac.send('update')
+
+
+def databases(request):
+    records = search(
+        appsettings.ZBASES['databases'],
+        u'@attr 1=12 @attr 2=4 0'
     )
 
+    databases = []
+    for record in records:
+        databases.append(mm.Database.from_rusmarc(record))
+
+    return render(request, 'admin_erm_databases.html', {
+        'databases': databases
+    })
+
+
+def database_detail(request, id):
+    records = search(
+        appsettings.ZBASES['databases'],
+        u'@attr 1=12 "%s"' % id
+    )
+    if records:
+        database = mm.Database.from_rusmarc(records[0])
+    else:
+        raise Http404(_(u'Database not founded'))
+    return render(request, 'admin_erm_database_detail.html', {
+        'database': database
+    })
+
+
+def create_databases(request):
+    if request.method == 'POST':
+        form = DatabaseForm(request.POST)
+        if form.is_valid():
+            database = mm.Database(
+                name=form.cleaned_data['name'],
+                vendor=form.cleaned_data['vendor'],
+                rubrics=form.cleaned_data['rubrics'],
+                start_date=form.cleaned_data['start_date'],
+                end_date=form.cleaned_data['end_date']
+            )
+            insert_record(database.to_rusmarc(), appsettings.ZBASES['databases'])
+            return redirect(reverse('erm_admin_databases'))
+    else:
+        form = DatabaseForm()
+
+    return render(request, 'admin_erm_databases_create.html', {
+        'form': form,
+        })
+
+
+def database_edit(request, id):
+    records = search(
+        appsettings.ZBASES['databases'],
+        u'@attr 1=12 "%s"' % id
+    )
+    if not records:
+        raise Http404(_(u'Database not founded'))
+
+    database_record = records[0]
+    database = mm.Database.from_rusmarc(database_record)
+    print database_record
+    print database.end_date
+    form = DatabaseForm(request.POST)
+
+    if form.is_valid():
+        database.name = form.cleaned_data['name']
+        database.vendor = form.cleaned_data['vendor']
+        database.rubrics = form.cleaned_data['rubrics']
+        database.start_date = form.cleaned_data['start_date']
+        database.end_date = form.cleaned_data['end_date']
+
+        update_record(database.to_rusmarc(), appsettings.ZBASES['databases'])
+        return redirect(reverse('erm_admin_databases'))
+    else:
+
+        form = DatabaseForm(data={
+            'name':database.name,
+            'vendor':database.vendor,
+            'rubrics':database.rubrics,
+            'start_date':database.start_date,
+            'end_date':database.end_date,
+        })
+
+    return render(request, 'admin_erm_databases_edit.html', {
+        'form': form,
+        })
+
+
+def database_delete(request, id):
+    records = search(
+        appsettings.ZBASES['databases'],
+        u'@attr 1=12 "%s"' % id
+    )
+    if records:
+        delete_record(records[0], appsettings.ZBASES['databases'])
+    else:
+        raise Http404(_(u'Database not founded'))
+    return redirect(reverse('erm_admin_databases'))
+
+
 def licenses(request):
-    licenses  = License.objects.all()
+    licenses = License.objects.all()
     paginator = Paginator(licenses, 1)
 
-    page = request.GET.get('page',1)
+    page = request.GET.get('page', 1)
     try:
         licenses_list = paginator.page(page)
     except PageNotAnInteger:
@@ -65,20 +211,17 @@ def licenses(request):
     except EmptyPage:
         licenses_list = paginator.page(paginator.num_pages)
 
-    return render_to_response(
-        'admin_licenses_list.html',
-        {
+    return render(request,
+                  'admin_erm_databases.html',
+            {
             'licenses_list': licenses_list,
-            'module':'erm',
-            'tab':'license'
+            'module': 'erm',
+            'tab': 'license'
         },
-        context_instance=RequestContext(request)
-    )
-
+                  )
 
 
 def license_create(request):
-
     if request.method == 'POST':
         form = LicenseForm(request.POST)
         if form.is_valid():
@@ -87,22 +230,21 @@ def license_create(request):
     else:
         form = LicenseForm()
 
-    return render_to_response(
-        'admin_license_create.html',
-        {
+    return render(request,
+                  'admin_license_create.html',
+            {
             'form': form,
-            'module':'erm',
-            'tab':'license'
+            'module': 'erm',
+            'tab': 'license'
         },
-        context_instance=RequestContext(request)
-    )
+                  )
 
 
 def rubricators(request):
-    rubricators  = Rubricator.objects.all()
+    rubricators = Rubricator.objects.all()
     paginator = Paginator(rubricators, 1)
 
-    page = request.GET.get('page',1)
+    page = request.GET.get('page', 1)
     try:
         rubricators_list = paginator.page(page)
     except PageNotAnInteger:
@@ -110,18 +252,16 @@ def rubricators(request):
     except EmptyPage:
         rubricators_list = paginator.page(paginator.num_pages)
 
-    return render_to_response(
-        'admin_rubricators_list.html',
-        {
+    return render(request, 'admin_rubricators_list.html',
+            {
             'rubricators_list': rubricators_list,
-            'module':'erm',
-            'tab':'rubrics'
+            'module': 'erm',
+            'tab': 'rubrics'
         },
-        context_instance=RequestContext(request)
-    )
+                  )
+
 
 def rubricator_create(request):
-
     if request.method == 'POST':
         form = RubricatorForm(request.POST)
         if form.is_valid():
@@ -130,35 +270,34 @@ def rubricator_create(request):
     else:
         form = RubricatorForm()
 
-    return render_to_response(
-        'admin_rubricator_create.html',
-        {
+    return render(request,
+                  'admin_rubricator_create.html',
+            {
             'form': form,
-            'module':'erm',
-            'tab':'rubrics'
+            'module': 'erm',
+            'tab': 'rubrics'
         },
-        context_instance=RequestContext(request)
-    )
+                  )
+
 
 def rubrics(request):
     #root = Rubric.objects.get(name=u'root')
-    root= Rubric.objects.get(name='root')
+    root = Rubric.objects.get(name='root')
     rubrics = root.children.all()[0:10]
 
-#    tree = []
+    #    tree = []
     for rubric in rubrics:
         print rubric.children.all()
-        
+
     #print rubrics
-    return render_to_response(
-        'admin_rubricator_create.html',
-        {
-#            'form': 'form',
-            'module':'erm',
-            'tab':'rubrics'
+    return render(request,
+                  'admin_rubricator_create.html',
+            {
+            #            'form': 'form',
+            'module': 'erm',
+            'tab': 'rubrics'
         },
-        context_instance=RequestContext(request)
-    )
+                  )
 
 
 def linked(request):
@@ -166,7 +305,7 @@ def linked(request):
     links = RubircLink.objects.filter(local_rubric=local_rubric)
     for link in links:
         print link.local_rubric, link.ext_rubric.get_children()
-    
+
     return HttpResponse(u'edede')
 
 
@@ -190,37 +329,35 @@ def load_rubrics_file(request):
     else:
         form = RubricFileForm(initial={})
 
-    return render_to_response(
-        'admin_load_rubrics_file.html',
-        {
+    return render(request,
+                  'admin_load_rubrics_file.html',
+            {
             'form': form,
             'message': _('Licences'),
-            'module':'erm',
-            'tab':'rubrics'
+            'module': 'erm',
+            'tab': 'rubrics'
         },
-        context_instance=RequestContext(request)
-    )
-
+                  )
 
 
 from django.db import connection
 from time import time as t
+
 @transaction.commit_manually
 def extract_rubric_handler(upload_file, rubricator, syntax, type, encoding):
-
     get = lambda node_id: Rubric.objects.get(pk=node_id)
 
-    file_path  = filework.save_content_to_file(upload_file, settings.SYSTEM_ROOT+'appdata/tmp/', file_ext='mrc')
+    file_path = filework.save_content_to_file(upload_file, settings.SYSTEM_ROOT + 'appdata/tmp/', file_ext='mrc')
     records = []
     s = t()
     #root = Rubric.add_root(name='root', rubricator=rubricator)
-#    roots = Rubric.get_root_nodes()
-#
-#    if not roots:
-#        root = Rubric.add_root(name='root', rubricator=rubricator)
-#    else:
-#        root = roots[0]
-#    print root
+    #    roots = Rubric.get_root_nodes()
+    #
+    #    if not roots:
+    #        root = Rubric.add_root(name='root', rubricator=rubricator)
+    #    else:
+    #        root = roots[0]
+    #    print root
 
 
     #node = get(root.id).add_child(name='Memory', rubricator=rubricator)
@@ -229,26 +366,24 @@ def extract_rubric_handler(upload_file, rubricator, syntax, type, encoding):
     #node.add_child(name='PENTIUM', rubricator=rubricator)
     #node = Rubric.objects.get(name=u'PENTIUM', rubricator=rubricator)
     #print node
-   #print Rubric.dump_bulk()
+    #print Rubric.dump_bulk()
     try:
         root = Rubric.objects.get(name=rubricator.name, parent=None)
     except Rubric.DoesNotExist:
         root = Rubric(name=rubricator.name, parent=None)
         root.save()
 
-#    rubric = Rubric(name=u'dddd')
-#    rubric.insert_at(root)
-#    root.save()
-#    return
-#    rubric = Rubric(name=u'Физика', parent=root, rubricator=rubricator)
-#    rubric.save()
-#
-#    rubric = Rubric(name=u'Ядерная', parent=rubric, rubricator=rubricator)
-#    rubric.save()
-#
-#    return
-
-
+    #    rubric = Rubric(name=u'dddd')
+    #    rubric.insert_at(root)
+    #    root.save()
+    #    return
+    #    rubric = Rubric(name=u'Физика', parent=root, rubricator=rubricator)
+    #    rubric.save()
+    #
+    #    rubric = Rubric(name=u'Ядерная', parent=rubric, rubricator=rubricator)
+    #    rubric.save()
+    #
+    #    return
 
     if syntax == 'USMARC':
         reader = pymarc.MARCReader(file(file_path), encoding=encoding, to_unicode=True)
@@ -256,18 +391,17 @@ def extract_rubric_handler(upload_file, rubricator, syntax, type, encoding):
         reader = pymarc.UNIMARCReader(file(file_path), encoding=encoding, to_unicode=True)
 
         for i, record in enumerate(reader):
-#            rubric = None
-#            if record['606']:
-#                rubric = record['606']['a']
-#
-#            print record['100']['a'], rubric
-#            continue
+        #            rubric = None
+        #            if record['606']:
+        #                rubric = record['606']['a']
+        #
+        #            print record['100']['a'], rubric
+        #            continue
             fields = record.get_fields('606')
             for field in fields:
                 rubric_name = field['a'].strip(' .')
 
                 if rubric_name:
-
                     try:
                         rubric = Rubric.objects.get(name=rubric_name, parent=root)
                     except Rubric.DoesNotExist:
@@ -287,18 +421,18 @@ def extract_rubric_handler(upload_file, rubricator, syntax, type, encoding):
                                 subrubric.save()
                                 #rubric.add_child(name=subrubric_name, rubricator=rubricator)
 
-            if i % 50 ==  0:
+            if i % 50 == 0:
                 transaction.commit()
                 print 'commit'
             print i
 
-#                    print 'sb:', subrubric_name, rubric_name
+            #                    print 'sb:', subrubric_name, rubric_name
 
     transaction.commit()
     print Rubric.objects.all().count()
     print 'time:', t() - s
 
-    
+
 #from django.db import connection
 #from time import time as t
 #@transaction.commit_manually

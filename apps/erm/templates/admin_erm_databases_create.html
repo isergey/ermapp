@@ -1,0 +1,345 @@
+{% extends 'admin_erm.html' %}
+{% load i18n %}
+{% load pagination_tag %}
+
+{% block erm_menu %}
+    <li><a href="{% url erm_admin_create_databases %}">{% trans 'Create database' %}</a></li>
+    <li><a href="{% url erm_admin_databases %}">{% trans 'Databases list' %}</a></li>
+{% endblock %}
+
+{% block erm_action_content %}
+    <h3>{% trans 'Database creating' %}</h3>
+    <hr/>
+    <div class="row">
+        <style>
+            #record ul {
+                list-style: none;
+            }
+
+            .subfield_tag {
+                font-weight: bold;
+                color: #0066cc;
+            }
+
+            .subfield_title {
+                font-weight: bold;
+                color: #000;
+            }
+
+            .field_title {
+                color: #993333;
+            }
+
+            .subfield_data:hover {
+                background: #fffee8;
+                cursor: pointer;
+            }
+        </style>
+        <div id="record">
+            {#        <ul id="fields" class="datafields">#}
+            {#            <li class="field">#}
+            {#                200#}
+            {#                <ul class="indicators">#}
+            {#                    <li class="i1"><b>И1</b> 1</li>#}
+            {#                    <li class="i2"><b>И2</b> _</li>#}
+            {#                </ul>#}
+            {#                <ul class="subfields">#}
+            {#                    <li class="subfield"><b>$a</b> Заглавие</li>#}
+            {#                </ul>#}
+            {#            </li>#}
+            {#        </ul>#}
+            {#        <a href="#1">Добавить поле</a>#}
+        </div>
+    </div>
+    <div class="row">
+
+        <form action="" method="POST" class="form-stacked">{% csrf_token %}
+            {% include 'admin_erm_databases_form.html' %}
+            {#            {{ form.as_p }}#}
+            <p><input type="SUBMIT" value="{% trans 'Create' %}" class="btn primary"></p>
+        </form>
+    </div>
+
+    <script type="text/javascript">
+        var i = $('#id_form-TOTAL_FORMS').val();
+        $('#add_rubric_button').click(function() {
+            $('#rubrics').append('<p><input id="id_form-' + i + '-name" type="text" name="form-' + i + '-name" value="" maxlength="256"></p>');
+            i++;
+            $('#id_form-TOTAL_FORMS').val(i);
+        });
+    </script>
+    <script type="text/javascript">
+        function zeroFill(number, width) {
+            width -= number.toString().length;
+            if (width > 0) {
+                return new Array(width + (/\./.test(number) ? 2 : 1)).join('0') + number;
+            }
+            return number;
+        }
+    </script>
+    <script type="text/javascript">
+    var template = {
+        version: '1.0',
+        marker:{
+            '6':{
+                title: 'Тип записи',
+                values:{
+                    'a':{
+                        title:'текстовые материалы, кроме рукописных'
+                    },
+                    'b':{
+                        title:'текстовые материалы, рукописные'
+                    },
+                    'c':{
+                        title:'музыкальные партитуры, кроме рукописных'
+                    },
+                    'd':{
+                        title:'музыкальные партитуры, рукописные'
+                    },
+                    'e':{
+                        title:'картографические материалы, кроме рукописных'
+                    },
+                    'f':{
+                        title:'картографические материалы, рукописные'
+                    },
+                    'g':{
+                        title:'проекционные и видеоматериалы'
+                    },
+                    'i':{
+                        title:'звукозаписи, немузыкальные'
+                    },
+                    'j':{
+                        title:'звукозаписи, музыкальные'
+                    },
+                    'k':{
+                        title:'двухмерная графика'
+                    },
+                    'l':{
+                        title:'электронный ресурс'
+                    },
+                    'm':{
+                        title:'информация на нескольких носителях'
+                    },
+                    'r':{
+                        title:'трехмерные искусственные и естественные объекты'
+                    },
+                }
+            },
+            '7':{
+                title: 'Библиографический уровень',
+                values:{
+                    'a':{
+                        title:'аналитический'
+                    },
+                    'c':{
+                        title:'подборка'
+                    },
+                    'i':{
+                        title:'интегрируемый ресурс'
+                    },
+                    'm':{
+                        title:'монографический'
+                    },
+                }
+            },
+            '8':{
+                title: 'Код иерархического уровня',
+                values:{
+                    ' ':{
+                        title:'иерархическая связь не определена'
+                    },
+                    '0':{
+                        title:'иерархическая связь отсутствует'
+                    },
+                    '1':{
+                        title:'запись высшего уровня'
+                    },
+                    '2':{
+                        title:'запись ниже высшего уровня'
+                    },
+                }
+            },
+            '17':{
+                title: 'Уровень кодирования',
+                values:{
+                    ' ':{
+                        title:'полный уровень'
+                    },
+                    '0':{
+                        title:'подуровень 1'
+                    },
+                    '1':{
+                        title:'подуровень 2'
+                    },
+                    '2':{
+                        title:'подуровень 3'
+                    },
+                }
+            }
+        },
+        datafields:{
+            '200': {
+
+                title: 'Заглавие и сведения об ответсвенности',
+                required: true,
+                repeatable: false,
+                subfields:{
+                    'a': {
+                        title: 'Основное заглавие',
+                        required: true,
+                        repeatable: true,
+                    },
+                    'b': {
+                        title: 'Общее обозначение материала',
+                        required: true,
+                        repeatable: true,
+                    },
+                    'e': {
+                        title: 'Сведения, относящиеся к заглавию',
+                        required: true,
+                        repeatable: true,
+                    }
+                }
+            }
+        }
+    };
+
+    function getSubfieldTitle(field_tag, subfield_tag, template) {
+        if (template.datafields[field_tag].subfields[subfield_tag]) {
+            return template.datafields[field_tag].subfields[subfield_tag].title;
+        }
+        return ' ';
+    }
+    function getMarkerPosTitle(pos, value, template) {
+        alert( pos + value);
+        if (template.marker[pos].values[value]) {
+            return template.marker[pos].values[value].title;
+        }
+        return ' ';
+    }
+    // alert(template.datafields['200'].subfields['a'].title);
+    var record = {
+        syntax: "1.2.840.10003.5.28",
+        leader: "01412cas a22003373i 450 ",
+
+        controlfields: {
+            '001': "10042",
+            '005': "20110608184508.0"
+        },
+        datafields:{
+            '200':[
+                {
+                    "i1": "1",
+                    "i2": " ",
+                    "subfields": {
+                        "a": ["American journal of transplantation", 'edwedwedweded'],
+                        "b": ["electronic resource"],
+                        "e": ["official journal of the Amociety of Transplant Surgeons."]
+                    }
+                }
+            ]
+
+        }
+    };
+    //Маркер
+    var controlfields_element = document.createElement('ul');
+    $(controlfields_element).html(
+            '<span class="field_title">Маркер</span>\
+          <ul><li><span class="subfield_tag">6</span> ' + record.leader[6] + ' ' + getMarkerPosTitle(6, record.leader[6], template)+ ' ' + '</li>\
+                    <li><span class="subfield_tag">7</span> '+ record.leader[7] + ' ' + getMarkerPosTitle(7, record.leader[7], template)+ ' ' +  '</li>\
+                    <li><span class="subfield_tag">8</span> '+ record.leader[8] + ' ' + getMarkerPosTitle(8, record.leader[8], template)+ ' ' + '</li>\
+                    <li><span class="subfield_tag">17</span> '+ record.leader[17] + ' ' + getMarkerPosTitle(17, record.leader[17], template)+ ' ' + '</li></ul>'
+    );
+    $('#record').append(controlfields_element);
+
+    //Контрольные поля
+    var controlfields_element = document.createElement('ul');
+
+    for (controlfield_tag in record.controlfields) {
+        var controlfield_element = document.createElement('li');
+        $(controlfield_element).html('<span class="field_title">' + controlfield_tag + '</span> ' + record.controlfields[controlfield_tag]);
+        $(controlfields_element).append(controlfield_element);
+    }
+
+    $('#record').append(controlfields_element);
+
+    var datafields_element = document.createElement('ul');
+    $(datafields_element).addClass('datafields');
+
+    //Пробегаем по всем полям данных
+    for (datafield_tag in record.datafields) {
+        //Создание элемента для хранения поля
+        var field_element = document.createElement('li');
+        $(field_element).addClass('field');
+        $(field_element).html('<span class="field_title">' + datafield_tag + '</span> <a href="#1" class="add_subfield">+</a>');
+        //$('#fields').append(field_element);
+        var fields = record.datafields[datafield_tag]
+
+        for (field_idx in fields) {
+            var field = fields[field_idx];
+
+            //Добавление индикаторов
+            var field_indicators_element = document.createElement('ul');
+            $(field_indicators_element).addClass('indicators');
+
+            //Добавление первого индикатора
+            var field_indicator1 = document.createElement('li');
+            $(field_indicator1).addClass('indicator');
+            $(field_indicator1).text('И1 ' + field.i1);
+            $(field_indicators_element).append(field_indicator1);
+
+            //Добавление второго индикатора
+            var field_indicator2 = document.createElement('li');
+            $(field_indicator2).addClass('indicator');
+            $(field_indicator2).text('И2 ' + field.i2);
+            $(field_indicators_element).append(field_indicator2);
+            $(field_element).append(field_indicators_element);
+
+            //Добавление подполей
+            var field_subfields_element = document.createElement('ul');
+            $(field_subfields_element).addClass('subfields');
+
+            for (subfield_tag in field.subfields) {
+                var subfields_data = field.subfields[subfield_tag];
+                for (subfields_data_idx in subfields_data) {
+                    var subfield_element = document.createElement('li');
+                    $(subfield_element).addClass('subfield');
+                    $(subfield_element).html('<span class="subfield_tag">$' + subfield_tag + '</span> <span class="subfield_title"> ' + getSubfieldTitle(datafield_tag, subfield_tag, template) + '</span><ul><li class="subfield_data">' + subfields_data[subfields_data_idx] + '</li></ul>');
+                    $(field_subfields_element).append(subfield_element);
+                }
+            }
+            $(field_element).append(field_subfields_element);
+
+            //alert(field.subfields.a[0]);
+        }
+        $(datafields_element).append(field_element);
+        $('#record').append(datafields_element);
+    }
+    </script>
+
+    <script type="text/javascript">
+        $('.subfield_data').live('click', function () {
+            if ($(this).hasClass('editable') == false) {
+                var text = $(this).text();
+                $(this).toggleClass('editable');
+                $(this).html('<textarea  class="edit" type="text">' + text + '</textarea><br/><a class="btn edit_done">Применить</a>');
+            }
+        });
+
+        $('.edit_done').live('click', function (e) {
+            e.stopPropagation();
+            var text = $(this).siblings('.edit').val();
+            var parent = $(this).parent();
+
+            parent.html(' ');
+            parent.text(text);
+            parent.toggleClass('editable');
+
+            //$(this).parent().text(text);
+            //$(this).addClass('editable');
+            //$(this).html('<input class="edit" type="text" value="'+ text +'"/>');
+
+        });
+    </script>
+    {#    {% if {% url erm_admin_databases %} == {{ request.META.PATH_INFO }} %}active{% endblock %}#}
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends 'admin_erm.html' %}
+{% load i18n %}
+{% load pagination_tag %}
+
+{% block erm_menu %}
+    <li><a href="{% url erm_admin_create_databases %}">Создать базу</a></li>
+    <li><a href="{% url erm_admin_databases %}">Список баз</a></li>
+{% endblock %}
+
+{% block erm_action_content %}
+    <div class="row">
+        <h3><a href="{% url erm_admin_databases %}">Список баз данных</a> → {{ database.name }} </h3>
+        <hr/>
+        <div>
+            <p><b>{% trans 'Name' %}</b>: {{ database.name }}</p>
+
+            <p><b>{% trans 'Vendor' %}</b>: {{ database.vendor }}</p>
+
+            <p><b>{% trans 'Rubrics' %}</b>: {{ database.rubrics }}</p>
+
+            <p><b>{% trans 'Subscribe period' %}</b>: {{ database.start_date }} - {{ database.end_date }}</p>
+
+            <p><a href="{% url erm_admin_database_edit database.id  %}" class="btn primary">{% trans 'Edit' %}</a> <a href="{% url erm_admin_database_delete database.id %}" class="btn danger">{% trans 'Delete' %}</a></p>
+        </div>
+    </div>
+    {#    {% if {% url erm_admin_databases %} == {{ request.META.PATH_INFO }} %}active{% endblock %}#}
+{% endblock %}

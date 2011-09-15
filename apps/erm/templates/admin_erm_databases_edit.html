@@ -1,0 +1,29 @@
+{% extends 'admin_erm.html' %}
+{% load i18n %}
+{% load pagination_tag %}
+
+{% block erm_menu %}
+    <li><a href="{% url erm_admin_create_databases %}">{% trans 'Create database' %}</a></li>
+    <li><a href="{% url erm_admin_databases %}">{% trans 'Databases list' %}з</a></li>
+{% endblock %}
+
+{% block erm_action_content %}
+    <h3>{% trans 'Database editing' %}</h3>
+    <hr/>
+    <div class="row">
+
+        <form action="" method="POST" class="form-stacked">{% csrf_token %}
+            {% include 'admin_erm_databases_form.html' %}
+            <p><input type="SUBMIT" value="{% trans 'Edit' %}" class="btn primary"></p>
+        </form>
+    </div>
+    <script type="text/javascript">
+        var i = $('#id_form-TOTAL_FORMS').val();
+        $('#add_rubric_button').click(function() {
+            $('#rubrics').append('<p><input id="id_form-'+i+'-name" type="text" name="form-'+ i +'-name" value="" maxlength="256"></p>');
+            i++;
+            $('#id_form-TOTAL_FORMS').val(i);
+        });
+    </script>
+    {#    {% if {% url erm_admin_databases %} == {{ request.META.PATH_INFO }} %}active{% endblock %}#}
+{% endblock %}

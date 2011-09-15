@@ -138,6 +138,17 @@ class Record(object):
 
         return [f for f in self.fields if f.tag in args]
 
+    def get_first_subfield(self,tag,subfield):
+        """
+        return first coincidence of field and subfield or None
+        """
+        for field in self.fields:
+            if field.tag == tag:
+                subfields = field.get_subfields(subfield)
+                if len(subfields) > 0:
+                    return subfields[0]
+        return None
+
     def decode_marc(self, marc, to_unicode=False, force_utf8=False, encoding=None,
                     hide_utf8_warnings=False, utf8_handling='strict'):
         """
@@ -193,7 +204,6 @@ class Record(object):
                         continue
                     code = subfield[0]
                     data = subfield[1:]
-                    print data
                     if to_unicode:
                         if self.leader[9] == 'a' or force_utf8:
                             data = data.decode('utf-8', utf8_handling)
@@ -218,7 +228,7 @@ class Record(object):
         if field_count == 0:
             raise NoFieldsFound
 
-    def as_marc(self, encoding=None, sorted_fields=True):
+    def as_marc(self, encoding='UTF-8', sorted_fields=True):
         """
         encoding - encoding of serialized record
         returns the record serialized as MARC21
@@ -279,7 +289,7 @@ class Record(object):
         # return the encoded record
         return ''.join((self.leader,directory,fields))
 
-    def as_md5(self):
+    def md5(self):
 
         fields = []
 

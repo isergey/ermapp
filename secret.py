@@ -30,9 +30,9 @@ DEV = {
 
     'CACHES': {
         'default': {
-            'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',
-            'LOCATION': 'unique-snowflake'
-            }
+            'BACKEND': 'django.core.cache.backends.memcached.PyLibMCCache',
+            'LOCATION': '127.0.0.1:11211',
+        }
     },
 
     'SECRET_KEY': '6e&h!4$+&p+!@^543%jn&+x!j3g-pf3%%frsvo2=6p*&*eo_i)'
